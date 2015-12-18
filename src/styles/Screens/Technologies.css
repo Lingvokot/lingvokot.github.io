@@ -1,0 +1,40 @@
+.technologies-container {
+  display: flex;
+  justify-content: space-between;
+  width: 87.6rem;
+}
+
+.tech {
+  display:flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.gear {
+  width: 14.2rem;
+  margin: auto;
+}
+
+.react-native {
+  width: 16rem;
+  margin: auto;
+}
+
+.tech-talks {
+  width: 15.4rem;
+  margin: auto;
+}
+
+.tech-link {
+  background-color: #f3c523;
+  border-radius: .6rem;
+  color: white;
+  font-family: "Luba LT CYR";
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 1.4rem 2.2rem 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
