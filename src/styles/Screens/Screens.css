@@ -1,0 +1,9 @@
+.section {
+  display: flex;
+  margin: auto;
+  width: 119rem;
+}
+
+.section__content {
+  margin: 4.4rem 12.8rem 0 12.8rem;
+}
