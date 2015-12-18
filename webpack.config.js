@@ -5,6 +5,11 @@ var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 
+var postcssImport = require("postcss-import");
+
+var postcssMixins = require("postcss-mixins");
+var postcssVars = require("postcss-simple-vars");
+var postcssNested = require("postcss-nested");
 
 // Switch plugins / build options by NODE_ENV variable
 var BUILD_TYPE = process.env["NODE_ENV"] == "production" ? "prod":"dev";
@@ -54,11 +59,9 @@ var variables = {
   },
   postcss_plugins: {
     "prod": [
-      cssnano,
-      autoprefixer
+      cssnano
     ],
     "dev": [
-      autoprefixer
     ]
   }
 };
@@ -97,8 +100,16 @@ module.exports = {
     root: __dirname
   },
 
-  postcss: function () {
-      return variables.postcss_plugins[BUILD_TYPE];
+  postcss: function (webpack) {
+      return variables.postcss_plugins[BUILD_TYPE].concat([
+        postcssMixins,
+        postcssNested,
+        postcssVars,
+        autoprefixer,
+        postcssImport({
+            addDependencyTo: webpack
+        })
+      ]);
   }
 
 };
