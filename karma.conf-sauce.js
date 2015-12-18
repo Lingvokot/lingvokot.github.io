@@ -36,7 +36,9 @@ var customLaunchers = {
 module.exports = function (config) {
   config.set({
     sauceLabs: {
-      testName: 'Web App Unit Tests'
+      testName: 'Web App Unit Tests',
+      recordVideo: true,
+      recordScreenshots: true
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
