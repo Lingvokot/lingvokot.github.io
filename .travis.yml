@@ -6,3 +6,6 @@ env:
 before_script: source .env
 notifications:
   email: false
+cache:
+  directories:
+    - node_modules

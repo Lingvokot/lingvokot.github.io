@@ -15,26 +15,30 @@ var customLaunchers = {
     base: "SauceLabs",
     browserName: "chrome",
     platform: "Windows 10",
-    version: "46.0"
   },
   sl_firefox: {
     base: "SauceLabs",
     browserName: "firefox",
     platform: "Windows 10",
-    version: "42.0"
   },
   sl_ie_11: {
     base: "SauceLabs",
+    browserName: "internet explorer",
+    platform: "Windows 10",
+  },
+  sl_ms_edge: {
+    base: "SauceLabs",
     browserName: "microsoftedge",
     platform: "Windows 10",
-    version: "20.10240"
   }
 }
 
 module.exports = function (config) {
   config.set({
     sauceLabs: {
-      testName: 'Web App Unit Tests'
+      testName: 'Web App Unit Tests',
+      recordVideo: true,
+      recordScreenshots: true
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
@@ -53,7 +57,7 @@ module.exports = function (config) {
     },
 
     // Timeout for capturing a browser (in ms).
-    captureTimeout: 60 * 1e3,
+    captureTimeout: 180 * 1e3,
 
     // to avoid DISCONNECTED messages
     browserDisconnectTimeout : 10000, // default 2000
