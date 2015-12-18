@@ -1,0 +1,28 @@
+.section--green {
+  background-color: #7cd985;
+}
+
+.slider {
+  display: flex;
+}
+
+.devices {
+  width: 43.2rem;
+}
+
+.slider__right-part {
+  width: 41.5rem;
+}
+
+.store-buttons {
+  display: flex;
+}
+
+.app-store,
+.google-play {
+  width: 14rem;
+}
+
+.slider-controls {
+  display: flex;
+}
