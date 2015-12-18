@@ -48,6 +48,7 @@ var variables = {
           warnings: false
         }
       }),
+      new webpack.optimize.DedupePlugin(),
       new StaticSiteGeneratorPlugin("main", ["/index.html"]),
       new webpack.NoErrorsPlugin(),
       new ExtractTextPlugin("[name].css")
@@ -79,7 +80,9 @@ module.exports = {
   entry: variables.entry[BUILD_TYPE],
 
   module: {
+    preLoaders: [],
     loaders: variables.module_loaders[BUILD_TYPE],
+    noParse: [],
   },
 
   plugins: variables.plugins[BUILD_TYPE],
@@ -87,6 +90,7 @@ module.exports = {
   cache: true,
   debug: true,
   devtool: BUILD_TYPE_IS_PROD ? "none":"source-map",
+  progress: true,
 
   stats: {
     timings: true,
@@ -97,6 +101,7 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx"],
     modulesDirectories: ["node_modules"],
+    alias: {},
     root: __dirname
   },
 
