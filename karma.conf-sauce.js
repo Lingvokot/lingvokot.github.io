@@ -50,6 +50,14 @@ module.exports = function (config) {
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true //please don"t spam the console when running in karma!
-    }
+    },
+
+    // Timeout for capturing a browser (in ms).
+    captureTimeout: 60 * 1e3,
+
+    // to avoid DISCONNECTED messages
+    browserDisconnectTimeout : 10000, // default 2000
+    browserDisconnectTolerance : 1, // default 0
+    browserNoActivityTimeout : 60 * 1e3, //default 10000
   });
 };
