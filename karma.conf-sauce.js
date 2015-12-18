@@ -50,7 +50,7 @@ module.exports = function (config) {
     },
 
     // Timeout for capturing a browser (in ms).
-    captureTimeout: 60 * 1e3,
+    captureTimeout: 180 * 1e3,
 
     // to avoid DISCONNECTED messages
     browserDisconnectTimeout : 10000, // default 2000
