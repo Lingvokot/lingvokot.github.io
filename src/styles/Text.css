@@ -5,7 +5,7 @@
 
 .text,
 .header--level-3 {
-  color: #3d6d42;
+  color: #828882;
   font-weight: 300;
 }
 
@@ -37,6 +37,7 @@
   line-height: 2.6rem;
 }
 
-.text--centered {
-  text-align: center;
+.text--green,
+.header--green {
+  color: #3d6d42;
 }
