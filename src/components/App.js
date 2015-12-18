@@ -1,10 +1,18 @@
 import React from "react";
 import "src/styles/App.css";
 
+import Navbar from "./Navbar.js";
+import Screens from "./Screens/Screens.js";
+import Footer from "./Footer.js";
+
 class App extends React.Component {
   render () {
     return (
-      <h1>Hello, World!</h1>
+      <div>
+        <Navbar/>
+        <Screens/>
+        <Footer/>
+      </div>
     );
   }
 }
