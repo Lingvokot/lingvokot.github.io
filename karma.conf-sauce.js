@@ -15,19 +15,16 @@ var customLaunchers = {
     base: "SauceLabs",
     browserName: "chrome",
     platform: "Windows 10",
-    version: "46.0"
   },
   sl_firefox: {
     base: "SauceLabs",
     browserName: "firefox",
     platform: "Windows 10",
-    version: "42.0"
   },
   sl_ie_11: {
     base: "SauceLabs",
     browserName: "microsoftedge",
     platform: "Windows 10",
-    version: "20"
   }
 }
 
