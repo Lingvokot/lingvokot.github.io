@@ -1,7 +1,8 @@
 {
-  "name": "tic-tac-toe-react",
+  "name": "lingvokot-github-io",
   "version": "0.0.1",
-  "description": "Tic Tac Toe game written with modern FrontEnd stack",
+  "private": true,
+  "description": "Static website hosten on GH Pages build with modern FrontEnd stack",
   "main": "index.js",
   "scripts": {
     "watch": "webpack-dev-server --watch --color --hot --inline",
@@ -13,8 +14,12 @@
     "url": "git+https://github.com/Lingvokot/Tic-Tac-Toe-React.git"
   },
   "keywords": [
+    "mocha",
+    "chai",
+    "quixote",
+    "webpack",
     "react",
-    "game"
+    "static website"
   ],
   "author": "Lingvokot <https://github.com/Lingvokot/>",
   "license": "MIT",
