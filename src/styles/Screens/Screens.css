@@ -7,3 +7,7 @@
 .section__content {
   margin: 4.4rem 12.8rem 0 12.8rem;
 }
+
+.section__content--container {
+  display: flex;
+}
