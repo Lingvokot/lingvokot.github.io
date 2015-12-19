@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  margin: auto;
+  width: 119rem;
+}
+
+.navbar__content {
+  display: flex;
+  margin: 0rem 12.8rem;
+  width: 119rem;
+}
+
+.logo {
+  width: 20.4rem;
+}
