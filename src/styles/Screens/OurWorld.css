@@ -1,0 +1,19 @@
+.our-world--container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.socials {
+  display: flex;
+}
+
+.planet {
+  width: 38.8rem;
+}
+
+.github,
+.facebook,
+.slideshare {
+  width: 6.9rem;
+  margin-right: 2.1rem;
+}
