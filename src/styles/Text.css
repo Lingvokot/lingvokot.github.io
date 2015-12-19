@@ -10,6 +10,7 @@
 }
 
 .header--level-2 {
+  margin-top: 0;
   color: black;
   text-transform: uppercase;
 }
