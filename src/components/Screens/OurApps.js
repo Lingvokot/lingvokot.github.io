@@ -18,7 +18,9 @@ class OurApps extends React.Component {
                     You want to use
                   </span>
                 </h2>
-                <h3 className="header header--level-3 header--green">Translator-Q</h3>
+                <h3 className="header header--level-3 header--green">
+                  Translator-Q
+                </h3>
                 <p className="text text--green">
                   Inspired by minimalist art, Dots was created with the notion
                   that beauty and fun are not mutually exclusive. Dots is a
