@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  margin: auto;
+  width: 119rem;
+  background-color: #7cd985;
+}
+
+.footer__content {
+  display: flex;
+  margin: 0rem 12.8rem;
+  width: 119rem;
+}
+
+.footer-socials {
+  display: flex;
+}
+
+.footer-socials__github,
+.footer-socials__facebook,
+.footer-socials__slideshare {
+  width: 3.1rem
+}
+
+.footer-text {
+  color: #3d6d42;
+  font-family: "Luba LT CYR";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
