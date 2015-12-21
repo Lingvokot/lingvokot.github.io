@@ -7,17 +7,17 @@ class ForInvestors extends React.Component {
   render () {
     return (
       <section className="section">
-        <div className="section__content section__content--container">
+        <div className="section__content section__content-for-investors">
           <ContactForm />
           <div className="for-investors--description">
             <h2 className="header header--level-2">
-              <span className="header--big">
+              <div className="header--big">
                 Great opportunities<br/>
                 for your investments<br/>
-              </span>
-              <span className="header--small">
+              </div>
+              <div className="header--small">
                 Complete the form and receive our brief shortly
-              </span>
+              </div>
             </h2>
             <p className="text">
               Inspired by minimalist art, Dots was created<br/>
