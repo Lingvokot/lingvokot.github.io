@@ -1,14 +1,23 @@
-.our-world--container {
+.section__content--our-world {
+  display: flex;
+  margin-top: 10.1rem;
+}
+
+.our-world-description {
   display: flex;
   flex-flow: column nowrap;
+  margin-left: 5.3rem;
+  margin-top: .8rem;
 }
 
 .socials {
   display: flex;
+  margin-top: 1.4rem;
 }
 
 .planet {
   width: 38.8rem;
+  margin-left: 2.8rem;
 }
 
 .github,
