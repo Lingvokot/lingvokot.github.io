@@ -7,17 +7,20 @@
 .header--level-3 {
   color: #828882;
   font-weight: 300;
+  margin: 1.6rem 0rem;
 }
 
 .header--level-2 {
-  margin-top: 0;
+  margin-bottom: 0;
   color: black;
   text-transform: uppercase;
+  margin-bottom: 2.8rem;
 }
 
 .header--big {
   font-size: 3.2rem;
   font-weight: 700;
+  margin-bottom: .9rem;
 }
 
 .header--small {
