@@ -6,10 +6,14 @@
 
 .navbar__content {
   display: flex;
-  margin: 0rem 12.8rem;
+  margin: 1.9rem 12.8rem 1.1rem;
   width: 119rem;
+  padding-left: .2rem;
 }
 
 .logo {
   width: 20.4rem;
+}
+
+.navigation-container {
 }
