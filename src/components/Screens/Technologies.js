@@ -5,13 +5,13 @@ class Technologies extends React.Component {
   render () {
     return (
       <section className="section">
-        <div className="section__content">
+        <div className="section__content section__content--technologies">
           <h2 className="header header--level-2">
-            <span className="header--big">We like what we do<br/></span>
-            <span className="header--small">
+            <div className="header--big">We like what we do<br/></div>
+            <div className="header--small">
               Creating applications make our adopters and us happy.
               Discover what is behind our apps
-            </span>
+            </div>
           </h2>
           <div className="technologies-container">
             <div className="tech">
@@ -19,14 +19,16 @@ class Technologies extends React.Component {
                 <div className="gear">
                   <img src="src/img/technologies/gear.svg"/>
                 </div>
-                <h3 className="header header--level-3">CI & CD</h3>
-                <p className="text text--centered">
-                  We use fully automated<br/>
-                  continuous integration and<br/>
-                  continuous delivery. So we<br/>
-                  can deliver any changes<br/>
-                  really fast
-                </p>
+                <div className="tech__description">
+                  <h3 className="header header--level-3">CI & CD</h3>
+                  <p className="text text--centered">
+                    We use fully automated<br/>
+                    continuous integration and<br/>
+                    continuous delivery. So we<br/>
+                    can deliver any changes<br/>
+                    really fast
+                  </p>
+                </div>
               </div>
               <a className="tech-link" href="">Our assets</a>
             </div>
@@ -35,15 +37,17 @@ class Technologies extends React.Component {
                 <div className="react-native">
                   <img src="src/img/technologies/react-native.svg"/>
                 </div>
-                <h3 className="header header--level-3">React native</h3>
-                <p className="text">
-                  We build native iOS and<br/>
-                  Android apps with Javascript.<br/>
-                  Together with automation it<br/>
-                  allows to develop smart and<br/>
-                  efficiently. Also hot deploy is<br/>
-                  available.
-                </p>
+                <div className="tech__description">
+                  <h3 className="header header--level-3">React native</h3>
+                  <p className="text">
+                    We build native iOS and<br/>
+                    Android apps with Javascript.<br/>
+                    Together with automation it<br/>
+                    allows to develop smart and<br/>
+                    efficiently. Also hot deploy is<br/>
+                    available.
+                  </p>
+                </div>
               </div>
               <a className="tech-link" href="">Read more</a>
             </div>
@@ -52,14 +56,16 @@ class Technologies extends React.Component {
                 <div className="tech-talks">
                   <img src="src/img/technologies/tech-talks.svg"/>
                 </div>
-                <h3 className="header header--level-3">Tech Talks</h3>
-                <p className="text">
-                  We use cutting edge<br/>
-                  technology stack and make<br/>
-                  things really simple. We are<br/>
-                  always ready to share our<br/>
-                  vision.
-                </p>
+                <div className="tech__description">
+                  <h3 className="header header--level-3">Tech Talks</h3>
+                  <p className="text">
+                    We use cutting edge<br/>
+                    technology stack and make<br/>
+                    things really simple. We are<br/>
+                    always ready to share our<br/>
+                    vision.
+                  </p>
+                </div>
               </div>
               <a className="tech-link" href="">Our presentations</a>
             </div>
