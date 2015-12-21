@@ -14,10 +14,12 @@ class Screens extends React.Component {
             <input id="site" className="input-form" type="text"/>
             <label htmlFor="email" className="label">E-mail</label>
             <input id="email" className="input-form" type="text"/>
-            <div>
-              <input id="promotion" type="checkbox" name="_promotion" value="promotion"/>
+            <div className="checkbox">
+              <input id="promotion" type="checkbox"
+                name="_promotion" value="promotion"
+              />
                <label htmlFor="promotion" className="checkbox-label">
-                 We have expertise in the marketingor applications promotion
+                 We have expertise in the marketing or applications promotion
               </label>
             </div>
           </div>
