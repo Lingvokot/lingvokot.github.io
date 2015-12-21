@@ -5,17 +5,17 @@ class OurWorld extends React.Component {
   render () {
     return (
       <section className="section">
-        <div className="section__content section__content--container">
+        <div className="section__content section__content--our-world">
           <div className="planet">
             <img src="src/img/world/planet.svg"/>
           </div>
-        <div className="our-world--container">
+        <div className="our-world-description">
           <div>
             <h2 className="header header--level-2">
-              <span className="header--big">Join our world<br/></span>
-              <span className="header--small">
+              <div className="header--big">Join our world<br/></div>
+              <div className="header--small">
                 With social networks updates and recources
-              </span>
+              </div>
             </h2>
             <p className="text">
               Questions have been raised about the social<br/>
