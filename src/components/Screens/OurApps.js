@@ -10,13 +10,13 @@ class OurApps extends React.Component {
             <div className="devices">
               <img src="src/img/apps/devices.svg"/>
             </div>
-            <div>
-              <div className="slider__right-part">
+            <div className="slider__right-part">
+              <div>
                 <h2 className="header header--level-2">
-                  <span className="header--big">Applications<br/></span>
-                  <span className="header--small header--heavy">
+                  <div className="header--big">Applications</div>
+                  <div className="header--small header--heavy">
                     You want to use
-                  </span>
+                  </div>
                 </h2>
                 <h3 className="header header--level-3 header--green">
                   Translator-Q
