@@ -11,7 +11,7 @@ class Navbar extends React.Component {
           <div className="logo">
             <img src="src/img/navbar/logo.svg" />
           </div>
-          <div>
+          <div className="navigation-container">
             <Navigation classes="navigation__page-scroller--green"/>
           </div>
         </div>
