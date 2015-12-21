@@ -4,6 +4,8 @@
 
 .slider {
   display: flex;
+  margin-top: 4.4rem;
+  margin-bottom: 2.2rem;
 }
 
 .devices {
@@ -11,6 +13,7 @@
 }
 
 .slider__right-part {
+  margin-left: 3.5rem;
   width: 41.5rem;
 }
 
