@@ -5,13 +5,13 @@
   border-radius: 6px;
   font-family: "Luba LT CYR";
   overflow: hidden;
-  width: 44rem;
+  width: 43.9rem;
 }
 
 .contact-form__input-part {
   display: flex;
   flex-flow: column nowrap;
-  margin: 2.5rem 3.2rem;
+  margin: 2.5rem 3.2rem 2.1rem;
 }
 .contact-form__submit-part {
   display: flex;
@@ -49,14 +49,6 @@
   margin-bottom: .5rem;
 }
 
-.checkbox-label {
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 18px;
-  text-transform: uppercase;
-}
-
 .submit-button {
   color: #67bf73;
   font-family: "Luba LT CYR";
@@ -67,6 +59,30 @@
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
   border-radius: 4px;
   margin: 2.6rem auto;
-  padding: 1rem 2.5rem .5rem;
+  padding: 1.3rem 2.5rem .8rem;
   border:none;
+}
+
+.checkbox {
+  display: flex;
+  margin-top: .9rem;
+  margin-bottom: .4rem
+}
+
+.checkbox-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.checkbox input {
+  display: none
+}
+
+.checkbox .checkbox-img {
+  width: 3.4rem;
+  height: 3.4rem;
+  background: url(../../img/contactform/checkbox.svg);
 }
