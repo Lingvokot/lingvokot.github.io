@@ -8,7 +8,7 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="footer__content">
-          <div>
+          <div className="footer__left-part">
             <div className="footer-socials">
               <div className="footer-socials__github">
                 <a href="https://github.com/Lingvokot">
