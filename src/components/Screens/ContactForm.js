@@ -14,14 +14,16 @@ class Screens extends React.Component {
             <input id="site" className="input-form" type="text"/>
             <label htmlFor="email" className="label">E-mail</label>
             <input id="email" className="input-form" type="text"/>
-            <div className="checkbox">
-              <input id="promotion" type="checkbox"
-                name="_promotion" value="promotion"
+            <label htmlFor="promotion" className="checkbox">
+              <input id="promotion" type="checkbox" name="_promotion"
+                  value="promotion"
               />
-               <label htmlFor="promotion" className="checkbox-label">
-                 We have expertise in the marketing or applications promotion
-              </label>
-            </div>
+              <span className="checkbox-img"></span>
+              <span className="checkbox-label">
+                We have expertise in the marketing or<br/>
+                applications promotion
+              </span>
+            </label>
           </div>
           <div className="contact-form__submit-part">
             <input type="submit" className="submit-button" value="Send"/>
