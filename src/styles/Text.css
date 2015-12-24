@@ -7,7 +7,7 @@
 .header--level-3 {
   color: #828882;
   font-weight: 300;
-  margin: 1.6rem 0rem;
+  margin: 1.4rem 0rem;
 }
 
 .header--level-2 {
@@ -25,6 +25,7 @@
 .header--small {
   font-size: 1.8rem;
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .header--heavy {
