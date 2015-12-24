@@ -27,10 +27,12 @@
   color: black;
 }
 
-.navigation__page-scroller--green:hover {
+.navigation__page-scroller--green:hover,
+.navigation__page-scroller--green .active {
   color: black;
 }
 
-.navigation__page-scroller--black:hover {
+.navigation__page-scroller--black:hover,
+.navigation__page-scroller--black .active {
   color: white;
 }
