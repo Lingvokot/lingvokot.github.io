@@ -5,20 +5,30 @@
   background-color: #7cd985;
 }
 
+.footer__left-part {
+  width: 14.6rem;
+  height: 8.2rem;
+  white-space: nowrap;
+}
+
 .footer__content {
   display: flex;
+  align-items: center;
   margin: 0rem 12.8rem;
   width: 119rem;
+  height: 13.2rem;
 }
 
 .footer-socials {
   display: flex;
+  margin-bottom: 1.5rem;
 }
 
 .footer-socials__github,
 .footer-socials__facebook,
 .footer-socials__slideshare {
-  width: 3.1rem
+  width: 3.1rem;
+  margin-right: .9rem;
 }
 
 .footer-text {
