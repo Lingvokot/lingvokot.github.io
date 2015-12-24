@@ -11,12 +11,8 @@ class ForInvestors extends React.Component {
           <ContactForm />
           <div className="for-investors-description">
             <h2 className="header header--level-2">
-              <div className="header--big">
-                Great opportunities
-              </div>
-              <div className="header--big">
-                for your investments<br/>
-              </div>
+              <div className="header--big">Great opportunities</div>
+              <div className="header--big">for your investments</div>
               <div className="header--small">
                 Complete the form and receive our brief shortly
               </div>
