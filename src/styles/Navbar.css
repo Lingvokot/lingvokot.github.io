@@ -1,19 +1,24 @@
 .navbar {
   display: flex;
+  justify-content: center;
+  background-color: white;
   margin: auto;
-  width: 119rem;
+  width: 100%;
+  margin-bottom: .7rem;
+  position: fixed;
+  top: 0;
+  z-index: 1050;
 }
 
 .navbar__content {
   display: flex;
-  margin: 1.9rem 12.8rem 1.1rem;
+  align-items: center;
+  margin: 1.5rem 0rem .8rem;
   width: 119rem;
   padding-left: .2rem;
 }
 
 .logo {
   width: 20.4rem;
-}
-
-.navigation-container {
+  margin: .4rem 9.2rem .3rem 12.8rem;
 }
