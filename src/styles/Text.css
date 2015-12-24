@@ -7,6 +7,9 @@
 .header--level-3 {
   color: #828882;
   font-weight: 300;
+}
+
+.text {
   margin: 1.4rem 0rem;
 }
 
@@ -34,6 +37,7 @@
 
 .header--level-3 {
   font-size: 2.6rem;
+  margin: 1.6rem 0rem;
 }
 
 .text {
