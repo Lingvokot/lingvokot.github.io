@@ -30,10 +30,16 @@ class OurApps extends React.Component {
               </div>
               <div className="store-buttons">
                 <div className="app-store">
-                  <img src="src/img/apps/app-store.svg"/>
+                  <a className="store-link" href="">
+                    <img src="src/img/apps/app-store.svg"/>
+                  </a>
+                  <img src="src/img/apps/app-store-button-shadow.svg"/>
                 </div>
                 <div className="google-play">
-                  <img src="src/img/apps/google-play.svg"/>
+                  <a className="store-link" href="">
+                    <img src="src/img/apps/google-play.svg"/>
+                  </a>
+                  <img src="src/img/apps/google-play-button-shadow.svg"/>
                 </div>
               </div>
             </div>
