@@ -12,3 +12,7 @@
 .section__content--container {
   display: flex;
 }
+
+.our-apps {
+  padding-top: 12.4rem;
+}
