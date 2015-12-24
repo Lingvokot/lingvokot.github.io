@@ -1,7 +1,6 @@
 .navigation {
   display: flex;
   list-style: none;
-  margin-left: 9.1rem;
 }
 
 .navigation__page-scroller {
