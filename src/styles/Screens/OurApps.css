@@ -13,17 +13,28 @@
 }
 
 .slider__right-part {
-  margin-left: 3.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-left: 3.4rem;
   width: 41.5rem;
 }
 
 .store-buttons {
   display: flex;
+  margin-bottom: 4.8rem;
 }
 
 .app-store,
 .google-play {
-  width: 14rem;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 13rem;
+  margin-right: 4rem;
+}
+
+.store-link {
+  margin-bottom: .6rem;
 }
 
 .slider-controls {
