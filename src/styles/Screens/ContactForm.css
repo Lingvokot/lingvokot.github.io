@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   background-color: #67bf73;
-  border-radius: 6px;
+  border-radius: .6rem;
   font-family: "Luba LT CYR";
   overflow: hidden;
   width: 43.9rem;
@@ -37,14 +37,14 @@
 }
 
 .input-form:focus {
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 .7rem rgba(0, 0, 0, 0.25);
 }
 
 .label {
   color: white;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 17px;
+  line-height: 1.7rem;
   text-transform: uppercase;
   margin-bottom: .5rem;
 }
@@ -52,12 +52,12 @@
 .submit-button {
   color: #67bf73;
   font-family: "Luba LT CYR";
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
   text-transform: uppercase;
   background-color: white;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border-radius: 4px;
+  border-radius: .4rem;
   margin: 2.6rem auto;
   padding: 1.3rem 2.5rem .8rem;
   border:none;
@@ -71,9 +71,9 @@
 
 .checkbox-label {
   color: white;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 1.8rem;
   text-transform: uppercase;
 }
 
