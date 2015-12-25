@@ -1,7 +1,5 @@
 .footer {
   display: flex;
-  margin: auto;
-  width: 119rem;
   background-color: #7cd985;
 }
 
@@ -15,8 +13,7 @@
 .footer__content {
   display: flex;
   align-items: center;
-  margin: 0rem 12.8rem;
-  width: 119rem;
+  margin: 0rem auto;
   height: 13.4rem;
 }
 
