@@ -73,6 +73,7 @@ module.exports = {
     pathinfo: true,
     path: path.resolve(__dirname, "dist/"),
     filename: "[name].js",
+    publicPath: "/dist/",
     libraryTarget: "umd"
   },
 
