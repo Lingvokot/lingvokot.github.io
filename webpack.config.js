@@ -31,7 +31,7 @@ var variables = {
       { test: /(\.jsx)|(\.js)$/, include: path.join(__dirname, "src"), loader: "babel-loader" },
       { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader") },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url-loader?limit=10000!img-loader?progressive=true' },
-      { test: /fonts\/.*\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+      { test: /fonts\/.*\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ],
     "dev": [
       { test: /(\.jsx)|(\.js)$/, include: path.join(__dirname, "src"), loader: "react-hot-loader!babel-loader" },
@@ -39,7 +39,7 @@ var variables = {
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpe?g$/, loader: "file-loader" },
       { test: /\.svg$/, loader: "file-loader" },
-      { test: /fonts\/.*\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+      { test: /fonts\/.*\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]
   },
   plugins: {
