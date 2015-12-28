@@ -4,10 +4,10 @@
 }
 
 .footer__left-part {
-  width: 14.6rem;
+  width: 15.6rem;
   height: 8.2rem;
   white-space: nowrap;
-  margin-right: 9.1rem;
+  margin-right: 8.2rem;
 }
 
 .footer__content {
@@ -20,13 +20,13 @@
 .footer-socials {
   display: flex;
   margin-bottom: 1.5rem;
+  justify-content: space-between;
 }
 
 .footer-socials__github,
 .footer-socials__facebook,
 .footer-socials__slideshare {
   width: 3.1rem;
-  margin-right: .9rem;
 }
 
 .footer-text {
