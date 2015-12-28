@@ -15,16 +15,16 @@ class Screens extends React.Component {
   render () {
     return (
       <main>
-        <Element className="screen our-apps" name="apps">
+        <Element className="screen our-apps" name="Applications">
           <OurApps/>
         </Element>
-        <Element className="screen" name="tech">
+        <Element className="screen" name="Technologies">
           <Technologies/>
         </Element>
-        <Element className="screen" name="socials">
+        <Element className="screen" name="Socials">
           <OurWorld/>
         </Element>
-        <Element className="screen" name="investors">
+        <Element className="screen" name="Investors">
           <ForInvestors/>
         </Element>
       </main>
