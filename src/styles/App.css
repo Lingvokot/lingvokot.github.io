@@ -17,12 +17,12 @@ html {
 
 @font-face {
   font-family: "Luba LT CYR";
-  src: url(../fonts/LubaLTCYR-medium.otf);
+  src: url(../fonts/LubaLTCYR-Medium.otf);
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Luba LT CYR";
-  src: url(../fonts/LubaLTCYR-light.otf);
+  src: url(../fonts/LubaLTCYR-Light.otf);
   font-weight: 300;
 }
