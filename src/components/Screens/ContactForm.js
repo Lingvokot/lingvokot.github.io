@@ -20,8 +20,8 @@ class Screens extends React.Component {
               />
               <span className="checkbox-img"></span>
               <span className="checkbox-label">
-                We have expertise in the marketing or<br/>
-                applications promotion
+                We have expertise in the marketing<br/>
+                or applications promotion
               </span>
             </label>
           </div>
