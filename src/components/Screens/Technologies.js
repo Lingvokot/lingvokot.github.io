@@ -26,7 +26,7 @@ class Technologies extends React.Component {
                     continuous integration and<br/>
                     continuous delivery. So we<br/>
                     can deliver any changes<br/>
-                    really fast
+                    rapidly
                   </p>
                 </div>
               </div>
@@ -43,8 +43,8 @@ class Technologies extends React.Component {
                     We build native iOS and<br/>
                     Android apps with Javascript.<br/>
                     Together with automation it<br/>
-                    allows to develop smart and<br/>
-                    efficiently. Also hot deploy is<br/>
+                    allows us to develop smart and<br/>
+                    efficient way. Also hot deploy is<br/>
                     available.
                   </p>
                 </div>
@@ -60,8 +60,8 @@ class Technologies extends React.Component {
                   <h3 className="header header--level-3">Tech Talks</h3>
                   <p className="text">
                     We use cutting edge<br/>
-                    technology stack and make<br/>
-                    things really simple. We are<br/>
+                    technologies and make<br/>
+                    things simple. We are<br/>
                     always ready to share our<br/>
                     vision.
                   </p>
