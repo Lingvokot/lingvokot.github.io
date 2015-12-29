@@ -8,7 +8,7 @@ class OurApps extends React.Component {
         <section className="section__content">
           <section className="slider">
             <figure className="devices">
-              <img src="src/img/apps/devices.svg"/>
+              <img alt="devices photo" src="src/img/apps/devices.svg"/>
             </figure>
             <section className="slider__right-part">
               <article>
@@ -30,14 +30,14 @@ class OurApps extends React.Component {
               </article>
               <ul className="store-buttons">
                 <li className="app-store">
-                  <a className="store-link" href="">
-                    <img src="src/img/apps/app-store.svg"/>
+                  <a title="Get it on App Store" className="store-link" href="">
+                    <img alt="App Store" src="src/img/apps/app-store.svg"/>
                   </a>
                   <img src="src/img/apps/app-store-button-shadow.svg"/>
                 </li>
                 <li className="google-play">
-                  <a className="store-link" href="">
-                    <img src="src/img/apps/google-play.svg"/>
+                  <a title="Get it on Google Play" className="store-link" href="">
+                    <img alt="Google Play" src="src/img/apps/google-play.svg"/>
                   </a>
                   <img src="src/img/apps/google-play-button-shadow.svg"/>
                 </li>
