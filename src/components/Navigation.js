@@ -4,49 +4,50 @@ import {Link} from "react-scroll";
 import "src/styles/Navigation.css";
 
 class Navigation extends React.Component {
+  renderMenuLink(name, text = name, setActive) {
+    return (
+      <Link className={name + (setActive ? " active": "")}
+          to={name}
+          {...Navigation.linkProps}
+      >
+        {text}
+      </Link>
+    );
+  }
   render () {
     let className = "navigation__page-scroller " + this.props.classes;
-    let linkProps = {
-      duration: 200,
-      offset: -124,
-      spy: true,
-      smooth: true,
-      onSetActive: (to) => {
-        let navlist = document.querySelectorAll(".navigation .active");
-        for(let i = 0; i < navlist.length; i++) {
-          navlist[i].className = navlist[i].className.slice(0, -7);
-        }
-        navlist = document.querySelectorAll(".navigation ." + to);
-        for(let i = 0; i < navlist.length; i++) {
-          navlist[i].className += " active";
-        }
-      }
-    };
     return (
         <ul className="navigation">
           <li className={className}>
-            <Link className="Applications active" to="Applications" {...linkProps}>
-              Applications
-            </Link>
+            {this.renderMenuLink("Applications", "Applications", true)}
           </li>
           <li className={className}>
-            <Link className="Technologies" to="Technologies" {...linkProps}>
-              Technologies
-            </Link>
+            {this.renderMenuLink("Technologies")}
           </li>
           <li className={className}>
-            <Link className="Socials" to="Socials" {...linkProps}>
-              Socials
-            </Link>
+            {this.renderMenuLink("Socials")}
           </li>
           <li className={className}>
-            <Link className="Investors" to="Investors" {...linkProps}>
-              For investors
-            </Link>
+            {this.renderMenuLink("Investors", "For investors")}
           </li>
         </ul>
     );
   }
+}
+
+Navigation.linkProps = {
+  duration: 200,
+  offset: -124,
+  spy: true,
+  smooth: true,
+  onSetActive: onSetActive
+};
+
+function onSetActive(to) {
+  let navlist = document.querySelectorAll(".navigation .active");
+  [...navlist].forEach((node) => node.classList.remove("active"));
+  navlist = document.querySelectorAll(".navigation ." + to);
+  [...navlist].forEach((node) => node.classList.add("active"));
 }
 
 Navigation.propTypes = {
