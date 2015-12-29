@@ -11,8 +11,8 @@ class Screens extends React.Component {
         <input type="hidden" name="id" value="0ff14c223a" />
         <input type="hidden" name="b_4ee96ad6ec49116c3de5ed5b5_0ff14c223a" tabIndex="-1" value="" />
 
-        <div className="contact-form--container">
-          <div className="contact-form__input-part">
+        <section className="contact-form--container">
+          <section className="contact-form__input-part">
             <label htmlFor="name" className="label">Name</label>
             <input id="name" className="input-form" type="text" name="MERGE1" size="25" />
             <label htmlFor="site" className="label">Site</label>
@@ -27,11 +27,11 @@ class Screens extends React.Component {
                 or applications promotion
               </span>
             </label>
-          </div>
-          <div className="contact-form__submit-part">
+          </section>
+          <section className="contact-form__submit-part">
             <input type="submit" className="submit-button" name="submit" value="Send"/>
-          </div>
-        </div>
+          </section>
+        </section>
       </form>
     );
   }
