@@ -5,11 +5,6 @@ var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 
-var postcssImport = require("postcss-import");
-
-var postcssMixins = require("postcss-mixins");
-var postcssVars = require("postcss-simple-vars");
-var postcssNested = require("postcss-nested");
 
 // Switch plugins / build options by NODE_ENV variable
 var BUILD_TYPE = process.env["NODE_ENV"] == "production" ? "prod":"dev";
@@ -29,13 +24,13 @@ var variables = {
   module_loaders: {
     "prod": [
       { test: /(\.jsx)|(\.js)$/, include: path.join(__dirname, "src"), loader: "babel-loader" },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader") },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url-loader?limit=10000!img-loader?progressive=true' },
       { test: /fonts\/.*\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ],
     "dev": [
       { test: /(\.jsx)|(\.js)$/, include: path.join(__dirname, "src"), loader: "react-hot-loader!babel-loader" },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader") },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.jpe?g$/, loader: "file-loader" },
       { test: /\.svg$/, loader: "file-loader" },
@@ -58,13 +53,6 @@ var variables = {
     'dev': [
       new webpack.NoErrorsPlugin(),
       new ExtractTextPlugin("[name].css")
-    ]
-  },
-  postcss_plugins: {
-    "prod": [
-      cssnano
-    ],
-    "dev": [
     ]
   }
 };
@@ -101,22 +89,10 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx", ".css"],
     modulesDirectories: ["node_modules"],
     alias: {},
     root: __dirname
-  },
-
-  postcss: function (webpack) {
-      return variables.postcss_plugins[BUILD_TYPE].concat([
-        postcssMixins,
-        postcssNested,
-        postcssVars,
-        autoprefixer,
-        postcssImport({
-            addDependencyTo: webpack
-        })
-      ]);
   }
 
 };
