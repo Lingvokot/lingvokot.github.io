@@ -17,7 +17,7 @@ class Technologies extends React.Component {
             <section className="tech">
               <section>
                 <figure className="gear">
-                  <img src="src/img/technologies/gear.svg"/>
+                  <img alt="Gear image" src="src/img/technologies/gear.svg"/>
                 </figure>
                 <article className="tech__description">
                   <h3 className="header header--level-3">CI & CD</h3>
@@ -30,12 +30,12 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a className="tech-link" href="">Our assets</a>
+              <a title="Check our assets" className="tech-link" href="">Our assets</a>
             </section>
             <section className="tech">
               <section>
                 <figure className="react-native">
-                  <img src="src/img/technologies/react-native.svg"/>
+                  <img alt="React Native logo" src="src/img/technologies/react-native.svg"/>
                 </figure>
                 <article className="tech__description">
                   <h3 className="header header--level-3">React native</h3>
@@ -49,12 +49,12 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a className="tech-link" href="">Read more</a>
+              <a title="Read about React Native" className="tech-link" href="">Read more</a>
             </section>
             <section className="tech">
               <section>
                 <figure className="tech-talks">
-                  <img src="src/img/technologies/tech-talks.svg"/>
+                  <img alt="Tech talks" src="src/img/technologies/tech-talks.svg"/>
                 </figure>
                 <article className="tech__description">
                   <h3 className="header header--level-3">Tech Talks</h3>
@@ -67,7 +67,7 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a className="tech-link" href="">Our presentations</a>
+              <a title="Take a look at our presentations" className="tech-link" href="">Our presentations</a>
             </section>
           </section>
         </section>
