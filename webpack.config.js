@@ -89,7 +89,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx", ".css"],
     modulesDirectories: ["node_modules"],
     alias: {},
     root: __dirname
