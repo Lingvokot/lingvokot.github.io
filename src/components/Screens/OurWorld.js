@@ -6,9 +6,9 @@ class OurWorld extends React.Component {
     return (
       <section className="section">
         <section className="section__content section__content--our-world">
-          <div className="planet">
-            <img src="src/img/world/planet.svg"/>
-          </div>
+          <figure className="planet">
+            <img alt="Planet image" src="src/img/world/planet.svg"/>
+          </figure>
         <section className="our-world-description">
           <article>
             <h2 className="header header--level-2">
@@ -25,15 +25,19 @@ class OurWorld extends React.Component {
           </article>
           <ul className="socials">
             <li className="github">
-              <a title="" href="https://github.com/Lingvokot">
+              <a title="Our company on github" href="https://github.com/Lingvokot">
                 <img src="src/img/world/github-ico.svg"/>
               </a>
             </li>
             <li className="facebook">
-              <a href=""><img src="src/img/world/facebook-ico.svg"/></a>
+              <a title="Our company on facebook" href="">
+                <img src="src/img/world/facebook-ico.svg"/>
+              </a>
             </li>
             <li className="slideshare">
-              <a href=""><img src="src/img/world/slideshare-ico.svg"/></a>
+              <a title="Our company on slideshare" href="">
+                <img src="src/img/world/slideshare-ico.svg"/>
+              </a>
             </li>
           </ul>
         </section>
