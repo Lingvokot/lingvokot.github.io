@@ -8,6 +8,7 @@ class Navigation extends React.Component {
     let className = "navigation__page-scroller " + this.props.classes;
     let linkProps = {
       duration: 200,
+      offset: -124,
       spy: true,
       smooth: true,
       onSetActive: (to) => {
@@ -24,7 +25,7 @@ class Navigation extends React.Component {
     return (
         <ul className="navigation">
           <li className={className}>
-            <Link className="Applications" to="Applications" {...linkProps}>
+            <Link className="Applications active" to="Applications" {...linkProps}>
               Applications
             </Link>
           </li>
