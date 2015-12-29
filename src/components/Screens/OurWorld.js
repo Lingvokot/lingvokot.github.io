@@ -5,12 +5,12 @@ class OurWorld extends React.Component {
   render () {
     return (
       <section className="section">
-        <div className="section__content section__content--our-world">
+        <section className="section__content section__content--our-world">
           <div className="planet">
             <img src="src/img/world/planet.svg"/>
           </div>
-        <div className="our-world-description">
-          <div>
+        <section className="our-world-description">
+          <article>
             <h2 className="header header--level-2">
               <div className="header--big">Join our world<br/></div>
               <div className="header--small">
@@ -22,22 +22,22 @@ class OurWorld extends React.Component {
               impact of widespread use of social networking<br/>
               sites
             </p>
-          </div>
-          <div className="socials">
-            <div className="github">
-              <a href="https://github.com/Lingvokot">
+          </article>
+          <ul className="socials">
+            <li className="github">
+              <a title="" href="https://github.com/Lingvokot">
                 <img src="src/img/world/github-ico.svg"/>
               </a>
-            </div>
-            <div className="facebook">
+            </li>
+            <li className="facebook">
               <a href=""><img src="src/img/world/facebook-ico.svg"/></a>
-            </div>
-            <div className="slideshare">
+            </li>
+            <li className="slideshare">
               <a href=""><img src="src/img/world/slideshare-ico.svg"/></a>
-            </div>
-          </div>
-        </div>
-        </div>
+            </li>
+          </ul>
+        </section>
+        </section>
       </section>
     );
   }
