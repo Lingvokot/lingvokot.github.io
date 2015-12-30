@@ -37,7 +37,7 @@ class Navigation extends React.Component {
 
 Navigation.linkProps = {
   duration: 200,
-  offset: -124,
+  offset: -120,
   spy: true,
   smooth: true,
   onSetActive: onSetActive
