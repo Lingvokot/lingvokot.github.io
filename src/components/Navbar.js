@@ -5,10 +5,6 @@ import Navigation from "./Navigation.js";
 import "src/styles/Navbar.css";
 
 class Navbar extends React.Component {
-  componentDidMount() {
-    Navbar.offset = -ReactDOM.findDOMNode(this).offsetHeight;
-    this.forceUpdate();
-  }
   render () {
     return (
       <nav className="navbar">

@@ -4,11 +4,6 @@ import {Link} from "react-scroll";
 import "src/styles/Navigation.css";
 
 class Navigation extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.offset) {
-      Navigation.linkProps.offset = nextProps.offset;
-    }
-  }
   renderMenuLink(name, text = name, setActive) {
     return (
       <Link className={name + (setActive ? " active": "")}
@@ -42,6 +37,7 @@ class Navigation extends React.Component {
 
 Navigation.linkProps = {
   duration: 200,
+  offset: -124,
   spy: true,
   smooth: true,
   onSetActive: onSetActive
