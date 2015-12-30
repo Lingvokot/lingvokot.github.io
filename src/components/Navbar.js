@@ -7,7 +7,6 @@ import "src/styles/Navbar.css";
 class Navbar extends React.Component {
   componentDidMount() {
     Navbar.offset = -ReactDOM.findDOMNode(this).offsetHeight;
-    console.log(Navbar.offset);
     this.forceUpdate();
   }
   render () {
