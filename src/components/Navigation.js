@@ -51,8 +51,7 @@ function onSetActive(to) {
 }
 
 Navigation.propTypes = {
-  classes: React.PropTypes.string,
-  offset: React.PropTypes.number
+  classes: React.PropTypes.string
 }
 
 export default Navigation;
