@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   background-color: #7cd985;
+  min-width: 119rem;
 }
 
 .footer__left-part {
