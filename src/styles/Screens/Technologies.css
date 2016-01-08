@@ -24,16 +24,19 @@
 
 .gear {
   width: 14.2rem;
+  height: 14.2rem;
   margin: auto;
 }
 
 .react-native {
   width: 16rem;
+  height: 14.2rem;
   margin: auto;
 }
 
 .tech-talks {
   width: 15.4rem;
+  height: 14.2rem;
   margin: auto;
 }
 
