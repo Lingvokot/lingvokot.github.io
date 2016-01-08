@@ -35,7 +35,7 @@ class OurWorld extends React.Component {
               </a>
             </li>
             <li className="slideshare">
-              <a title="Our company on slideshare" href="">
+              <a title="Our company on slideshare" href="http://www.slideshare.net/Lingvokot">
                 <img src="src/img/world/slideshare-ico.svg"/>
               </a>
             </li>
