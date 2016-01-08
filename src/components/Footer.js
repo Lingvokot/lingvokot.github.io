@@ -7,32 +7,32 @@ class Footer extends React.Component {
   render () {
     return (
       <footer className="footer">
-        <div className="footer__content">
-          <div className="footer__left-part">
-            <div className="footer-socials">
-              <div className="footer-socials__github">
+        <section className="footer__content">
+          <section className="footer__left-part">
+            <ul className="footer-socials">
+              <li className="footer-socials__github">
                 <a href="https://github.com/Lingvokot">
                   <img src="src/img/footer/github-ico.svg"/>
                 </a>
-              </div>
-              <div className="footer-socials__facebook">
+              </li>
+              <li className="footer-socials__facebook">
                 <a href=""><img src="src/img/footer/facebook-ico.svg"/></a>
-              </div>
-              <div className="footer-socials__slideshare">
+              </li>
+              <li className="footer-socials__slideshare">
                 <a href=""><img src="src/img/footer/slideshare-ico.svg"/></a>
-              </div>
-            </div>
-            <div>
+              </li>
+            </ul>
+            <section>
               <p className="footer-text">
                 © 2015 LingvoKot inc.<br/>
                 All rights reserved
               </p>
-            </div>
-          </div>
-          <div>
+            </section>
+          </section>
+          <section>
             <Navigation classes="navigation__page-scroller--black" />
-          </div>
-        </div>
+          </section>
+        </section>
       </footer>
     );
   }
