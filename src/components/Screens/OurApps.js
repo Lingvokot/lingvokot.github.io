@@ -19,13 +19,10 @@ class OurApps extends React.Component {
                   </div>
                 </h2>
                 <h3 className="header header--level-3 header--green">
-                  Translator-Q
+                  Coming soon
                 </h3>
                 <p className="text text--green">
-                  Inspired by minimalist art, Dots was created with the notion
-                  that beauty and fun are not mutually exclusive. Dots is a
-                  minimalist game that was designed to be a soothing experience.
-                  But dig deeper and there is a depth of challenging
+                  Coming soon
                 </p>
               </article>
               <ul className="store-buttons">
@@ -36,7 +33,8 @@ class OurApps extends React.Component {
                   <img src="src/img/apps/app-store-button-shadow.svg"/>
                 </li>
                 <li className="google-play">
-                  <a title="Get it on Google Play" className="store-link" href="">
+                  <a title="Get it on Google Play" className="store-link"
+                    href="http://play.google.com/store/search?q=pub:Lingvokot">
                     <img alt="Google Play" src="src/img/apps/google-play.svg"/>
                   </a>
                   <img src="src/img/apps/google-play-button-shadow.svg"/>
