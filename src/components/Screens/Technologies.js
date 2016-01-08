@@ -30,7 +30,9 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a title="Check our assets" className="tech-link" href="">Our assets</a>
+              <a className="tech-link" href="https://github.com/Lingvokot" title="Check our assets">
+                Our assets
+              </a>
             </section>
             <section className="tech">
               <section>
@@ -49,7 +51,10 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a title="Read about React Native" className="tech-link" href="">Read more</a>
+              <a title="Read about React Native" className="tech-link"
+                href="https://facebook.github.io/react-native/">
+                Read more
+              </a>
             </section>
             <section className="tech">
               <section>
@@ -67,7 +72,10 @@ class Technologies extends React.Component {
                   </p>
                 </article>
               </section>
-              <a title="Take a look at our presentations" className="tech-link" href="">Our presentations</a>
+              <a className="tech-link" href="http://www.slideshare.net/Lingvokot"
+                title="Take a look at our presentations">
+                Our presentations
+              </a>
             </section>
           </section>
         </section>
