@@ -19,7 +19,9 @@ class Footer extends React.Component {
                 <a href=""><img src="src/img/footer/facebook-ico.svg"/></a>
               </li>
               <li className="footer-socials__slideshare">
-                <a href=""><img src="src/img/footer/slideshare-ico.svg"/></a>
+                <a href="http://www.slideshare.net/Lingvokot">
+                  <img src="src/img/footer/slideshare-ico.svg"/>
+                </a>
               </li>
             </ul>
             <section>
