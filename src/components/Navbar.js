@@ -7,16 +7,16 @@ class Navbar extends React.Component {
   render () {
     return (
       <nav className="navbar">
-        <div className="navbar__content">
-          <div className="logo">
+        <section className="navbar__content">
+          <figure className="logo">
             <img src="src/img/navbar/logo.svg" />
-          </div>
-          <div className="navigation-container">
+          </figure>
+          <section className="navigation-container">
             <Navigation classes="navigation__page-scroller--green"
                 offset={Navbar.offset}
             />
-          </div>
-        </div>
+          </section>
+        </section>
       </nav>
     );
   }
