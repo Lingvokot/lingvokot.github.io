@@ -18,9 +18,8 @@ class OurWorld extends React.Component {
               </div>
             </h2>
             <p className="text">
-              Questions have been raised about the social<br/>
-              impact of widespread use of social networking<br/>
-              sites
+              The world is not enough.<br/>
+              Keep your eyes open with us.<br/>
             </p>
           </article>
           <ul className="socials">
