@@ -1,11 +1,63 @@
 import React from "react";
+import serialize from "form-serialize";
+import jsonp from "jsonp";
 
 import "src/styles/Screens/ContactForm.css";
 
 class Screens extends React.Component {
+
+  componentDidMount () {
+    this.refs.form.addEventListener("submit", (e) => this.formSubmitHandler(e), false);
+  }
+
+  formSubmitHandler (e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    let url = form.action.replace('/post', '/post-json');
+
+    url = url + '?' + serialize(form) + '&c=clb';
+
+    const timeout = 1e3 * 5;
+
+    jsonp(url, {timeout, name: "clb"}, (err, data) => {
+      if (err) {
+        alert("ERROR\n\tThere was an error submiting your form: \n\t" + err);
+      } else {
+        this.handleFormSuccess(data);
+      }
+    });
+
+  }
+
+  handleFormSuccess (data) {
+    // MailChimp sends HTML...
+    // if there is a link provided in message,
+    //  we consider that it's a profile link
+    let someElem = document.createElement("div");
+    someElem.innerHTML = data.msg;
+
+    let profileLink = someElem.querySelector("a");
+
+    let msg = "Success!\n\nYou have registered in our form";
+
+    if (profileLink) {
+
+      msg += `\nDid you want to go to your MailChimp account page?`;
+
+      if (global.confirm(msg)) {
+        location.go(profileLink.href);
+      }
+    } else {
+      alert(msg);
+    }
+
+  }
+
   render () {
     return (
-      <form action="http://lingvokot.us12.list-manage.com/subscribe/post" method="POST">
+      <form action="http://lingvokot.us12.list-manage.com/subscribe/post" method="POST" ref="form">
 
         <input type="hidden" name="u" value="4ee96ad6ec49116c3de5ed5b5" />
         <input type="hidden" name="id" value="0ff14c223a" />
