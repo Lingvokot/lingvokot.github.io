@@ -19,10 +19,12 @@ class OurApps extends React.Component {
                   </div>
                 </h2>
                 <h3 className="header header--level-3 header--green">
-                  Coming soon
+                  Coming soon...
                 </h3>
                 <p className="text text--green">
-                  Coming soon
+                  We are busy with creating applications. Please,<br/>
+                  look for our apps in several weeks in AppStore<br/>
+                  or Google Play Market. You will adopt them.
                 </p>
               </article>
               <ul className="store-buttons">
