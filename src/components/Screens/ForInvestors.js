@@ -18,20 +18,13 @@ class ForInvestors extends React.Component {
               </div>
             </h2>
             <p className="text">
-              Inspired by minimalist art, Dots was created with<br/>
-              the notion that beauty and fun are not mutually<br/>
-              exclusive. Dots is a minimalist game that was de-<br/>
-              signed to be a soothing experience. But dig<br/>
-              deeper and there is a depth of challenging game-<br/>
-              play for more competitive players.
-            </p>
-            <p className="text">
-              Inspired by minimalist art, Dots was created with<br/>
-              the notion that beauty and fun are not mutually<br/>
-              exclusive. Dots is a minimalist game that was de-<br/>
-              signed to be a soothing experience. But dig<br/>
-              deeper and there is a depth of challenging game-<br/>
-              play for more competitive players.
+              Inspired by minimalist art, functional and domain<br/>
+              driven software developing approach, we create our <br/>
+              apps as a portion of beauty and fun along with <br/>
+              simplicity and pleasant. So this provides great <br/>
+              user experience. Despite the ease of use, we can <br/>
+              always offer more advanced functionality and <br/>
+              challenges for more competitive and experienced users.
             </p>
           </article>
         </section>
