@@ -30,14 +30,18 @@ class OurApps extends React.Component {
                   <a title="Get it on App Store" className="store-link" href="">
                     <img alt="App Store" src="src/img/apps/app-store.svg"/>
                   </a>
+                  <figure className="button-shadow">
                   <img src="src/img/apps/app-store-button-shadow.svg"/>
+                  </figure>
                 </li>
                 <li className="google-play">
                   <a title="Get it on Google Play" className="store-link"
                     href="http://play.google.com/store/search?q=pub:Lingvokot">
                     <img alt="Google Play" src="src/img/apps/google-play.svg"/>
                   </a>
-                  <img src="src/img/apps/google-play-button-shadow.svg"/>
+                  <figure className="button-shadow">
+                    <img src="src/img/apps/google-play-button-shadow.svg"/>
+                  </figure>
                 </li>
               </ul>
             </section>
