@@ -40,7 +40,7 @@ class Screens extends React.Component {
 
     let profileLink = someElem.querySelector("a");
 
-    let msg = "Success!\n\nYou have registered in our form";
+    let msg = "Thank you for reaching out. We will get back to you soon";
 
     if (profileLink) {
 
