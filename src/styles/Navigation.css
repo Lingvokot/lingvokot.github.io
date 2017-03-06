@@ -28,8 +28,8 @@
   color: black;
 }
 
-.navigation__page-scroller--green .active,
-.navigation__page-scroller--green:hover {
+.navigation__page-scroller--green:hover,
+.navigation__page-scroller--green .active {
   color: black;
 }
 

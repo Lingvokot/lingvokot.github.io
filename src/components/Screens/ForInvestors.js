@@ -18,12 +18,12 @@ class ForInvestors extends React.Component {
               </div>
             </h2>
             <p className="text">
-              Inspired by minimalist art, functional and domain
-              driven software developing approach, we create our
-              apps as a portion of beauty and fun along with
-              simplicity and pleasant. So this provides great
-              user experience. Despite the ease of use, we can
-              always offer more advanced functionality and
+              Inspired by minimalist art, functional and domain<br/>
+              driven software developing approach, we create our <br/>
+              apps as a portion of beauty and fun along with <br/>
+              simplicity and pleasant. So this provides great <br/>
+              user experience. Despite the ease of use, we can <br/>
+              always offer more advanced functionality and <br/>
               challenges for more competitive and experienced users.
             </p>
           </article>

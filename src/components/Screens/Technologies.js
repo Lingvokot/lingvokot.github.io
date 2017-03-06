@@ -22,10 +22,10 @@ class Technologies extends React.Component {
                 <article className="tech__description">
                   <h3 className="header header--level-3">CI & CD</h3>
                   <p className="text text--centered">
-                    We use fully automated
-                    continuous integration and
-                    continuous delivery. So we
-                    can deliver any changes
+                    We use fully automated<br/>
+                    continuous integration and<br/>
+                    continuous delivery. So we<br/>
+                    can deliver any changes<br/>
                     rapidly
                   </p>
                 </article>
@@ -42,11 +42,11 @@ class Technologies extends React.Component {
                 <article className="tech__description">
                   <h3 className="header header--level-3">React native</h3>
                   <p className="text">
-                    We build native iOS and
-                    Android apps with Javascript.
-                    Together with automation it
-                    allows us to develop smart and
-                    efficient way. Also hot deploy is
+                    We build native iOS and<br/>
+                    Android apps with Javascript.<br/>
+                    Together with automation it<br/>
+                    allows us to develop smart and<br/>
+                    efficient way. Also hot deploy is<br/>
                     available.
                   </p>
                 </article>
@@ -64,10 +64,10 @@ class Technologies extends React.Component {
                 <article className="tech__description">
                   <h3 className="header header--level-3">Tech Talks</h3>
                   <p className="text">
-                    We use cutting edge
-                    technologies and make
-                    things simple. We are
-                    always ready to share our
+                    We use cutting edge<br/>
+                    technologies and make<br/>
+                    things simple. We are<br/>
+                    always ready to share our<br/>
                     vision.
                   </p>
                 </article>
