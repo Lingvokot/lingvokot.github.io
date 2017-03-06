@@ -4,10 +4,17 @@ import {Link} from "react-scroll";
 import "src/styles/Navigation.css";
 
 class Navigation extends React.Component {
-  renderMenuLink(name, text = name, setActive) {
+  constructor(props) {
+    super(props);
+    this.state = {activeSection: "Applications"};
+  }
+  renderMenuLink(name, text = name) {
     return (
-      <Link className={name + (setActive ? " active": "")}
-          to={name}
+      <Link className={name + ((name == this.state.activeSection) ? " active": "")}
+          to={name} onSetActive={() => {
+            console.log(`onSetActive: name ${name}`)
+            this.setState({activeSection: name});
+          }}
           {...Navigation.linkProps}
       >
         {text}
@@ -19,7 +26,7 @@ class Navigation extends React.Component {
     return (
         <ul className="navigation">
           <li className={className}>
-            {this.renderMenuLink("Applications", "Applications", true)}
+            {this.renderMenuLink("Applications")}
           </li>
           <li className={className}>
             {this.renderMenuLink("Technologies")}
@@ -39,16 +46,8 @@ Navigation.linkProps = {
   duration: 200,
   offset: -124,
   spy: true,
-  smooth: true,
-  onSetActive: onSetActive
+  smooth: true
 };
-
-function onSetActive(to) {
-  let navlist = document.querySelectorAll(".navigation .active");
-  [...navlist].forEach((node) => node.classList.remove("active"));
-  navlist = document.querySelectorAll(".navigation ." + to);
-  [...navlist].forEach((node) => node.classList.add("active"));
-}
 
 Navigation.propTypes = {
   classes: React.PropTypes.string

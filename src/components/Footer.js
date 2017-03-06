@@ -31,9 +31,6 @@ class Footer extends React.Component {
               </p>
             </section>
           </section>
-          <section>
-            <Navigation classes="navigation__page-scroller--black" />
-          </section>
         </section>
       </footer>
     );

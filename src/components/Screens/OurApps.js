@@ -22,8 +22,8 @@ class OurApps extends React.Component {
                   Coming soon...
                 </h3>
                 <p className="text text--green">
-                  We are busy with creating applications. Please,<br/>
-                  look for our apps in several weeks in AppStore<br/>
+                  We are busy with creating applications. Please,
+                  look for our apps in several weeks in AppStore
                   or Google Play Market. You will adopt them.
                 </p>
               </article>
