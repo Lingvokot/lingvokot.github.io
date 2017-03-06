@@ -13,7 +13,7 @@ describe("Bar", () => {
 
   before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: "/_karma_webpack_/test/test_bundle.js.css"
+      stylesheet: "/_karma_webpack_/test/test_bundle.js"
     }, done);
   });
 
