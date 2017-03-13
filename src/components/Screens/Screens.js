@@ -14,20 +14,20 @@ const Element = Scroll.Element;
 class Screens extends React.Component {
   render () {
     return (
-      <main>
-        <Element className="screen our-apps" name="Applications">
+      <div className="ui grid">
+        <Element className="screen our-apps row" name="Applications">
           <OurApps/>
         </Element>
-        <Element className="screen" name="Technologies">
+        <Element className="screen row" name="Technologies">
           <Technologies/>
         </Element>
-        <Element className="screen" name="Socials">
+        <Element className="screen row" name="Socials">
           <OurWorld/>
         </Element>
-        <Element className="screen" name="Investors">
+        <Element className="screen row" name="Investors">
           <ForInvestors/>
         </Element>
-      </main>
+      </div>
     );
   }
 }
