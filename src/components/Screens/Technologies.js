@@ -4,82 +4,77 @@ import "src/styles/Screens/Technologies.css";
 class Technologies extends React.Component {
   render () {
     return (
-      <section className="section">
-        <section className="section__content section__content--technologies">
+      <div className="ui doubling three column grid technologies">
+        <div className="row"><div>
           <h2 className="header header--level-2">
-            <div className="header--big">We like what we do<br/></div>
+            <div className="header--big">We like what we do</div>
             <div className="header--small">
               Creating applications make our adopters and us happy.
               Discover what is behind our apps
             </div>
           </h2>
-          <section className="technologies-container">
-            <section className="tech">
-              <section>
-                <figure className="gear">
-                  <img alt="Gear image" src="src/img/technologies/gear.svg"/>
-                </figure>
-                <article className="tech__description">
-                  <h3 className="header header--level-3">CI & CD</h3>
-                  <p className="text text--centered">
-                    We use fully automated<br/>
-                    continuous integration and<br/>
-                    continuous delivery. So we<br/>
-                    can deliver any changes<br/>
-                    rapidly
-                  </p>
-                </article>
-              </section>
-              <a className="tech-link" href="https://github.com/Lingvokot" title="Check our assets">
-                Our assets
-              </a>
-            </section>
-            <section className="tech">
-              <section>
-                <figure className="react-native">
-                  <img alt="React Native logo" src="src/img/technologies/react-native.svg"/>
-                </figure>
-                <article className="tech__description">
-                  <h3 className="header header--level-3">React native</h3>
-                  <p className="text">
-                    We build native iOS and<br/>
-                    Android apps with Javascript.<br/>
-                    Together with automation it<br/>
-                    allows us to develop smart and<br/>
-                    efficient way. Also hot deploy is<br/>
-                    available.
-                  </p>
-                </article>
-              </section>
-              <a title="Read about React Native" className="tech-link"
-                href="https://facebook.github.io/react-native/">
-                Read more
-              </a>
-            </section>
-            <section className="tech">
-              <section>
-                <figure className="tech-talks">
-                  <img alt="Tech talks" src="src/img/technologies/tech-talks.svg"/>
-                </figure>
-                <article className="tech__description">
-                  <h3 className="header header--level-3">Tech Talks</h3>
-                  <p className="text">
-                    We use cutting edge<br/>
-                    technologies and make<br/>
-                    things simple. We are<br/>
-                    always ready to share our<br/>
-                    vision.
-                  </p>
-                </article>
-              </section>
-              <a className="tech-link" href="http://www.slideshare.net/Lingvokot"
-                title="Take a look at our presentations">
-                Our presentations
-              </a>
-            </section>
-          </section>
-        </section>
-      </section>
+        </div></div>
+        <div className="row">
+        <div className="four wide column">
+            <img alt="Gear image" src="src/img/technologies/gear.svg"/>
+        </div>
+        <div className="eight wide column">
+          <article>
+            <h3 className="header header--level-3">CI & CD</h3>
+            <p className="text text--centered">
+              We use fully automated continuous integration and continuous 
+              delivery. So we can deliver any changes rapidly
+            </p>
+          </article>
+        </div>
+        <div className="four wide column">
+          <a className="tech-link" href="https://github.com/Lingvokot" title="Check our assets">
+            Our assets
+          </a>
+        </div>
+        </div>
+        <div className="row">
+        <div className="four wide column">
+            <img alt="React Native logo" src="src/img/technologies/react-native.svg"/>
+        </div>
+        <div className="eight wide column">
+          <article>
+            <h3 className="header header--level-3">React native</h3>
+            <p className="text">
+              We build native iOS and Android apps with Javascript.
+              Together with automation it allows us to develop smart and
+              efficient way. Also hot deploy is available.
+            </p>
+          </article>
+        </div>
+        <div className="four wide column">
+          <a title="Read about React Native" className="tech-link"
+            href="https://facebook.github.io/react-native/">
+            Read more
+          </a>
+        </div>
+        </div>
+        <div className="row">
+        <div className="four wide column">
+            <img alt="Tech talks" src="src/img/technologies/tech-talks.svg"/>
+        </div>
+        <div className="eight wide column">
+          <article>
+            <h3 className="header header--level-3">Tech Talks</h3>
+            <p className="text">
+              We use cutting edge technologies and make things simple.
+              We are always ready to share our vision.
+            </p>
+          </article>
+        </div>
+        <div className="four wide column">
+          <a className="tech-link" href="http://www.slideshare.net/Lingvokot"
+            title="Take a look at our presentations">
+            Our presentations
+          </a> 
+        </div>
+        </div>
+      </div>
     );
   }
 }

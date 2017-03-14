@@ -1,45 +1,11 @@
-.slider {
-  display: flex;
-  margin-top: 4.4rem;
-  margin-bottom: 2.2rem;
+.image {
+  margin: 1rem;
 }
 
-.devices {
-  width: 43.2rem;
-  height: 46.5rem;
+.above-shadow {
+	padding-bottom: 0 !important;
 }
 
-.slider__right-part {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  margin-left: 3.4rem;
-  width: 41.5rem;
-}
-
-.store-buttons {
-  display: flex;
-  margin-bottom: 4.8rem;
-}
-
-.app-store,
-.google-play {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 13rem;
-  height: 4rem;
-  margin-right: 4rem;
-}
-
-.button-shadow {
-  width: 12.9rem;
-  height: 1.4rem;
-}
-
-.store-link {
-  margin-bottom: .6rem;
-}
-
-.slider-controls {
-  display: flex;
+.shadow-container {
+	padding-top: 6px !important;
 }

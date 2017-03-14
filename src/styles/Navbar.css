@@ -1,28 +1,46 @@
 .navbar {
-  display: flex;
   justify-content: center;
-  background-color: white;
-  margin: auto;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1050;
 }
 
-.navbar__content {
-  display: flex;
-  align-items: center;
-  margin: 1.5rem 0rem .8rem;
-  width: 119rem;
-  padding-left: .2rem;
+.navigation__page-scroller {
+  cursor: pointer;
+  text-transform: uppercase !important;
+  /*font-size: 1.8rem;*/
+  font-weight: 700;
+  font-family: "Luba LT CYR";
+  font-weight: bold !important;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
-.logo {
-  width: 20.4rem;
-  height: 9.4rem;
-  margin: .4rem 9.2rem .3rem 12.8rem;
+.navigation__page-scroller::before, .logo-container::before {
+  visibility: hidden;
 }
-.logo > img {
-  height: 100%;
-  max-width: 100%;
+
+/*.navigation__page-scroller:first-child {
+  margin-right: 5rem;
+}*/
+
+.navigation__page-scroller--green > * {
+  color: #7cd985;
 }
+
+.navigation__page-scroller--black > * {
+  color: black;
+}
+
+.navigation__page-scroller--green > *:hover,
+.navigation__page-scroller--green .active {
+  color: black;
+}
+
+.navigation__page-scroller--black > *:hover,
+.navigation__page-scroller--black .active {
+  color: white;
+}
+
+/*.logo {
+  width: 10rem !important;
+  height: auto;
+};*/

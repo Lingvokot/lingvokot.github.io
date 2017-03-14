@@ -1,43 +1,24 @@
 .section__content--technologies {
-  margin-top: 5.8rem;
+  /*margin-top: 5.8rem;*/
 }
 
 .technologies-container {
-  display: flex;
-  justify-content: space-between;
-  width: 84.8rem;
-  margin-top: 4.4rem;
-  margin-left: 4.5rem;
+  /*margin-top: 4.4rem;
+  margin-left: 4.5rem;*/
 }
 
 .tech {
-  display:flex;
-  flex-flow: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 
-.tech__description {
-  margin-top: 2.8rem;
+.technologies > .column:not(.wide) {
+  text-align: center;
 }
 
-.gear {
-  width: 14.2rem;
-  height: 14.2rem;
-  margin: auto;
-}
-
-.react-native {
-  width: 16rem;
-  height: 14.2rem;
-  margin: auto;
-}
-
-.tech-talks {
-  width: 15.4rem;
-  height: 14.2rem;
-  margin: auto;
+.technologies > .row > .column:last-child {
+  text-align: center;
 }
 
 .tech-link {
@@ -45,11 +26,13 @@
   border-radius: .6rem;
   color: white;
   font-family: "Luba LT CYR";
-  font-size: 1.8rem;
   font-weight: 500;
-  padding: 1.3rem 1.9rem 1.1rem;
+  padding: 1rem;
+  white-space: nowrap;
+  /*padding: 1.3rem 1.9rem 1.1rem;*/
   text-transform: uppercase;
   text-decoration: none;
+  /*font-size: 1.6rem;*/
 }
 
 .tech-link:hover {

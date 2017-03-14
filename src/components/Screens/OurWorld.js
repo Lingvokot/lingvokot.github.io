@@ -4,44 +4,43 @@ import "src/styles/Screens/OurWorld.css";
 class OurWorld extends React.Component {
   render () {
     return (
-      <section className="section">
-        <section className="section__content section__content--our-world">
-          <figure className="planet">
+      <div className="ui two column grid">
+        <div className="column">
             <img alt="Planet image" src="src/img/world/planet.svg"/>
-          </figure>
-        <section className="our-world-description">
-          <article>
-            <h2 className="header header--level-2">
-              <div className="header--big">Join our world<br/></div>
-              <div className="header--small">
-                With social networks updates and recources
-              </div>
-            </h2>
-            <p className="text">
-              The world is not enough.<br/>
-              Keep your eyes open with us.<br/>
-            </p>
-          </article>
-          <ul className="socials">
-            <li className="github">
+        </div>
+        <div className="column">
+          <div className="ui doubling five column grid our-world-description">
+            <div className="row">
+            <div>
+              <h2 className="header header--level-2">
+                <div className="header--big">Join our world</div>
+                <div className="header--small">
+                  With social networks updates and recources
+                </div>
+              </h2>
+              <p className="text">
+                The world is not enough. Keep your eyes open with us.
+              </p>
+            </div>
+            </div>
+            <div className="column github">
               <a title="Our company on github" href="https://github.com/Lingvokot">
                 <img src="src/img/world/github-ico.svg"/>
               </a>
-            </li>
-            <li className="facebook">
+            </div>
+            <div className="column facebook">
               <a title="Our company on facebook" href="">
                 <img src="src/img/world/facebook-ico.svg"/>
               </a>
-            </li>
-            <li className="slideshare">
+            </div>
+            <div className="column slideshare">
               <a title="Our company on slideshare" href="http://www.slideshare.net/Lingvokot">
                 <img src="src/img/world/slideshare-ico.svg"/>
               </a>
-            </li>
-          </ul>
-        </section>
-        </section>
-      </section>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

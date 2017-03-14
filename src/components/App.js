@@ -8,9 +8,11 @@ import Footer from "./Footer.js";
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Navbar/>
-        <Screens/>
+      <div className="pusher">
+      	<div className="full-height">
+        	<Navbar/>
+        	<Screens/>
+        </div>
         <Footer/>
       </div>
     );

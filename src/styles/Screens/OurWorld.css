@@ -1,29 +1,23 @@
 .section__content--our-world {
-  display: flex;
-  margin-top: 10.4rem;
+  /*margin-top: 10.4rem;*/
 }
 
 .our-world-description {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-left: 5.3rem;
-  margin-top: .8rem;
+  /*margin-left: 5.3rem;
+  margin-top: .8rem;*/
 }
 
 .socials {
-  display: flex;
-  margin-top: 1.4rem;
+  /*margin-top: 1.4rem;*/
 }
 
 .planet {
-  width: 38.8rem;
-  height: 36rem;
-  margin-left: 2.8rem;
+  /*margin-left: 2.8rem;*/
 }
 
 .github,
 .facebook,
 .slideshare {
-  width: 6.9rem;
-  margin-right: 2.1rem;
+  /*width: 6.9rem;
+  margin-right: 2.1rem;*/
 }
