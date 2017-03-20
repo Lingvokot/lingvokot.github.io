@@ -81,6 +81,9 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "google-play-scraper": "^3.2.3",
+    "react-slick": "^0.14.7",
     "semantic-ui": "^2.2.9"
   }
 }
