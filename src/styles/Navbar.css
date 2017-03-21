@@ -40,6 +40,10 @@
   color: white;
 }
 
+#logo {
+  height: 6rem;
+  width: auto;
+}
 /*.logo {
   width: 10rem !important;
   height: auto;

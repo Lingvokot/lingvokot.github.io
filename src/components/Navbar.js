@@ -34,7 +34,7 @@ class Navbar extends React.Component {
     return (
       <div className="ui top fixed menu navbar">
         <div className="item logo-container">
-          <img className="logo" src="src/img/navbar/logo.svg"/>
+          <img id="logo" src="src/img/navbar/logo.svg"/>
         </div>
         {argumentsSet.map((item) => this.renderMenuLink(...item))}
       </div>
@@ -44,7 +44,7 @@ class Navbar extends React.Component {
 
 Navbar.linkProps = {
   duration: 200,
-  offset: -43,
+  offset: -80,
   spy: true,
   smooth: true
 };
