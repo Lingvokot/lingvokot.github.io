@@ -31,12 +31,12 @@
 }
 
 .navigation__page-scroller--green > *:hover,
-.navigation__page-scroller--green .active {
+.navigation__page-scroller--green .true-active {
   color: black;
 }
 
 .navigation__page-scroller--black > *:hover,
-.navigation__page-scroller--black .active {
+.navigation__page-scroller--black .true-active {
   color: white;
 }
 

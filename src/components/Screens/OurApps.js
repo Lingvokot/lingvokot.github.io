@@ -25,8 +25,7 @@ class OurApps extends React.Component {
           artworkUrl512: icon, description, screenshotUrls,
           trackName: name, trackViewUrl: url, bundleId
         } = item;
-        while (description.contains("\n"))
-          description = description.replace("\n", "<br/>");
+        description = description.split("\n").join("<br/>");
         return {icon, description, screenshotUrls, name, url, bundleId};
       });
     }).then(extract => {
@@ -42,7 +41,7 @@ class OurApps extends React.Component {
           {
             this.state.extract.map((app) => {
               return (
-                <div className="ui stackable two column grid" key={app.bundleId}>
+                <div className="ui stackable two column grid" key={app.bundleId} style={{paddingBottom: 40}}>
                   <div className="column">
                     <img alt="screenshot" src={app.screenshotUrls[0] || "src/img/apps/devices.svg"}
                         className="image"/>
