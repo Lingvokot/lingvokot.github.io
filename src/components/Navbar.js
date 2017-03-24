@@ -16,21 +16,22 @@ class Navbar extends React.Component {
     this.state = {activeLinkName: argumentsSet[0][0]};
   }
   componentDidMount() {
-    window.onscroll = () => {
-      let navbarHeight = -(Navbar.linkProps.offset);
-      const sectionsNames = argumentsSet.map(item => item[0]);
-      for (let name1 of sectionsNames) {
-        let associatedElement = document.querySelector("div[name=\"" + name1 + "\"]");
-        let rect = associatedElement.getClientRects()[0];
-        let boundY = (window.innerHeight - navbarHeight) / 2;
-        //let the link be active if and only if the respective element
-        //has a top bound upper than half of inner window free of navbar
-        //and has a bottom bound lower than half of inner window free of navbar
-        if (((rect.top - navbarHeight) < boundY) && ((rect.bottom - navbarHeight) > boundY)) {
-          if (name1 != this.state.activeLinkName)
-            this.setState({activeLinkName: name1});
-          break;
-        }
+    window.addEventListener("scroll", () => this.onWindowScroll(), true);
+  }
+  onWindowScroll() {
+    let navbarHeight = -(Navbar.linkProps.offset);
+    const sectionsNames = argumentsSet.map(item => item[0]);
+    for (let name1 of sectionsNames) {
+      let associatedElement = $("div[name=\"" + name1 + "\"]")[0];
+      let rect = associatedElement.getClientRects()[0];
+      let boundY = (window.innerHeight - navbarHeight) / 2;
+      //let the link be active if and only if the respective element
+      //has a top bound upper than half of inner window free of navbar
+      //and has a bottom bound lower than half of inner window free of navbar
+      if (((rect.top - navbarHeight) < boundY) && ((rect.bottom - navbarHeight) > boundY)) {
+        if (name1 != this.state.activeLinkName)
+          this.setState({activeLinkName: name1});
+        break;
       }
     }
   }
@@ -45,7 +46,7 @@ class Navbar extends React.Component {
     );
   }
   render() {
-    Navbar.linkProps.offset = -(document.getElementsByClassName("ui top fixed menu navbar")[0].clientHeight);
+    Navbar.linkProps.offset = -($(".ui.top.fixed.menu.navbar")[0].clientHeight);
     return (
       <div className="ui top fixed menu navbar">
         <div className="item logo-container">
@@ -56,7 +57,7 @@ class Navbar extends React.Component {
     );
   }
   componentWillUnmount() {
-    window.onScroll = null;
+    window.removeEventListener("scroll", this.onWindowScroll);
   }
 }
 

@@ -14,17 +14,17 @@ const Element = Scroll.Element;
 class Screens extends React.Component {
   render () {
     return (
-      <div className="ui grid">
-        <Element className="screen our-apps row" name="Applications">
+      <div className="ui one column grid">
+        <Element className="screen our-apps column" name="Applications">
           <OurApps/>
         </Element>
-        <Element className="screen row" name="Technologies">
+        <Element className="screen column" name="Technologies">
           <Technologies/>
         </Element>
-        <Element className="screen row" name="Socials">
+        <Element className="screen column" name="Socials">
           <OurWorld/>
         </Element>
-        <Element className="screen row" name="Investors">
+        <Element className="screen column" name="Investors">
           <ForInvestors/>
         </Element>
       </div>

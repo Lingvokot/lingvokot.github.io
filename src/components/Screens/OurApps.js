@@ -15,7 +15,7 @@ class OurApps extends React.Component {
     super(props);
     this.state = {extract: []};
   }
-  componentWillMount() {
+  getAvailableApps() {
     reqwest({
       url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software&attribute=softwareDeveloper",
       type: "jsonp"
@@ -32,8 +32,10 @@ class OurApps extends React.Component {
       this.setState({extract});
     }).catch(err => console.log(err));
   }
+  componentWillMount() {
+    this.getAvailableApps();
+  }
   render() {
-    console.log(this.state);
     return (
       <div className="ui stackable one column grid">
         <div className="column">
