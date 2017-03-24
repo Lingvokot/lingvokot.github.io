@@ -1,57 +1,100 @@
 import React from "react";
+import axios from "axios";
+import reqwest from "reqwest";
+import Carousel from "nuka-carousel";
 import "src/styles/Screens/OurApps.css";
 
+const settings = {
+  wrapAround: true,
+  speed: 500,
+  slidesToShow: 1
+};
+
 class OurApps extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+    this.state = {extract: []};
+  }
+  getAvailableApps() {
+    reqwest({
+      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software&attribute=softwareDeveloper",
+      type: "jsonp"
+    }).then(response => {
+      return response.results.map(item => {
+        let {
+          artworkUrl512: icon, description, screenshotUrls,
+          trackName: name, trackViewUrl: url, bundleId
+        } = item;
+        description = description.split("\n").join("<br/>");
+        return {icon, description, screenshotUrls, name, url, bundleId};
+      });
+    }).then(extract => {
+      this.setState({extract});
+    }).catch(err => console.log(err));
+  }
+  componentWillMount() {
+    this.getAvailableApps();
+  }
+  render() {
     return (
-      <div className="ui stackable two column grid">
+      <div className="ui stackable one column grid">
         <div className="column">
-          <img alt="devices photo" src="src/img/apps/devices.svg" className="image"/>
-        </div>
-        <div className="column">
-          <div className="ui two column grid">
-            <div className="sixteen wide column">
-              <h2 className="header header--level-2">
-                <div className="header--big">Applications</div>
-                <div className="header--small header--heavy">
-                  You want to use
+          <Carousel {...settings}>
+          {
+            this.state.extract.map((app) => {
+              return (
+                <div className="ui stackable two column grid" key={app.bundleId} style={{paddingBottom: 40}}>
+                  <div className="column">
+                    <img alt="screenshot" src={app.screenshotUrls[0] || "src/img/apps/devices.svg"}
+                        className="image"/>
+                  </div>
+                  <div className="column">
+                    <div className="ui two column grid">
+                      <div className="sixteen wide column">
+                        <h2 className="header header--level-2">
+                          <div className="header--big">Applications</div>
+                          <div className="header--small header--heavy">
+                            You want to use
+                          </div>
+                        </h2>
+                        <h3 className="header header--level-3 header--green">
+                          {app.name}
+                        </h3>
+                        <p className="text text--green"
+                            dangerouslySetInnerHTML={{__html: app.description}}></p>
+                      </div>
+                      <div className="column">
+                        <div className="one column grid">
+                          <div className="column above-shadow">
+                            <a title="Get it on App Store" className="store-link" href={app.url}>
+                              <img alt="App Store" src="src/img/apps/app-store.svg"/>
+                            </a>
+                          </div>
+                        </div>
+                        <div className="column shadow-container">
+                          <img src="src/img/apps/app-store-button-shadow.svg"/>
+                        </div>
+                      </div>
+                      <div className="column">
+                        <div className="one column grid">
+                          <div className="column above-shadow">
+                            <a title="Get it on Google Play" className="store-link"
+                                href={"https://play.google.com/store/apps/details?id=" + app.bundleId}>
+                              <img alt="Google Play" src="src/img/apps/google-play.svg"/>
+                            </a>
+                          </div>
+                          <div className="column shadow-container">
+                            <img src="src/img/apps/google-play-button-shadow.svg"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </h2>
-              <h3 className="header header--level-3 header--green">
-                Coming soon...
-              </h3>
-              <p className="text text--green">
-We are busy with creating applications. Please, look for our apps in several 
-weeks in AppStore or Google Play Market. You will adopt them.
-              </p>
-            </div>
-            <div className="column">
-              <div className="one column grid">
-                <div className="column above-shadow">
-                  <a title="Get it on App Store" className="store-link"
-                    href="https://itunes.apple.com/ru/developer/oleksandr-nikolaievskyi/id1097334529">
-                    <img alt="App Store" src="src/img/apps/app-store.svg"/>
-                  </a>
-                </div>
-              </div>
-              <div className="column shadow-container">
-                <img src="src/img/apps/app-store-button-shadow.svg"/>
-              </div>
-            </div>
-            <div className="column">
-              <div className="one column grid">
-                <div className="column above-shadow">
-                  <a title="Get it on Google Play" className="store-link"
-                    href="https://play.google.com/store/apps/developer?id=Lingvokot">
-                    <img alt="Google Play" src="src/img/apps/google-play.svg"/>
-                  </a>
-                </div>
-                <div className="column shadow-container">
-                  <img src="src/img/apps/google-play-button-shadow.svg"/>
-                </div>
-              </div>
-            </div>
-          </div>
+              )
+            })
+          }
+          </Carousel>
         </div>
       </div>
     );

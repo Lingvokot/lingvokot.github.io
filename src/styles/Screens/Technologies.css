@@ -16,16 +16,16 @@
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 
-.technologies > .row > .column {
+.technologies > .column > .grid > .column {
   display: flex !important;
   flex-direction: column !important;
 }
 
-.technologies > .row > .column > img {
+.technologies > .column > .grid > .column > img {
   height: 10rem;
   width: auto;
 }
 
-.technologies > .row > .column > p {
+.technologies > .column > .grid > .column > p {
   flex: 1 0 auto;
 }
