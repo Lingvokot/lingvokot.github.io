@@ -4,14 +4,13 @@ import "src/styles/Screens/OurWorld.css";
 class OurWorld extends React.Component {
   render () {
     return (
-      <div className="ui two column grid">
+      <div className="ui two column stackable grid">
         <div className="column">
             <img alt="Planet image" src="src/img/world/planet.svg"/>
         </div>
         <div className="column">
-          <div className="ui doubling five column grid our-world-description">
-            <div className="row">
-            <div>
+          <div className="ui five column grid our-world-description">
+            <div className="sixteen wide column">
               <h2 className="header header--level-2">
                 <div className="header--big">Join our world</div>
                 <div className="header--small">
@@ -21,7 +20,6 @@ class OurWorld extends React.Component {
               <p className="text">
                 The world is not enough. Keep your eyes open with us.
               </p>
-            </div>
             </div>
             <div className="column github">
               <a title="Our company on github" href="https://github.com/Lingvokot">
