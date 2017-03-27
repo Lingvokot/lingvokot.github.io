@@ -35,7 +35,7 @@ describe("Footer", () => {
 
   it('for it to be', () => {
     console.log("for it to be");
-    should(2 * 2).be.equal(4);
+    chai.should(2 * 2).be.equal(4);
   });
 
 });
