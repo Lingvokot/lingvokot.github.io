@@ -14,26 +14,26 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {activeLinkName: argumentsSet[0][0]};
-  }
-  componentDidMount() {
-    window.addEventListener("scroll", () => this.onWindowScroll(), true);
-  }
-  onWindowScroll() {
-    let navbarHeight = -(Navbar.linkProps.offset);
-    const sectionsNames = argumentsSet.map(item => item[0]);
-    for (let name1 of sectionsNames) {
-      let associatedElement = $("div[name=\"" + name1 + "\"]")[0];
-      let rect = associatedElement.getClientRects()[0];
-      let boundY = (window.innerHeight - navbarHeight) / 2;
-      //let the link be active if and only if the respective element
-      //has a top bound upper than half of inner window free of navbar
-      //and has a bottom bound lower than half of inner window free of navbar
-      if (((rect.top - navbarHeight) < boundY) && ((rect.bottom - navbarHeight) > boundY)) {
-        if (name1 != this.state.activeLinkName)
-          this.setState({activeLinkName: name1});
-        break;
+    this.onWindowScroll = () => {
+      let navbarHeight = -(Navbar.linkProps.offset);
+      const sectionsNames = argumentsSet.map(item => item[0]);
+      for (let name1 of sectionsNames) {
+        let associatedElement = $("div[name=\"" + name1 + "\"]")[0];
+        let rect = associatedElement.getClientRects()[0];
+        let boundY = (window.innerHeight - navbarHeight) / 2;
+        //let the link be active if and only if the respective element
+        //has a top bound upper than half of inner window free of navbar
+        //and has a bottom bound lower than half of inner window free of navbar
+        if (((rect.top - navbarHeight) < boundY) && ((rect.bottom - navbarHeight) > boundY)) {
+          if (name1 != this.state.activeLinkName)
+            this.setState({activeLinkName: name1});
+          break;
+        }
       }
     }
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this.onWindowScroll, true);
   }
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);

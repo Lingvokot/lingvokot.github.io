@@ -15,3 +15,10 @@ global.quixote = quixote;
 if (process.env.REPORTER) {
   mocha.reporter(process.env.REPORTER);
 }
+
+describe("For it to be", () => {
+	it("I hope you understood why", () => {
+		let x = 2 * 2;
+		x.should.be.equal(4);
+	})
+});
