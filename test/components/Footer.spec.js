@@ -28,7 +28,7 @@ describe("Footer", () => {
       rootElement
     );
 
-    element = frame.get(".Footer");
+    element = frame.get(".footer");
     console.log("Element");
     console.log(element);
   });
