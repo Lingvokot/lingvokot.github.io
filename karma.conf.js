@@ -12,7 +12,7 @@ webpackConfig.module.noParse.push(/quixote\.js$/);
 
 module.exports = function (config) {
   config.set({
-    browsers: [ "Chrome" ], //run in Chrome
+    browsers: [ "Firefox" ], //run in Firefox
     singleRun: true, //just run once by default
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [
@@ -25,6 +25,7 @@ module.exports = function (config) {
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true //please don"t spam the console when running in karma!
-    }
+    },
+    logLevel: config.LOG_DEBUG
   });
 };

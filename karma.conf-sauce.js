@@ -28,6 +28,14 @@ var customLaunchers = {
   }
 }
 
+/*var customLaunchers = {
+  sl_firefox: {
+    base: "SauceLabs",
+    browserName: "Firefox",
+    platform: "Linux"
+  }
+}*/
+
 module.exports = function (config) {
   config.set({
     sauceLabs: {
