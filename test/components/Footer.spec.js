@@ -7,9 +7,7 @@ describe("Footer", () => {
   var frame, container, root, rootElement, element;
 
   before(function(done) {
-    frame = quixote.createFrame({
-      stylesheet: "/_karma_webpack_/test/test_bundle.js.css"
-    }, done);
+    frame = quixote.createFrame({}, done);
   });
 
   after(function() {
