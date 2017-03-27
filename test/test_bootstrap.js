@@ -3,7 +3,7 @@
 var quixote = require("quixote");
 var chai = require("chai");
 
-var should = chai.should();
+var should = chai.should;
 var expect = chai.expect;
 
 // Export vars into global space
