@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import Footer from "src/components/Footer.js";
 
 describe("Footer", () => {
-  var frame, rootElement, element;
+  var frame, rootElement, element, pageBody;
   before(function(done) {
     frame = quixote.createFrame({}, done);
   });
@@ -22,10 +22,10 @@ describe("Footer", () => {
       rootElement
     );
     element = frame.get(".footer");
+    pageBody = frame.body();
   });
 
   it('Footer leaves no spaces at the left, right and bottom sides of the page', () => {
-    let pageBody = frame.body();
     element.assert({
       left: pageBody.left,
       right: pageBody.right,
