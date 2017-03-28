@@ -43,9 +43,9 @@ describe("Footer", () => {
     let childrenContainer = frame.get(".footer .ui.three.column.grid.footer-socials");
     expect(getElementMiddleX(childrenContainer)).to.equal(expectedMiddleX);
     let textLabels = frame.getAll(".footer span");
-    expect(textLabelsInList.length()).to.equal(2);
-    for (let i = 0; i < textLabelsInList.length(); i++) {
-      let label1 = textLabelsInList.at(i);
+    expect(textLabels.length()).to.equal(2);
+    for (let i = 0; i < textLabels.length(); i++) {
+      let label1 = textLabels.at(i);
       expect(getElementMiddleX(label1)).to.equal(expectedMiddleX);
     }
   });
