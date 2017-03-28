@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 
 import Footer from "src/components/Footer.js";
 
+function getElementMiddleX(element1) {
+  let position = element1.getRawPosition();
+  return (position.left + position.right) / 2;
+}
+
 describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
@@ -34,17 +39,14 @@ describe("Footer", () => {
   });
 
   it("Child elements are centered", () => {
-    let expectedCenterX = pageBody.width / 2;
+    let expectedMiddleX = getElementMiddleX(pageBody);
     let childrenContainer = frame.get(".footer .ui.three.column.grid.footer-socials");
-    let childrenContainerPosition = childrenContainer.getRawPosition();
-    expect((childrenContainerPosition.left + childrenContainerPosition.right) / 2)
-          .to.equal(expectedCenterX);
+    expect(getElementMiddleX(childrenContainer)).to.equal(expectedMiddleX);
     let textLabels = frame.getAll(".footer span");
     expect(textLabelsInList.length()).to.equal(2);
     for (let i = 0; i < textLabelsInList.length(); i++) {
       let label1 = textLabelsInList.at(i);
-      let labelPosition = label1.getRawPosition();
-      expect((labelPosition.left + labelPosition.right) / 2).to.equal(expectedCenterX);
+      expect(getElementMiddleX(label1)).to.equal(expectedMiddleX);
     }
   });
 });
