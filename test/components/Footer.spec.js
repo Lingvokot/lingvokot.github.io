@@ -11,7 +11,7 @@ function getElementMiddleX(element1) {
 describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
-    frame = quixote.createFrame({}, done);
+    frame = quixote.createFrame({stylesheet: 'dist/main.css'}, done);
   });
   after(function() {
     frame.remove();
