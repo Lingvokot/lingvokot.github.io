@@ -5,14 +5,14 @@ import Footer from "src/components/Footer.js";
 
 function getElementMiddleX(element1) {
   let position = element1.getRawPosition();
-  return (position.left + position.right) / 2;
+  return Math.round((position.left + position.right) / 2);
 }
 
 describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: ["dist/main.css", "semantic/dist/semantic.min.css"]
+      stylesheet: ["/base/dist/main.css", "/base/semantic/dist/semantic.min.css"]
     }, done);
   });
   after(function() {
@@ -34,9 +34,9 @@ describe("Footer", () => {
 
   it('Footer leaves no spaces at the left, right and bottom sides of the page', () => {
     element.assert({
-      left: pageBody.left,
-      right: pageBody.right,
-      bottom: pageBody.bottom
+      left: rootElement.clientLeft,
+      right: rootElement.clientLeft + rootElement.clientWidth,
+      bottom: rootElement.clientTop + rootElement.clientHeight
     });
   });
 

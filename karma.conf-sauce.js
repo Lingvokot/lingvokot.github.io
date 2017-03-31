@@ -4,7 +4,11 @@ var path = require("path");
 
 var webpackConfig = require("./webpack.config.js");
 
-webpackConfig.module.loaders.push({ test: /\.spec\.js$/, include: path.join(__dirname, "test"), loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js" });
+webpackConfig.module.loaders.push({
+  test: /\.spec\.js$/,
+  include: path.join(__dirname, "test"),
+  loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js"
+});
 webpackConfig.devtool = "inline-source-map";
 
 // quixote is served as prebuilt bundle so skip parsing it
