@@ -52,7 +52,9 @@ module.exports = function (config) {
     singleRun: true, //just run once by default
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [
-      "test/test_bundle.js" //just load this file
+      "test/test_bundle.js", //just load these files
+      "dist/main.css", "semantic/dist/semantic.min.css",
+      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
