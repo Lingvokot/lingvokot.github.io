@@ -12,6 +12,7 @@
 .footer-socials__facebook,
 .footer-socials__slideshare {
   margin-top: 1rem;
+  padding-bottom: 0 !important;
 }
 
 .footer-text {

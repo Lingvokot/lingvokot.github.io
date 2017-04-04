@@ -8,7 +8,8 @@ class Footer extends React.Component {
       <div className="ui bottom menu footer">
         <div className="ui one column center aligned grid footer-socials">
           <div className="column">
-            <div className="ui three column grid footer-socials">
+            <div className="ui five column grid footer-socials">
+              <div className="column"></div>
               <div className="column footer-socials__github">
                 <a href="https://github.com/Lingvokot">
                   <img src="src/img/footer/github-ico.svg"/>
@@ -22,9 +23,10 @@ class Footer extends React.Component {
                   <img src="src/img/footer/slideshare-ico.svg"/>
                 </a>
               </div>
+              <div className="column"></div>
               <div className="sixteen wide column">
                 <p className="footer-text">
-                  © 2015 LingvoKot inc.<br/>
+                  © 2017 LingvoKot inc.<br/>
                   All rights reserved
                 </p>
               </div>
