@@ -54,7 +54,9 @@ module.exports = function (config) {
     files: [
       "test/test_bundle.js", //just load these files
       "dist/main.css", "semantic/dist/semantic.min.css",
-      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
+      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js",
+      "src/img/footer/github-ico.svg", "src/img/footer/facebook-ico.svg",
+      "src/img/footer/slideshare-ico.svg"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader

@@ -16,13 +16,13 @@ webpackConfig.module.noParse.push(/quixote\.js$/);
 
 module.exports = function (config) {
   config.set({
-    browsers: [ "Firefox", "Chrome", "Opera" ], //run in Firefox, Chrome and Opera
-    singleRun: true, //just run once by default
+    browsers: [ "Firefox", "Chrome", "Opera", 'IE11 - Win7' ],
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [
       "test/test_bundle.js", //just load these files
       "dist/main.css", "semantic/dist/semantic.min.css",
-      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
+      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js",
+      "src/img/footer/*.svg"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
