@@ -42,7 +42,7 @@ describe("Footer", () => {
 
   it("Child elements are centered", () => {
     let expectedMiddleX = getElementMiddleX(pageBody);
-    let childrenContainer = frame.get(".footer .ui.three.column.grid.footer-socials");
+    let childrenContainer = frame.get(".footer .ui.five.column.grid.footer-socials");
     expect(getElementMiddleX(childrenContainer)).to.equal(expectedMiddleX);
     let textLabels = frame.getAll(".footer span");
     expect(textLabels.length()).to.equal(2);
