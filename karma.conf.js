@@ -16,7 +16,7 @@ webpackConfig.module.noParse.push(/quixote\.js$/);
 
 module.exports = function (config) {
   config.set({
-    browsers: [ "Firefox", "Chrome", "Opera", 'IE11 - Win7' ],
+    browsers: [ "Firefox", "Chrome", "Opera", 'MSEdge - Win10' ],
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [
       "test/test_bundle.js", //just load these files
