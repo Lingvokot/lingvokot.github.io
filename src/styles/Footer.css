@@ -8,11 +8,14 @@
   white-space: nowrap;
 }
 
-.footer-socials__github,
-.footer-socials__facebook,
-.footer-socials__slideshare {
+#footer-socials__github, #footer-socials__facebook, #footer-socials__slideshare {
   margin-top: 1rem;
   padding-bottom: 0 !important;
+  max-width: 9rem;
+}
+
+#footer-socials__github img, #footer-socials__facebook img, #footer-socials__slideshare img {
+  max-height: 6rem;
 }
 
 .footer-text {

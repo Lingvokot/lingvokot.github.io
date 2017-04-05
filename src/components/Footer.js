@@ -10,15 +10,15 @@ class Footer extends React.Component {
           <div className="column">
             <div className="ui five column grid footer-socials">
               <div className="column"></div>
-              <div className="column footer-socials__github">
+              <div className="column" id="footer-socials__github">
                 <a href="https://github.com/Lingvokot">
                   <img src="src/img/footer/github-ico.svg"/>
                 </a>
               </div>
-              <div className="column footer-socials__facebook">
+              <div className="column" id="footer-socials__facebook">
                 <a href=""><img src="src/img/footer/facebook-ico.svg"/></a>
               </div>
-              <div className="column footer-socials__slideshare">
+              <div className="column" id="footer-socials__slideshare">
                 <a href="http://www.slideshare.net/Lingvokot">
                   <img src="src/img/footer/slideshare-ico.svg"/>
                 </a>

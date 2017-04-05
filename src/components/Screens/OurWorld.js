@@ -6,7 +6,7 @@ class OurWorld extends React.Component {
     return (
       <div className="ui two column stackable grid">
         <div className="column">
-            <img alt="Planet image" src="src/img/world/planet.svg"/>
+            <img id="planet-image" alt="Planet image" src="src/img/world/planet.svg"/>
         </div>
         <div className="column">
           <div className="ui five column grid our-world-description">
