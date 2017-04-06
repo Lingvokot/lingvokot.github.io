@@ -1,26 +1,25 @@
-.navbar {
-  justify-content: center;
-}
-
 .navigation__page-scroller {
   cursor: pointer;
   text-transform: uppercase !important;
-  /*font-size: 1.8rem;*/
   font-weight: 700;
   font-family: "Luba LT CYR";
   font-weight: bold !important;
-  text-align: right;
   white-space: nowrap;
   vertical-align: middle;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar > .grid > .column {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigation__page-scroller::before, .logo-container::before {
   visibility: hidden;
 }
-
-/*.navigation__page-scroller:first-child {
-  margin-right: 5rem;
-}*/
 
 .navigation__page-scroller--green > * {
   color: #7cd985;
@@ -41,10 +40,14 @@
 }
 
 #logo {
-  height: 6rem;
-  width: auto;
+  max-height: 6rem;
 }
-/*.logo {
-  width: 10rem !important;
-  height: auto;
-};*/
+
+@media screen and (max-height: 480px) {
+  #logo {
+    max-height: 3rem;
+  }
+  .ui.top.navbar > .grid > .column {
+    padding: 0.25rem;
+  }
+}

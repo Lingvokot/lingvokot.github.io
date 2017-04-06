@@ -38,7 +38,8 @@ class Navbar extends React.Component {
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);
     return (
-      <div className="item navigation__page-scroller navigation__page-scroller--green" key={name}>
+      <div className={"eight wide mobile four wide tablet three wide computer column " +
+                    "navigation__page-scroller navigation__page-scroller--green"} key={name}>
         <Link className={name + (isActive ? " true-active": "")} to={name} {...Navbar.linkProps}>
           {text}
         </Link>
@@ -46,13 +47,15 @@ class Navbar extends React.Component {
     );
   }
   render() {
-    Navbar.linkProps.offset = -($(".ui.top.fixed.menu.navbar")[0].clientHeight);
+    Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
     return (
-      <div className="ui top fixed menu navbar">
-        <div className="item logo-container">
-          <img id="logo" src="src/img/navbar/logo.svg"/>
+      <div className="ui top sidebar ui segment push visible navbar">
+        <div className="ui center aligned page grid">
+          <div className="sixteen wide tablet three wide computer column">
+            <img id="logo" src="src/img/navbar/logo.svg"/>
+          </div>
+          {argumentsSet.map((item) => this.renderMenuLink(...item))}
         </div>
-        {argumentsSet.map((item) => this.renderMenuLink(...item))}
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React from "react";
-import "src/styles/Screens/OurWorld.css";
 
 class OurWorld extends React.Component {
   render () {
@@ -9,7 +8,7 @@ class OurWorld extends React.Component {
             <img id="planet-image" alt="Planet image" src="src/img/world/planet.svg"/>
         </div>
         <div className="column">
-          <div className="ui five column grid our-world-description">
+          <div className="ui grid our-world-description">
             <div className="sixteen wide column">
               <h2 className="header header--level-2">
                 <div className="header--big">Join our world</div>
@@ -21,17 +20,17 @@ class OurWorld extends React.Component {
                 The world is not enough. Keep your eyes open with us.
               </p>
             </div>
-            <div className="column github">
+            <div className="four wide mobile five wide tablet column github">
               <a title="Our company on github" href="https://github.com/Lingvokot">
                 <img src="src/img/world/github-ico.svg"/>
               </a>
             </div>
-            <div className="column facebook">
+            <div className="four wide mobile five wide tablet column facebook">
               <a title="Our company on facebook" href="">
                 <img src="src/img/world/facebook-ico.svg"/>
               </a>
             </div>
-            <div className="column slideshare">
+            <div className="four wide mobile five wide tablet column slideshare">
               <a title="Our company on slideshare" href="http://www.slideshare.net/Lingvokot">
                 <img src="src/img/world/slideshare-ico.svg"/>
               </a>
