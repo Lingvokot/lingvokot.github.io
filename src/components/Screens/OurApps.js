@@ -17,7 +17,8 @@ class OurApps extends React.Component {
   }
   getAvailableApps() {
     reqwest({
-      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software&attribute=softwareDeveloper",
+      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software\
+&attribute=softwareDeveloper",
       type: "jsonp"
     }).then(response => {
       return response.results.map(item => {
