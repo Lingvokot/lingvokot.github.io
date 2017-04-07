@@ -23,7 +23,8 @@
 
 .technologies > .column > .grid > .column > img {
   height: 10rem;
-  width: auto;
+  width: 10rem;
+  align-self: center;
 }
 
 .technologies > .column > .grid > .column > p {

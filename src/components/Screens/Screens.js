@@ -14,8 +14,9 @@ const Element = Scroll.Element;
 class Screens extends React.Component {
   render () {
     return (
-      <div className="ui one column grid">
-        <Element className="screen our-apps column" name="Applications">
+      <div className="ui one column grid pusher" id="pusher">
+        <Element className="screen our-apps column" name="Applications"
+                   style={{paddingTop: this.props.paddingTop}}>
           <OurApps/>
         </Element>
         <Element className="screen column" name="Technologies">

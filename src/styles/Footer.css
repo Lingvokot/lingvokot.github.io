@@ -1,26 +1,21 @@
 .footer {
   background-color: #7cd985 !important;
-  justify-content: center;
-  text-align: center;
   padding-bottom: 1rem;
+  justify-content: center;
 }
 
 .footer__left-part {
   white-space: nowrap;
 }
 
-.footer__content {
-  align-items: center;
-}
-
-.footer-socials {
-  justify-content: space-between;
-}
-
-.footer-socials__github,
-.footer-socials__facebook,
-.footer-socials__slideshare {
+#footer-socials__github, #footer-socials__facebook, #footer-socials__slideshare {
   margin-top: 1rem;
+  padding-bottom: 0 !important;
+  max-width: 9rem;
+}
+
+#footer-socials__github img, #footer-socials__facebook img, #footer-socials__slideshare img {
+  max-height: 6rem;
 }
 
 .footer-text {

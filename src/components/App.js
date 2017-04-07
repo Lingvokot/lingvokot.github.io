@@ -6,16 +6,34 @@ import Screens from "./Screens/Screens.js";
 import Footer from "./Footer.js";
 
 class App extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+    this.state = {navbarHeight: 150};
+    this.onWindowResize = () => {
+      if (!IS_CLIENT)
+        return;
+      let navbarHeight = $(".navbar")[0].clientHeight;
+      if (navbarHeight != this.state.navbarHeight)
+        this.setState({navbarHeight});
+    }
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.onWindowResize, true);
+    this.onWindowResize();
+  }
+  render() {
     return (
-      <div className="pusher">
+      <div>
       	<div className="full-height">
         	<Navbar/>
-        	<Screens/>
+        	<Screens paddingTop={this.state.navbarHeight}/>
         </div>
         <Footer/>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onWindowResize);
   }
 }
 

@@ -16,8 +16,11 @@ class OurApps extends React.Component {
     this.state = {extract: []};
   }
   getAvailableApps() {
+    if (!IS_CLIENT)
+      return;
     reqwest({
-      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software&attribute=softwareDeveloper",
+      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software\
+&attribute=softwareDeveloper",
       type: "jsonp"
     }).then(response => {
       return response.results.map(item => {
@@ -64,25 +67,29 @@ class OurApps extends React.Component {
                             dangerouslySetInnerHTML={{__html: app.description}}></p>
                       </div>
                       <div className="column">
-                        <div className="one column grid">
+                        <div className="row">
                           <div className="column above-shadow">
                             <a title="Get it on App Store" className="store-link" href={app.url}>
                               <img alt="App Store" src="src/img/apps/app-store.svg"/>
                             </a>
                           </div>
                         </div>
-                        <div className="column shadow-container">
-                          <img src="src/img/apps/app-store-button-shadow.svg"/>
+                        <div className="row">
+                          <div className="column shadow-container">
+                            <img src="src/img/apps/app-store-button-shadow.svg"/>
+                          </div>
                         </div>
                       </div>
                       <div className="column">
-                        <div className="one column grid">
+                        <div className="row">
                           <div className="column above-shadow">
                             <a title="Get it on Google Play" className="store-link"
                                 href={"https://play.google.com/store/apps/details?id=" + app.bundleId}>
                               <img alt="Google Play" src="src/img/apps/google-play.svg"/>
                             </a>
                           </div>
+                        </div>
+                        <div className="row">
                           <div className="column shadow-container">
                             <img src="src/img/apps/google-play-button-shadow.svg"/>
                           </div>

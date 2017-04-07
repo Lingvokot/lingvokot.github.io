@@ -4,7 +4,11 @@ var path = require("path");
 
 var webpackConfig = require("./webpack.config.js");
 
-webpackConfig.module.loaders.push({ test: /\.spec\.js$/, include: path.join(__dirname, "test"), loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js" });
+webpackConfig.module.loaders.push({
+  test: /\.spec\.js$/,
+  include: path.join(__dirname, "test"),
+  loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js"
+});
 webpackConfig.devtool = "inline-source-map";
 
 // quixote is served as prebuilt bundle so skip parsing it
@@ -23,13 +27,14 @@ var customLaunchers = {
   },
   sl_ie_11: {
     base: "SauceLabs",
-    browserName: "internet explorer",
+    browserName: "MicrosoftEdge",
     platform: "Windows 10",
   }
 }
 
 module.exports = function (config) {
   config.set({
+    singleRun: true, //just run once by default
     sauceLabs: {
       testName: 'Web App Unit Tests',
       recordVideo: true,
@@ -37,10 +42,10 @@ module.exports = function (config) {
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
-    singleRun: true, //just run once by default
     frameworks: [ "mocha" ], //use the mocha test framework
-    files: [
-      "test/test_bundle.js" //just load this file
+    files: [ //just load these files
+      "test/test_bundle.js", "dist/main.css", "semantic/dist/semantic.min.css",
+      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
@@ -57,6 +62,6 @@ module.exports = function (config) {
     // to avoid DISCONNECTED messages
     browserDisconnectTimeout : 10000, // default 2000
     browserDisconnectTolerance : 1, // default 0
-    browserNoActivityTimeout : 60 * 1e3, //default 10000
+    browserNoActivityTimeout : 60 * 1e3 //default 10000
   });
 };
