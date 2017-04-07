@@ -48,7 +48,7 @@ describe("Footer", () => {
     expect(textLabels.length()).to.equal(2);
     for (let i = 0; i < textLabels.length(); i++) {
       let label1 = textLabels.at(i);
-      expect(getElementMiddleX(label1)).to.equal(expectedMiddleX);
+      expect(Math.abs(getElementMiddleX(label1) - expectedMiddleX)).to.be.below(5);
     }
   });
 });

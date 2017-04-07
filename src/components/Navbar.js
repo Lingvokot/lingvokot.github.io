@@ -15,6 +15,8 @@ class Navbar extends React.Component {
     super(props);
     this.state = {activeLinkName: argumentsSet[0][0]};
     this.onWindowScroll = () => {
+      if (!IS_CLIENT)
+        return;
       let navbarHeight = -(Navbar.linkProps.offset);
       const sectionsNames = argumentsSet.map(item => item[0]);
       for (let name1 of sectionsNames) {
@@ -47,7 +49,8 @@ class Navbar extends React.Component {
     );
   }
   render() {
-    Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
+    if (IS_CLIENT)
+      Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
     return (
       <div className="ui top sidebar ui segment push visible navbar">
         <div className="ui center aligned page grid">

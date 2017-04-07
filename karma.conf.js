@@ -18,9 +18,8 @@ module.exports = function (config) {
   config.set({
     browsers: [ "Firefox", "Chrome", "Opera", 'MSEdge - Win10' ],
     frameworks: [ "mocha" ], //use the mocha test framework
-    files: [
-      "test/test_bundle.js", //just load these files
-      "dist/main.css", "semantic/dist/semantic.min.css",
+    files: [ //just load these files
+      "test/test_bundle.js", "dist/main.css", "semantic/dist/semantic.min.css",
       "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
     ],
     preprocessors: {
@@ -31,6 +30,13 @@ module.exports = function (config) {
     webpackServer: {
       noInfo: true //please don"t spam the console when running in karma!
     },
-    logLevel: config.LOG_DEBUG
+    logLevel: config.LOG_DEBUG,
+    // Timeout for capturing a browser (in ms).
+    captureTimeout: 180 * 1e3,
+
+    // to avoid DISCONNECTED messages
+    browserDisconnectTimeout : 10000, // default 2000
+    browserDisconnectTolerance : 1, // default 0
+    browserNoActivityTimeout : 60 * 1e3, //default 10000
   });
 };

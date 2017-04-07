@@ -16,6 +16,8 @@ class OurApps extends React.Component {
     this.state = {extract: []};
   }
   getAvailableApps() {
+    if (!IS_CLIENT)
+      return;
     reqwest({
       url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software\
 &attribute=softwareDeveloper",

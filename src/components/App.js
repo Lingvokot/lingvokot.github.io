@@ -8,8 +8,10 @@ import Footer from "./Footer.js";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {navbarHeight: 0};
+    this.state = {navbarHeight: 150};
     this.onWindowResize = () => {
+      if (!IS_CLIENT)
+        return;
       let navbarHeight = $(".navbar")[0].clientHeight;
       if (navbarHeight != this.state.navbarHeight) {
         console.log("navbarHeight: " + navbarHeight);
