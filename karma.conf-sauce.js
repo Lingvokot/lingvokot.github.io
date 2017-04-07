@@ -14,8 +14,6 @@ webpackConfig.devtool = "inline-source-map";
 // quixote is served as prebuilt bundle so skip parsing it
 webpackConfig.module.noParse.push(/quixote\.js$/);
 
-console.log(process.platform);
-
 var customLaunchers = {
   sl_chrome: {
     base: "SauceLabs",
@@ -37,6 +35,13 @@ var customLaunchers = {
 module.exports = function (config) {
   config.set({
     singleRun: true, //just run once by default
+    sauceLabs: {
+      testName: 'Web App Unit Tests',
+      recordVideo: true,
+      recordScreenshots: true
+    },
+    customLaunchers: customLaunchers,
+    browsers: Object.keys(customLaunchers),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
       "test/test_bundle.js", "dist/main.css", "semantic/dist/semantic.min.css",
@@ -57,20 +62,6 @@ module.exports = function (config) {
     // to avoid DISCONNECTED messages
     browserDisconnectTimeout : 10000, // default 2000
     browserDisconnectTolerance : 1, // default 0
-    browserNoActivityTimeout : 60 * 1e3, //default 10000
+    browserNoActivityTimeout : 60 * 1e3 //default 10000
   });
-  if (process.platform == 'linux')
-    config.set({
-      browsers: [ "Firefox", "Chrome", "Opera", 'MSEdge - Win10' ],
-    });
-  else
-    config.set({
-      sauceLabs: {
-        testName: 'Web App Unit Tests',
-        recordVideo: true,
-        recordScreenshots: true
-      },
-      customLaunchers: customLaunchers,
-      browsers: Object.keys(customLaunchers)
-    });
 };
