@@ -7,7 +7,35 @@ import "src/styles/Screens/OurApps.css";
 const settings = {
   wrapAround: true,
   speed: 500,
-  slidesToShow: 1
+  slidesToShow: 1,
+  decorators: [{
+    component: React.createClass({
+      shouldComponentUpdate: function(nextProps, nextState) {
+        let shouldUpdate = false;
+        if ((this.props.currentSlide !== nextProps.currentSlide) ||
+            (this.props.slideCount !== nextProps.slideCount))
+          shouldUpdate = true;
+        return shouldUpdate;
+      },
+      render: function() {
+        let props = this.props;
+        let slideCount = props.slideCount;
+        let buttons = [];
+        for (let i = 0; i < slideCount; i++) {
+          let active = '';
+          if (props.currentSlide === i)
+            active = 'active';
+          buttons.push(
+            <li className={"carousel-control " + active} key={i}
+                onClick={props.goToSlide.bind(null,i)}></li>
+          );
+        }
+        return (<ul className="carousel-controls">{buttons}</ul>);
+      }
+    }),
+    position: "BottomCenter",
+    style: {}
+  }]
 };
 
 class OurApps extends React.Component {
