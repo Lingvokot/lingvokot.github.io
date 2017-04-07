@@ -13,10 +13,8 @@ class App extends React.Component {
       if (!IS_CLIENT)
         return;
       let navbarHeight = $(".navbar")[0].clientHeight;
-      if (navbarHeight != this.state.navbarHeight) {
-        console.log("navbarHeight: " + navbarHeight);
+      if (navbarHeight != this.state.navbarHeight)
         this.setState({navbarHeight});
-      }
     }
   }
   componentDidMount() {
