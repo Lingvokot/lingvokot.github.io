@@ -60,6 +60,7 @@ class OurApps extends React.Component {
         return {icon, description, screenshotUrls, name, url, bundleId};
       });
     }).then(extract => {
+      console.log(JSON.stringify(extract));
       this.setState({extract});
     }).catch(err => console.log(err));
   }

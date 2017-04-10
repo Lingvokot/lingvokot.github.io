@@ -16,7 +16,7 @@ class Screens extends React.Component {
     return (
       <div className="ui one column grid pusher" id="pusher">
         <Element className="screen our-apps column" name="Applications"
-                   style={{paddingTop: this.props.paddingTop}}>
+                style={{paddingTop: this.props.paddingTop}}>
           <OurApps/>
         </Element>
         <Element className="screen column" name="Technologies">

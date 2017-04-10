@@ -10,6 +10,7 @@ var expect = chai.expect;
 global.expect = expect;
 global.chai = chai;
 global.quixote = quixote;
+global.IS_CLIENT = false;
 
 // Set mocha reporter if needed
 if (process.env.REPORTER) {
