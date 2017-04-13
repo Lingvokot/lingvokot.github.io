@@ -6,16 +6,16 @@ import OurApps from "src/components/Screens/OurApps.js";
 let extract = [
   {
     icon: "",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-Donec volutpat, odio quis tempor tempor, ex risus lacinia eros, a feugiat purus ligula eget tellus.<br/>
-Suspendisse cursus rhoncus dolor, quis euismod lectus.<br/>
-Etiam cursus gravida turpis, nec scelerisque nisi cursus vitae.<br/>
-Integer euismod rhoncus nunc, in congue justo egestas rutrum.<br/>
-Praesent sollicitudin mi odio, id aliquam purus rhoncus posuere.<br/>
-Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br/>
-Suspendisse iaculis orci id efficitur vulputate.<br/>Proin pellentesque ligula ac dignissim mollis.<br/>
-Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>
-Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>\
+Donec volutpat, odio quis tempor tempor, ex risus lacinia eros, a feugiat purus ligula eget tellus.<br/>\
+Suspendisse cursus rhoncus dolor, quis euismod lectus.<br/>\
+Etiam cursus gravida turpis, nec scelerisque nisi cursus vitae.<br/>\
+Integer euismod rhoncus nunc, in congue justo egestas rutrum.<br/>\
+Praesent sollicitudin mi odio, id aliquam purus rhoncus posuere.<br/>\
+Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br/>\
+Suspendisse iaculis orci id efficitur vulputate.<br/>Proin pellentesque ligula ac dignissim mollis.<br/>\
+Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>\
+Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>\
 Fusce sagittis quam nec pharetra eleifend.<br/>Quisque mollis vehicula eros.",
     screenshotUrls: [
       "url1.domain/img/id1",
@@ -27,8 +27,7 @@ Fusce sagittis quam nec pharetra eleifend.<br/>Quisque mollis vehicula eros.",
   },
   {
     icon: "",
-    description: "Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, 
-vitae porttitor arcu elit non felis.<br/>
+    description: "Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br/>\
 Suspendisse iaculis orci id efficitur vulputate.",
     screenshotUrls: [],
     name: "Application 2",
@@ -37,9 +36,9 @@ Suspendisse iaculis orci id efficitur vulputate.",
   },
   {
     icon: "",
-    description: "Proin pellentesque ligula ac dignissim mollis.<br/>
-Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>
-Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>
+    description: "Proin pellentesque ligula ac dignissim mollis.<br/>\
+Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>\
+Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>\
 Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
     screenshotUrls: [
       "url3.domain/img/id3"
@@ -92,10 +91,10 @@ describe("OurApps", () => {
       for (let slide1 of sliderList.children) {
         expect(dots[i].classList.contains("active")).to.equal(i == 0);
         i++;
-        let screenshot = frame.getAll(".sliderList:nth-child(" + i + ") img[alt=\"screenshot\"]");
-        expect(screenshot.length).to.equal(1);
-        screenshot = screenshot[0];
-        expect(screenshot.src).to.equal(extract[i - 1].screenshotUrls[0] || "src/img/apps/devices.svg");
+        let screenshot = frame.getAll(".slider-list > li:nth-child(" + i + ") img[alt=\"screenshot\"]");
+        expect(screenshot.length()).to.equal(1);
+        screenshot = screenshot.at(0).toDomElement();
+        expect(screenshot.src.replace("http://localhost:9876/", "")).to.equal(extract[i - 1].screenshotUrls[0] || "src/img/apps/devices.svg");
       }
       done();
     });
