@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {navbarHeight: 150};
     this.onWindowResize = () => {
-      if (!IS_CLIENT)
+      if (!global.IS_CLIENT)
         return;
       let navbarHeight = $(".navbar")[0].clientHeight;
       if (navbarHeight != this.state.navbarHeight)
@@ -24,8 +24,10 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    window.addEventListener("resize", this.onWindowResize, true);
-    this.onWindowResize();
+    if (global.IS_CLIENT) {
+      window.addEventListener("resize", this.onWindowResize, true);
+      this.onWindowResize();
+    }
   }
   render() {
     return (
@@ -39,7 +41,9 @@ class App extends React.Component {
     );
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onWindowResize);
+    if (global.IS_CLIENT) {
+      window.removeEventListener("resize", this.onWindowResize);
+    }
   }
 }
 
