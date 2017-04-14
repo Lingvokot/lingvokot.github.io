@@ -31,3 +31,9 @@ assets-ignore
 
 # OS X system files
 *.DS_Store
+
+# Packages lock
+yarn.lock
+
+# Semantic UI dir
+semantic
