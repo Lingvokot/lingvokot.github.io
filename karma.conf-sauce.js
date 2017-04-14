@@ -33,6 +33,7 @@ var customLaunchers = {
   sl_ios: {
     base: "SauceLabs",
     browserName: "Safari",
+    deviceName: 'iPhone Simulator',
     platform: "iOS"
   }
 }
