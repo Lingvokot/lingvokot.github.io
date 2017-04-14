@@ -87,14 +87,13 @@ describe("OurApps", () => {
       let control = frame.get(".slider-decorator-0 > ul").toDomElement();
       let dots = control.children;
       expect(dots.length).to.equal(extract.length);
-      let i = 0;
-      for (let slide1 of sliderList.children) {
+      for (let i = 0; i < sliderList.children.length; i++) {
+        let slide1 = sliderList.children[i];
         expect(dots[i].classList.contains("active")).to.equal(i == 0);
-        i++;
-        let screenshot = frame.getAll(".slider-list > li:nth-child(" + i + ") img[alt=\"screenshot\"]");
+        let screenshot = frame.getAll(".slider-list > li:nth-child(" + (i + 1) + ") img[alt=\"screenshot\"]");
         expect(screenshot.length()).to.equal(1);
         screenshot = screenshot.at(0).toDomElement();
-        expect(screenshot.src.replace("http://localhost:9876/", "")).to.equal(extract[i - 1].screenshotUrls[0] || "src/img/apps/devices.svg");
+        expect(screenshot.src.replace("http://localhost:9876/", "")).to.equal(extract[i].screenshotUrls[0] || "src/img/apps/devices.svg");
       }
       done();
     });
