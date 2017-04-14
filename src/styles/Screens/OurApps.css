@@ -10,3 +10,19 @@
 .shadow-container {
 	padding-top: 6px !important;
 }
+
+ul.carousel-controls > li.carousel-control {
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: #61b969 !important;
+	border: none !important;
+	float: left;
+	margin-right: 12px;
+	margin-left: 12px;
+	cursor: pointer;
+}
+
+ul.carousel-controls > li.carousel-control.active {
+	background-color: white !important;
+}

@@ -25,10 +25,16 @@ var customLaunchers = {
     browserName: "firefox",
     platform: "Windows 10",
   },
-  sl_ie_11: {
+  sl_android: {
     base: "SauceLabs",
-    browserName: "MicrosoftEdge",
-    platform: "Windows 10",
+    browserName: "Chrome",
+    platform: "Android"
+  },
+  sl_ios: {
+    base: "SauceLabs",
+    browserName: "Safari",
+    deviceName: 'iPhone Simulator',
+    platform: "iOS"
   }
 }
 

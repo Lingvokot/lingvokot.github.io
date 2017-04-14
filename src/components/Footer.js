@@ -5,7 +5,7 @@ import "src/styles/Footer.css";
 class Footer extends React.Component {
   render () {
     return (
-      <div className="ui bottom menu footer">
+      <div className="ui bottom menu" id="footer">
         <div className="ui one column center aligned grid footer-socials">
           <div className="column">
             <div className="ui five column grid footer-socials">
