@@ -39,6 +39,10 @@ var variables = {
   },
   plugins: {
     'prod': [
+      new webpack.DefinePlugin({
+        BUILD_TYPE_IS_PROD: BUILD_TYPE_IS_PROD,
+        ENV: process.env["NODE_ENV"],
+      }),
       new webpack.optimize.OccurenceOrderPlugin(true),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
