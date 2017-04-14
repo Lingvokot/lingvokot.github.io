@@ -22,7 +22,7 @@ describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: ["/base/dist/main.css", "/base/node_modules/semantic-ui/dist/semantic.min.css"]
+      stylesheet: ["/base/dist/main.css"]
     }, done);
   });
   after(function() {
