@@ -49,8 +49,6 @@ class Navbar extends React.Component {
     );
   }
   render() {
-    if (IS_CLIENT)
-      Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
     return (
       <div className="ui top sidebar ui segment push visible navbar">
         <div className="ui center aligned page grid">
