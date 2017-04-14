@@ -1,4 +1,10 @@
 import React from "react";
+
+if (global.IS_CLIENT) {
+  require("semantic-ui-css");
+  require("semantic-ui-js");
+}
+
 import "src/styles/App.css";
 
 import Navbar from "./Navbar.js";

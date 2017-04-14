@@ -50,8 +50,7 @@ module.exports = function (config) {
     browsers: Object.keys(customLaunchers),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-      "test/test_bundle.js", "dist/main.css", "semantic/dist/semantic.min.css",
-      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
+      "test/test_bundle.js", "dist/main.css",
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
