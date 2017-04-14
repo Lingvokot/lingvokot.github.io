@@ -53,7 +53,7 @@ describe("OurApps", () => {
   var frame, rootElement, element, pageBody, reactElement;
 	before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: ["/base/dist/main.css"]
+      stylesheet: ["dist/main.css", "./node_modules/semantic-ui/dist/semantic.min.css"]
     }, done);
   });
   after(function() {
