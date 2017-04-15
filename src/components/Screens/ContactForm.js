@@ -1,5 +1,6 @@
 import React from "react";
 import "src/styles/Screens/ContactForm.css";
+import {Grid, Form, Button, Input, Checkbox} from 'semantic-ui-react';
 
 const appURL = "https://script.google.com/macros/s/AKfycbxUnBrdST0kW8Ds3-F8bBmZmqReU__nxeA-AACJuD-vr5w8LeA/exec";
 
@@ -39,47 +40,35 @@ class ContactForm extends React.Component {
       alert("Oops! Some error occurred.\nDetails: " + err);
     }
   }
-  onFieldChange(event) {
-    this.setState({[event.target.id]: (event.target.id == "promotion") ? event.target.checked : event.target.value});
+  onFieldChange(data) {
+    this.setState({[data.id]: (data.id == "promotion") ? data.checked : data.value});
   }
   render() {
     return (
-      <div className="column">
-        <div className="ui form contact-form--container">
+      <Grid.Column width={8}>
+        <Form as="div" className="contact-form--container">
           <div className="contact-form__input-part">
-            <div className="field">
-              <label htmlFor="name" className="label">Name</label>
-              <input id="name" className="input-form" type="text" name="MERGE1" size="25"
-                    onChange={(e) => this.onFieldChange(e)} value={this.state.name}/>
-            </div>
-            <div className="field">
-              <label htmlFor="site" className="label">Site</label>
-              <input id="site" className="input-form" type="text" name="MERGE2" size="25"
-                    onChange={(e) => this.onFieldChange(e)} value={this.state.site}/>
-            </div>
-            <div className="field">
-              <label htmlFor="email" className="label">E-mail</label>
-              <input id="email" className="input-form" type="email" autoCapitalize="off"
-                    onChange={(e) => this.onFieldChange(e)} value={this.state.email}
-                    autoCorrect="off" name="MERGE0" size="25" />
-          </div>
-          <div className="field">
-            <div className="ui checkbox">
-              <input id="promotion" type="checkbox" className="hidden" tabIndex="0"
-                    name="group[2105][1]" checked={this.state.promotion}
-                    onChange={(e) => this.onFieldChange(e)}/>
-              <label htmlFor="promotion" className="checkbox-label">
-                We have expertise in the marketing or applications promotion
-              </label>
-            </div>
-          </div>
+            <div className="label">Name</div>
+            <Input type="text" className="field" id="name" value={this.state.name}
+                    onChange={(event, data) => this.onFieldChange(data)}/>
+            <div className="label">Site</div>
+            <Input type="text" className="field" id="site" value={this.state.site}
+                    onChange={(event, data) => this.onFieldChange(data)}/>
+            <div className="label">E-mail</div>
+            <Input type="email" className="field" id="email" value={this.state.email}
+                    onChange={(event, data) => this.onFieldChange(data)}/>
+            <Checkbox id="promotion" checked={this.state.promotion} className="field"
+                    onChange={(event, data) => this.onFieldChange(data)}
+                    label="We have expertise in the marketing or applications promotion"/>
           </div>
           <div className="contact-form__submit-part">
-            <button className="ui button" id="submit-button" onClick={() => this.submitForm}
-                    disabled={(this.state.name.length == 0) || (this.state.email.length == 0)}>Send</button>
+            <Button id="submit-button" onClick={() => this.submitForm()}
+                    disabled={(this.state.name.length == 0) || (this.state.email.length == 0)}>
+              Send
+            </Button>
           </div>
-        </div>
-      </div>
+        </Form>
+      </Grid.Column>
     );
   }
 }

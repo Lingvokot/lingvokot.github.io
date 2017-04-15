@@ -14,13 +14,14 @@ webpackConfig.devtool = "inline-source-map";
 // quixote is served as prebuilt bundle so skip parsing it
 webpackConfig.module.noParse.push(/quixote\.js$/);
 
+console.log(webpackConfig.module.loaders);
 module.exports = function (config) {
+  console.log("butthurt2");
   config.set({
     browsers: [ "Firefox", "Chrome", "Opera" ],
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-      "dist/main.css", "./node_modules/semantic-ui/dist/semantic.min.css",
-      "./node_modules/jquery/dist/jquery.min.js", "./node_modules/semantic-ui/dist/semantic.min.js"
+      "dist/main.css"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
@@ -39,4 +40,5 @@ module.exports = function (config) {
     browserDisconnectTolerance : 1, // default 0
     browserNoActivityTimeout : 60 * 1e3, //default 10000
   });
+  console.log("butthurt3");
 };

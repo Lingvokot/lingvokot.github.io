@@ -1,14 +1,15 @@
 import React from "react";
-
 import ContactForm from "./ContactForm.js";
+import {Grid, } from 'semantic-ui-react';
+
 import "src/styles/Screens/ForInvestors.css";
 
 class ForInvestors extends React.Component {
   render () {
     return (
-      <div className="ui stackable two column grid section__content section__content-for-investors">
+      <Grid stackable columns={2} className="section__content section__content-for-investors">
         <ContactForm />
-        <div className="column">
+        <Grid.Column width={8}>
           <h2 className="header header--level-2">
             <div className="header--big">
               Great opportunities for your investments
@@ -26,8 +27,8 @@ class ForInvestors extends React.Component {
             always offer more advanced functionality and 
             challenges for more competitive and experienced users.
           </p>
-        </div>
-      </div>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

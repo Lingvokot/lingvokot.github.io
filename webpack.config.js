@@ -107,11 +107,7 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx", ".css"],
     modulesDirectories: ["node_modules"],
-    alias: {
-      "semantic-ui-css": path.join(__dirname, "./node_modules/semantic-ui/dist/semantic.min.css"),
-      "jquery": path.join(__dirname, "./node_modules/jquery/dist/jquery.min.js"),
-      'semantic-ui-js': path.join(__dirname, "./node_modules/semantic-ui/dist/semantic.min.js")
-    },
+    alias: {},
     root: __dirname
   }
 

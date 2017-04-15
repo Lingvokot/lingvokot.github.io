@@ -1,22 +1,23 @@
 import React from "react";
 import "src/styles/Screens/Technologies.css";
+import {Grid} from 'semantic-ui-react';
 
 class Technologies extends React.Component {
   render () {
     return (
-      <div className="ui one column center aligned relaxed grid technologies">
-        <div className="column">
-            <h2 className="header header--level-2">
-              <div className="header--big">We like what we do</div>
-              <div className="header--small">
-                Creating applications make our adopters and us happy.
-                Discover what is behind our apps
-              </div>
-            </h2>
-        </div>
-        <div className="column">
-          <div className="ui stackable three column grid">
-            <div className="column">
+      <Grid columns={1} centered relaxed className="technologies">
+        <Grid.Column verticalAlign="middle">
+          <h2 className="header header--level-2">
+            <div className="header--big">We like what we do</div>
+            <div className="header--small">
+              Creating applications make our adopters and us happy.
+              Discover what is behind our apps
+            </div>
+          </h2>
+        </Grid.Column>
+        <Grid.Column verticalAlign="middle">
+          <Grid columns={3} stackable>
+            <Grid.Column>
               <img alt="Gear image" src="src/img/technologies/gear.svg"/>
               <h3 className="header header--level-3">CI & CD</h3>
               <p className="text text--centered">
@@ -26,8 +27,8 @@ class Technologies extends React.Component {
               <a className="tech-link" href="https://github.com/Lingvokot" title="Check our assets">
                 Our assets
               </a>
-            </div>
-            <div className="column">
+            </Grid.Column>
+            <Grid.Column>
               <img alt="React Native logo" src="src/img/technologies/react-native.svg"/>
               <h3 className="header header--level-3">React native</h3>
               <p className="text">
@@ -39,8 +40,8 @@ class Technologies extends React.Component {
                   href="https://facebook.github.io/react-native/">
                 Read more
               </a>
-            </div>
-            <div className="column">
+            </Grid.Column>
+            <Grid.Column>
               <img alt="Tech talks" src="src/img/technologies/tech-talks.svg"/>
               <h3 className="header header--level-3">Tech Talks</h3>
               <p className="text">
@@ -51,10 +52,10 @@ class Technologies extends React.Component {
                   title="Take a look at our presentations">
                 Our presentations
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Grid.Column>
+          </Grid>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

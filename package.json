@@ -76,6 +76,7 @@
     "react-scroll": "^0.35.0",
     "reset.css": "^2.0.2",
     "rimraf": "^2.4.4",
+    "semantic-ui-react": "^0.67.2",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "style-loader": "^0.13.0",
     "svgo": "^0.6.1",
@@ -90,6 +91,6 @@
     "jsonp": "^0.2.1",
     "nuka-carousel": "^2.0.4",
     "reqwest": "^2.0.5",
-    "semantic-ui": "^2.2.9"
+    "semantic-ui-react": "^0.67.2"
   }
 }

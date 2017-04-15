@@ -1,39 +1,40 @@
 import React from "react";
+import {Grid, Sidebar, Segment, Menu} from "semantic-ui-react";
 
 import "src/styles/Footer.css";
 
 class Footer extends React.Component {
   render () {
     return (
-      <div className="ui bottom menu" id="footer">
-        <div className="ui one column center aligned grid footer-socials">
-          <div className="column">
-            <div className="ui five column grid footer-socials">
-              <div className="column"></div>
-              <div className="column" id="footer-socials__github">
+      <Menu as={Segment} animation='push' direction='bottom' visible id="footer">
+        <Grid centered columns={1} className=" footer-socials">
+          <Grid.Column verticalAlign="middle">
+            <Grid columns={5} className="footer-socials">
+              <Grid.Column />
+              <Grid.Column id="footer-socials__github">
                 <a href="https://github.com/Lingvokot">
                   <img src="src/img/footer/github-ico.svg"/>
                 </a>
-              </div>
-              <div className="column" id="footer-socials__facebook">
+              </Grid.Column>
+              <Grid.Column id="footer-socials__facebook">
                 <a href=""><img src="src/img/footer/facebook-ico.svg"/></a>
-              </div>
-              <div className="column" id="footer-socials__slideshare">
+              </Grid.Column>
+              <Grid.Column id="footer-socials__slideshare">
                 <a href="http://www.slideshare.net/Lingvokot">
                   <img src="src/img/footer/slideshare-ico.svg"/>
                 </a>
-              </div>
-              <div className="column"></div>
-              <div className="sixteen wide column">
+              </Grid.Column>
+              <Grid.Column />
+              <Grid.Column width={16}>
                 <p className="footer-text">
                   © 2017 LingvoKot inc.<br/>
                   All rights reserved
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </Grid.Column>
+            </Grid>
+          </Grid.Column>
+        </Grid>
+      </Menu>
     );
   }
 }

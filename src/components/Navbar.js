@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-scroll";
 import "src/styles/Navbar.css";
+import $ from "jquery";
+import {Grid, Sidebar, Segment, Menu} from "semantic-ui-react";
 
 const argumentsSet = [
   ["Applications"],
@@ -40,26 +42,26 @@ class Navbar extends React.Component {
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);
     return (
-      <div className={"eight wide mobile four wide tablet three wide computer column " +
-                    "navigation__page-scroller navigation__page-scroller--green"} key={name}>
+      <Grid.Column mobile={8} tablet={4} computer={3} key={name}
+                  className={"navigation__page-scroller navigation__page-scroller--green"}>
         <Link className={name + (isActive ? " true-active": "")} to={name} {...Navbar.linkProps}>
           {text}
         </Link>
-      </div>
+      </Grid.Column>
     );
   }
   render() {
     if (global.IS_CLIENT)
       Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
     return (
-      <div className="ui top sidebar ui segment push visible navbar">
-        <div className="ui center aligned page grid">
-          <div className="sixteen wide tablet three wide computer column">
+      <Sidebar as={Segment} animation='push' direction='top' visible className="navbar">
+        <Grid textAlign="center" columns={argumentsSet.length} className="page">
+          <Grid.Column tablet={16} computer={3}>
             <img id="logo" src="src/img/navbar/logo.svg"/>
-          </div>
+          </Grid.Column>
           {argumentsSet.map((item) => this.renderMenuLink(...item))}
-        </div>
-      </div>
+        </Grid>
+      </Sidebar>
     );
   }
   componentWillUnmount() {

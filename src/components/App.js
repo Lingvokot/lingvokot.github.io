@@ -1,9 +1,11 @@
 import React from "react";
+import $ from 'jquery';
+import {Sidebar, Segment} from 'semantic-ui-react';
 
-if (global.IS_CLIENT) {
+/*if (global.IS_CLIENT) {
   require("semantic-ui-css");
   require("semantic-ui-js");
-}
+}*/
 
 import "src/styles/App.css";
 
@@ -19,6 +21,7 @@ class App extends React.Component {
       if (!global.IS_CLIENT)
         return;
       let navbarHeight = $(".navbar")[0].clientHeight;
+      console.log(navbarHeight == document.getElementsByClassName("navbar")[0].clientHeight);
       if (navbarHeight != this.state.navbarHeight)
         this.setState({navbarHeight});
     }
@@ -32,11 +35,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      	<div className="full-height">
-        	<Navbar/>
+        <Navbar/>
+      	<Sidebar.Pushable as={Segment}>
         	<Screens paddingTop={this.state.navbarHeight}/>
-        </div>
-        <Footer/>
+          <Footer/>
+        </Sidebar.Pushable>
       </div>
     );
   }

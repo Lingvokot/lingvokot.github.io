@@ -21,8 +21,9 @@ function hexNotationToRgb(hex1) {
 describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
+    console.log("Footer");
     frame = quixote.createFrame({
-      stylesheet: ["dist/main.css", "./node_modules/semantic-ui/dist/semantic.min.css"]
+      stylesheet: ["dist/main.css"]
     }, done);
   });
   after(function() {

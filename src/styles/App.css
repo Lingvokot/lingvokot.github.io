@@ -4,6 +4,10 @@ html {
   /*font-size: 62.5%;*/
 }
 
+.pushable {
+  margin-top: 2rem !important;
+}
+
 @font-face {
   font-family: "Luba LT CYR";
   src: url(../fonts/LubaLTCYR-Regular.otf);
