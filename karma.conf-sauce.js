@@ -51,11 +51,11 @@ for (var i = 0; i < appiumPlatforms.length; i++) {
                       "_" + browser1] = {
         base: "SauceLabs",
         browserName: browser1,
-        platform: platform1
+        platform: platform1,
+        deviceName: device1
       }
   }
 }
-console.log(customLaunchers);
 
 module.exports = function (config) {
   config.set({
