@@ -21,7 +21,8 @@ module.exports = function (config) {
     browsers: [ "Firefox", "Chrome", "Opera" ],
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-      "dist/main.css"
+       "test/test_bundle.js", "dist/main.css",
+       "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader

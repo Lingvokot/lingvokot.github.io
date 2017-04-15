@@ -52,9 +52,11 @@ Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
 describe("OurApps", () => {
   var frame, rootElement, element, pageBody, reactElement;
 	before(function(done) {
-    console.log("OurApps");
     frame = quixote.createFrame({
-      stylesheet: ["dist/main.css"]
+      stylesheet: [
+        "/base/dist/main.css",
+        "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"
+      ]
     }, done);
   });
   after(function() {
