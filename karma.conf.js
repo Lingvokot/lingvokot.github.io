@@ -14,9 +14,7 @@ webpackConfig.devtool = "inline-source-map";
 // quixote is served as prebuilt bundle so skip parsing it
 webpackConfig.module.noParse.push(/quixote\.js$/);
 
-console.log(webpackConfig.module.loaders);
 module.exports = function (config) {
-  console.log("butthurt2");
   config.set({
     browsers: [ "Firefox", "Chrome", "Opera" ],
     frameworks: [ "mocha" ], //use the mocha test framework
@@ -41,5 +39,4 @@ module.exports = function (config) {
     browserDisconnectTolerance : 1, // default 0
     browserNoActivityTimeout : 60 * 1e3, //default 10000
   });
-  console.log("butthurt3");
 };
