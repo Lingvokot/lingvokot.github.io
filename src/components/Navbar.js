@@ -37,7 +37,10 @@ class Navbar extends React.Component {
     }
   }
   componentDidMount() {
-    window.addEventListener("scroll", this.onWindowScroll, true);
+    if (global.IS_CLIENT) {
+      window.addEventListener("scroll", this.onWindowScroll, true);
+      Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
+    }
   }
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);
