@@ -5,6 +5,7 @@ import Carousel from "nuka-carousel";
 import "src/styles/Screens/OurApps.css";
 import BulletControl from "./BulletControl.js";
 import Slide from "./Slide.js";
+import {Grid} from 'semantic-ui-react';
 
 const settings = {
   wrapAround: true,
@@ -47,15 +48,15 @@ class OurApps extends React.Component {
   }
   render() {
     return (
-      <div className="ui stackable one column grid">
-        <div className="column">
+      <Grid stackable columns={1}>
+        <Grid.Column width={16}>
           <Carousel {...settings}>
           {this.state.extract.map((app) => {
             return (<Slide app={app} key={app.bundleId}/>)
           })}
           </Carousel>
-        </div>
-      </div>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

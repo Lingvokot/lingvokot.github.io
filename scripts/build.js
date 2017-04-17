@@ -30,15 +30,20 @@ function onDistCleaned () {
 
     var jsonStats = stats.toJson();
 
-    if (jsonStats.errors.length > 0)
-      return console.error(jsonStats.errors);
-
-    if (jsonStats.warnings.length > 0)
-      console.warn(jsonStats.warnings);
-
     var statsPath = path.join(__dirname, "../dist/bundle-stats.json");
     fs.writeFileSync(statsPath, JSON.stringify(jsonStats));
     console.log("Bundle stats written to " + statsPath + ". Go to https://webpack.github.io/analyse/ to analyse it.");
+
+    if (jsonStats.errors.length > 0) {
+      console.error("There was errors compiling bundle");
+      console.log(jsonStats);
+      return console.error(jsonStats.errors);
+    }
+
+    if (jsonStats.warnings.length > 0) {
+      console.warn("There was warnings compiling bundle");
+      console.warn(jsonStats.warnings);
+    }
 
     onWebpackSuccessfullyCompiled();
 

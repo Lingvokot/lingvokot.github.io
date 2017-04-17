@@ -14,27 +14,46 @@ webpackConfig.devtool = "inline-source-map";
 // quixote is served as prebuilt bundle so skip parsing it
 webpackConfig.module.noParse.push(/quixote\.js$/);
 
-var customLaunchers = {
-  sl_chrome: {
-    base: "SauceLabs",
-    browserName: "chrome",
-    platform: "Windows 10",
-  },
-  sl_firefox: {
-    base: "SauceLabs",
-    browserName: "firefox",
-    platform: "Windows 10",
-  },
-  sl_android: {
-    base: "SauceLabs",
-    browserName: "Chrome",
-    platform: "Android"
-  },
-  sl_ios: {
-    base: "SauceLabs",
-    browserName: "Safari",
-    deviceName: 'iPhone Simulator',
-    platform: "iOS"
+var seleniumPlatforms = ["Windows 10", "Linux", "macOS 10.12"];
+var appiumPlatforms = [
+  {platform: "Android", deviceName: "Android Emulator"},
+  {platform: "iOS", deviceName: "iPhone Simulator"}
+];
+var knownBrowsers = ["chrome", "firefox", "safari"];
+var customLaunchers = {};
+
+for (var i = 0; i < seleniumPlatforms.length; i++) {
+  var platform1 = seleniumPlatforms[i];
+  for (var j = 0; j < knownBrowsers.length; j++) {
+    var browser1 = knownBrowsers[j];
+    if ((platform1 != "macOS 10.12") && (browser1 == "safari"))
+      continue;
+    else
+      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
+                      "_" + browser1] = {
+        base: "SauceLabs",
+        browserName: browser1,
+        platform: platform1
+      };
+  }
+}
+for (var i = 0; i < appiumPlatforms.length; i++) {
+  var platform1 = appiumPlatforms[i];
+  var device1 = platform1.deviceName;
+  platform1 = platform1.platform;
+  for (var j = 0; j < knownBrowsers.length; j++) {
+    var browser1 = knownBrowsers[j];
+    browser1 = browser1.substr(0, 1).toUpperCase() + browser1.substr(1);
+    if ((platform1 != "iOS") && (browser1 == "Safari"))
+      continue;
+    else
+      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
+                      "_" + browser1] = {
+        base: "SauceLabs",
+        browserName: browser1,
+        platform: platform1,
+        deviceName: device1
+      }
   }
 }
 
@@ -50,8 +69,8 @@ module.exports = function (config) {
     browsers: Object.keys(customLaunchers),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-      "test/test_bundle.js", "dist/main.css", "semantic/dist/semantic.min.css",
-      "jquery-3.1.1.min.js", "semantic/dist/semantic.min.js"
+      "test/test_bundle.js", "dist/main.css",
+      "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
