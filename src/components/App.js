@@ -1,9 +1,6 @@
 import React from "react";
-
-if (global.IS_CLIENT) {
-  require("semantic-ui-css");
-  require("semantic-ui-js");
-}
+import $ from 'jquery';
+import {Sidebar, Segment} from 'semantic-ui-react';
 
 import "src/styles/App.css";
 
@@ -32,11 +29,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      	<div className="full-height">
-        	<Navbar/>
+        <Navbar/>
+      	<Sidebar.Pushable as={Segment}>
         	<Screens paddingTop={this.state.navbarHeight}/>
-        </div>
-        <Footer/>
+          <Footer/>
+        </Sidebar.Pushable>
       </div>
     );
   }
