@@ -1,7 +1,6 @@
 process.env.NODE_ENV = "development";
 
 var path = require("path");
-
 var webpackConfig = require("./webpack.config.js");
 
 webpackConfig.module.loaders.push({
@@ -16,7 +15,7 @@ webpackConfig.module.noParse.push(/quixote\.js$/);
 
 module.exports = function (config) {
   config.set({
-    browsers: [ "Firefox", "Chrome", "Opera" ],
+    browsers: ((process.platform == "darwin") ? [ "Firefox", "Chrome", "Safari" ] : ["Firefox", "Chrome"]),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
        "test/test_bundle.js", "dist/main.css",
