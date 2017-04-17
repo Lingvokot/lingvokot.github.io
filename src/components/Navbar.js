@@ -36,10 +36,15 @@ class Navbar extends React.Component {
       }
     }
   }
+
+  adjustNavBar = () => {
+    Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
+  };
+
   componentDidMount() {
     if (global.IS_CLIENT) {
       window.addEventListener("scroll", this.onWindowScroll, true);
-      Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
+      window.addEventListener("resize", this.adjustNavBar, true);
     }
   }
   renderMenuLink(name, text = name) {
@@ -66,7 +71,10 @@ class Navbar extends React.Component {
     );
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.onWindowScroll);
+    if (global.IS_CLIENT) {
+      window.removeEventListener("scroll", this.onWindowScroll);
+      window.removeEventListener("resize", this.adjustNavBar);
+    }
   }
 }
 
