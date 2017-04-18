@@ -36,8 +36,17 @@ class Navbar extends React.Component {
       }
     }
   }
+
+  adjustNavBar = () => {
+    Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
+  };
+
   componentDidMount() {
-    window.addEventListener("scroll", this.onWindowScroll, true);
+    if (global.IS_CLIENT) {
+      window.addEventListener("scroll", this.onWindowScroll, true);
+      window.addEventListener("resize", this.adjustNavBar, true);
+      this.adjustNavBar();
+    }
   }
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);
@@ -51,8 +60,6 @@ class Navbar extends React.Component {
     );
   }
   render() {
-    if (global.IS_CLIENT)
-      Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
     return (
       <Sidebar as={Segment} animation='push' direction='top' visible className="navbar">
         <Grid textAlign="center" columns={argumentsSet.length} className="page">
@@ -65,7 +72,10 @@ class Navbar extends React.Component {
     );
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.onWindowScroll);
+    if (global.IS_CLIENT) {
+      window.removeEventListener("scroll", this.onWindowScroll);
+      window.removeEventListener("resize", this.adjustNavBar);
+    }
   }
 }
 
