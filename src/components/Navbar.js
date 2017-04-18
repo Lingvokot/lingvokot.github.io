@@ -45,6 +45,7 @@ class Navbar extends React.Component {
     if (global.IS_CLIENT) {
       window.addEventListener("scroll", this.onWindowScroll, true);
       window.addEventListener("resize", this.adjustNavBar, true);
+      this.adjustNavBar();
     }
   }
   renderMenuLink(name, text = name) {
