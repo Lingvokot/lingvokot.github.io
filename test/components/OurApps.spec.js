@@ -6,17 +6,17 @@ import OurApps from "src/components/Screens/OurApps.js";
 let extract = [
   {
     icon: "",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>\
-Donec volutpat, odio quis tempor tempor, ex risus lacinia eros, a feugiat purus ligula eget tellus.<br/>\
-Suspendisse cursus rhoncus dolor, quis euismod lectus.<br/>\
-Etiam cursus gravida turpis, nec scelerisque nisi cursus vitae.<br/>\
-Integer euismod rhoncus nunc, in congue justo egestas rutrum.<br/>\
-Praesent sollicitudin mi odio, id aliquam purus rhoncus posuere.<br/>\
-Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br/>\
-Suspendisse iaculis orci id efficitur vulputate.<br/>Proin pellentesque ligula ac dignissim mollis.<br/>\
-Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>\
-Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>\
-Fusce sagittis quam nec pharetra eleifend.<br/>Quisque mollis vehicula eros.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>\
+Donec volutpat, odio quis tempor tempor, ex risus lacinia eros, a feugiat purus ligula eget tellus.<br>\
+Suspendisse cursus rhoncus dolor, quis euismod lectus.<br>\
+Etiam cursus gravida turpis, nec scelerisque nisi cursus vitae.<br>\
+Integer euismod rhoncus nunc, in congue justo egestas rutrum.<br>\
+Praesent sollicitudin mi odio, id aliquam purus rhoncus posuere.<br>\
+Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br>\
+Suspendisse iaculis orci id efficitur vulputate.<br>Proin pellentesque ligula ac dignissim mollis.<br>\
+Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br>\
+Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br>\
+Fusce sagittis quam nec pharetra eleifend.<br>Quisque mollis vehicula eros.",
     screenshotUrls: [
       "url1.domain/img/id1",
       "url1.domain/img/id2"
@@ -27,7 +27,7 @@ Fusce sagittis quam nec pharetra eleifend.<br/>Quisque mollis vehicula eros.",
   },
   {
     icon: "",
-    description: "Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br/>\
+    description: "Maecenas volutpat, ligula at faucibus sagittis, augue nulla euismod nunc, vitae porttitor arcu elit non felis.<br>\
 Suspendisse iaculis orci id efficitur vulputate.",
     screenshotUrls: [],
     name: "Application 2",
@@ -36,9 +36,9 @@ Suspendisse iaculis orci id efficitur vulputate.",
   },
   {
     icon: "",
-    description: "Proin pellentesque ligula ac dignissim mollis.<br/>\
-Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br/>\
-Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br/>\
+    description: "Proin pellentesque ligula ac dignissim mollis.<br>\
+Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br>\
+Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br>\
 Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
     screenshotUrls: [
       "url3.domain/img/id3"
@@ -79,6 +79,7 @@ describe("OurApps", () => {
     }
   }
   var checkSlideConsistency = function(slide, dataSet) {
+    console.log("in checkSlideConsistency");
     let screenshots = slide.querySelectorAll("img[alt=\"screenshot\"]");
     expect(screenshots.length).to.equal(1);
     let screenshot = screenshots[0];
@@ -89,8 +90,10 @@ describe("OurApps", () => {
     expect(level2Headers.length).to.equal(1);
     let maybeConstantHeader = level2Headers[0];
     let headerChildren = maybeConstantHeader.children;
-    expect(children[0].innerText).to.equal("APPLICATIONS");
-    expect(children[1].innerText).to.equal("YOU WANT TO USE");
+    expect(headerChildren.length).to.equal(2);
+    expect(headerChildren[0].innerText).to.equal("APPLICATIONS");
+    expect(headerChildren[1].innerText).to.equal("YOU WANT TO USE");
+    console.log("constant header checked");
 
     let level3Headers = slide.querySelectorAll("h3");
     expect(level3Headers.length).to.equal(1);
@@ -106,9 +109,9 @@ describe("OurApps", () => {
     expect(refs.length).to.equal(2);
     expect(refs[0].href).to.equal(dataSet.url);
     expect(refs[1].href).to.equal("https://play.google.com/store/apps/details?id=" + dataSet.bundleId);
-    expect(refs[0].children).to.equal(1);
-    expect(refs[1].children).to.equal(1);
-    let maybeImages = [refs[0].children[0], refs[1].children[0]);
+    expect(refs[0].children.length).to.equal(1);
+    expect(refs[1].children.length).to.equal(1);
+    let maybeImages = [refs[0].children[0], refs[1].children[0]];
     let expectedAlts = ["App Store", "Google Play"];
     let expectedSrcs = ["src/img/apps/app-store.svg", "src/img/apps/google-play.svg"];
     for (let i = 0; i < 2; i++) {
@@ -140,7 +143,7 @@ describe("OurApps", () => {
       expect(sliderList.children.length).to.equal(extract.length);
       checkDecoratorsPresence(true);
       let bulletControl = frame.get(".slider-decorator-0 > ul").toDomElement();
-      let dots = control.children;
+      let dots = bulletControl.children;
       expect(dots.length).to.equal(extract.length);
       for (let i = 0; i < sliderList.children.length; i++) {
         let slide1 = sliderList.children[i];
