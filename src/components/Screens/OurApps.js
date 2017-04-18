@@ -64,7 +64,9 @@ class OurApps extends React.Component {
     return (
       <Grid stackable columns={1}>
         <Grid.Column width={16}>
-          <Carousel {...settings} decorators={this.getNeededDecorators()}>
+          <Carousel {...settings} decorators={this.getNeededDecorators()}
+                    dragging={this.state.extract.length > 1}
+                    swiping={this.state.extract.length > 1}>
           {this.state.extract.map((app) => {
             return (<Slide app={app} key={app.bundleId}/>)
           })}
