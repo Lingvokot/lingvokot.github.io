@@ -79,7 +79,6 @@ describe("OurApps", () => {
     }
   }
   var checkSlideConsistency = function(slide, dataSet) {
-    console.log("in checkSlideConsistency");
     let screenshots = slide.querySelectorAll("img[alt=\"screenshot\"]");
     expect(screenshots.length).to.equal(1);
     let screenshot = screenshots[0];
@@ -93,7 +92,6 @@ describe("OurApps", () => {
     expect(headerChildren.length).to.equal(2);
     expect(headerChildren[0].innerText).to.equal("APPLICATIONS");
     expect(headerChildren[1].innerText).to.equal("YOU WANT TO USE");
-    console.log("constant header checked");
 
     let level3Headers = slide.querySelectorAll("h3");
     expect(level3Headers.length).to.equal(1);
