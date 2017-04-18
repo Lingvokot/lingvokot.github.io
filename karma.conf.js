@@ -18,8 +18,7 @@ module.exports = function (config) {
     browsers: ((process.platform == "darwin") ? [ "Firefox", "Chrome", "Safari" ] : ["Firefox", "Chrome"]),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-       "test/test_bundle.js", "dist/main.css",
-       "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"
+       "test/test_bundle.js", "dist/main.css"
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader

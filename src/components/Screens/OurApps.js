@@ -9,23 +9,24 @@ import NextControl from "./NextControl.js";
 import Slide from "./Slide.js";
 import {Grid} from 'semantic-ui-react';
 
+const decoratorsIfMoreOne = [{
+  component: BulletControl,
+  position: "BottomCenter",
+  style: {}
+}, {
+  component: PreviousControl,
+  position: "CenterLeft",
+  style: {}
+}, {
+  component: NextControl,
+  position: "CenterRight",
+  style: {}
+}];
+
 const settings = {
   wrapAround: true,
   speed: 500,
-  slidesToShow: 1,
-  decorators: [{
-    component: BulletControl,
-    position: "BottomCenter",
-    style: {}
-  }, {
-    component: PreviousControl,
-    position: "CenterLeft",
-    style: {}
-  }, {
-    component: NextControl,
-    position: "CenterRight",
-    style: {}
-  }]
+  slidesToShow: 1
 };
 
 class OurApps extends React.Component {
@@ -53,6 +54,9 @@ class OurApps extends React.Component {
       this.setState({extract});
     }).catch(err => console.log(err));
   }
+  getNeededDecorators() {
+    return this.state.extract.length > 1 ? decoratorsIfMoreOne : [];
+  }
   componentWillMount() {
     this.getAvailableApps();
   }
@@ -60,7 +64,9 @@ class OurApps extends React.Component {
     return (
       <Grid stackable columns={1}>
         <Grid.Column width={16}>
-          <Carousel {...settings}>
+          <Carousel {...settings} decorators={this.getNeededDecorators()}
+                    dragging={this.state.extract.length > 1}
+                    swiping={this.state.extract.length > 1}>
           {this.state.extract.map((app) => {
             return (<Slide app={app} key={app.bundleId}/>)
           })}
