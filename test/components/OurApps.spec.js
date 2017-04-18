@@ -77,7 +77,7 @@ describe("OurApps", () => {
     expect(sliderList.children.length).to.equal(0);
     for (let i = 0; i < 3; i++) {
       let controls1 = frame.getAll(".slider-decorator-" + i);
-      expect(controls1.length().to.equal(1));
+      expect(controls1.length()).to.equal(1);
     }
     let control = frame.get(".slider-decorator-0 > ul").toDomElement();
     expect(control.children.length).to.equal(0);
@@ -89,7 +89,7 @@ describe("OurApps", () => {
       expect(sliderList.children.length).to.equal(extract.length);
       for (let i = 0; i < 3; i++) {
         let controls1 = frame.getAll(".slider-decorator-" + i);
-        expect(controls1.length().to.equal(1));
+        expect(controls1.length()).to.equal(1);
       }
       let control = frame.get(".slider-decorator-0 > ul").toDomElement();
       let dots = control.children;
