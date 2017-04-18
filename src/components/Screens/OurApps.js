@@ -4,6 +4,8 @@ import reqwest from "reqwest";
 import Carousel from "nuka-carousel";
 import "src/styles/Screens/OurApps.css";
 import BulletControl from "./BulletControl.js";
+import PreviousControl from "./PreviousControl.js";
+import NextControl from "./NextControl.js";
 import Slide from "./Slide.js";
 import {Grid} from 'semantic-ui-react';
 
@@ -14,6 +16,14 @@ const settings = {
   decorators: [{
     component: BulletControl,
     position: "BottomCenter",
+    style: {}
+  }, {
+    component: PreviousControl,
+    position: "CenterLeft",
+    style: {}
+  }, {
+    component: NextControl,
+    position: "CenterRight",
     style: {}
   }]
 };
