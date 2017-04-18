@@ -76,6 +76,7 @@
     "react-scroll": "^0.35.0",
     "reset.css": "^2.0.2",
     "rimraf": "^2.4.4",
+    "semantic-ui-css": "^2.2.10",
     "semantic-ui-react": "^0.67.2",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "style-loader": "^0.13.0",
