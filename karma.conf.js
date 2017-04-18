@@ -18,10 +18,16 @@ module.exports = function (config) {
     browsers: ((process.platform == "darwin") ? [ "Firefox", "Chrome", "Safari" ] : ["Firefox", "Chrome"]),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
-       "test/test_bundle.js", "dist/main.css"
+       "test/test_bundle.js", "dist/main.css",
+       {pattern: "src/img/**/*.svg", watched: false, included: false, served: true, nocache: false},
+       {pattern: "dist/*", watched: false, included: false, served: true, nocache: false}
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader
+    },
+    proxies: {
+      "/src/img/": "http://localhost:9876/base/src/img/",
+      "/dist/": "http://localhost:9876/base/dist/"
     },
     reporters: [ "dots" ], //report results in this format
     webpack: webpackConfig,
