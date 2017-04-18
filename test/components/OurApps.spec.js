@@ -75,8 +75,10 @@ describe("OurApps", () => {
   it("Checking presence of necessary elements in case there are no apps", () => {
     let sliderList = frame.get(".slider-list").toDomElement();
     expect(sliderList.children.length).to.equal(0);
-    let controls = frame.getAll(".slider-decorator-0, .slider-decorator-1, .slider-decorator-2");
-    expect(controls.length()).to.equal(1);
+    for (let i = 0; i < 3; i++) {
+      let controls1 = frame.getAll(".slider-decorator-" + i);
+      expect(controls1.length().to.equal(1));
+    }
     let control = frame.get(".slider-decorator-0 > ul").toDomElement();
     expect(control.children.length).to.equal(0);
   });
@@ -85,8 +87,10 @@ describe("OurApps", () => {
     reactElement.setState({extract}, () => {
       let sliderList = frame.get('.slider-list').toDomElement();
       expect(sliderList.children.length).to.equal(extract.length);
-      let controls = frame.getAll(".slider-decorator-0, .slider-decorator-1, .slider-decorator-2");
-      expect(controls.length()).to.equal(1);
+      for (let i = 0; i < 3; i++) {
+        let controls1 = frame.getAll(".slider-decorator-" + i);
+        expect(controls1.length().to.equal(1));
+      }
       let control = frame.get(".slider-decorator-0 > ul").toDomElement();
       let dots = control.children;
       expect(dots.length).to.equal(extract.length);
