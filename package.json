@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lingvokot/Tic-Tac-Toe-React.git"
+    "url": "git+https://github.com/Lingvokot/lingvokot.github.io.git"
   },
   "keywords": [
     "mocha",
@@ -27,12 +27,12 @@
   "author": "Lingvokot <https://github.com/Lingvokot/>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lingvokot/Tic-Tac-Toe-React/issues"
+    "url": "https://github.com/Lingvokot/lingvokot.github.io/issues"
   },
   "engines": {
     "node": ">= 4.0"
   },
-  "homepage": "https://github.com/Lingvokot/Tic-Tac-Toe-React#readme",
+  "homepage": "https://github.com/Lingvokot/lingvokot.github.io#readme",
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "babel-cli": "^6.1.2",
@@ -58,8 +58,6 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-cli": "^0.1.1",
     "karma-firefox-launcher": "^1.0.1",
-    "karma-ie-launcher": "^1.0.0",
-    "karma-ievms": "git+https://github.com/niksy/karma-ievms.git#browser-decorator",
     "karma-mocha": "^0.2.1",
     "karma-opera-launcher": "^1.0.0",
     "karma-safari-launcher": "^1.0.0",
@@ -76,6 +74,7 @@
     "react-scroll": "^0.35.0",
     "reset.css": "^2.0.2",
     "rimraf": "^2.4.4",
+    "semantic-ui-css": "^2.2.10",
     "semantic-ui-react": "^0.67.2",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "style-loader": "^0.13.0",
