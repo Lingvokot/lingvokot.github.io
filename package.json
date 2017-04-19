@@ -5,6 +5,7 @@
   "description": "Static website hosten on GH Pages build with modern FrontEnd stack",
   "main": "index.js",
   "scripts": {
+    "deploy": "npm run build && git add dist index.html && git commit -m 'Update build' && npm version minor && git push && git push --tags",
     "test": "npm run test:karma:sauce",
     "test:karma:sauce": "karma start karma.conf-sauce.js",
     "test:karma": "karma start --single-run",
