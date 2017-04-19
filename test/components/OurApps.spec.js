@@ -18,8 +18,8 @@ Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br>\
 Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br>\
 Fusce sagittis quam nec pharetra eleifend.<br>Quisque mollis vehicula eros.",
     screenshotUrls: [
-      "test/img/unnamed1.jpg",
-      "test/img/unnamed2.jpg"
+      "base/test/img/unnamed1.jpg",
+      "base/test/img/unnamed2.jpg"
     ],
     name: "Application 1",
     url: "https://url1.domain/application1",
@@ -41,7 +41,7 @@ Morbi id lacus ac tortor lobortis interdum vitae placerat arcu.<br>\
 Suspendisse elit mi, consectetur vitae gravida interdum, feugiat vitae turpis.<br>\
 Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
     screenshotUrls: [
-      "test/img/unnamed3.jpg"
+      "base/test/img/unnamed3.jpg"
     ],
     name: "Application 3",
     url: "https://url3.domain/application3",
