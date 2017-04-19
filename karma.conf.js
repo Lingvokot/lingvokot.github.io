@@ -27,7 +27,8 @@ module.exports = function (config) {
     },
     proxies: {
       "/src/img/": "http://localhost:9876/base/src/img/",
-      "/dist/": "http://localhost:9876/base/dist/"
+      "/dist/": "http://localhost:9876/base/dist/",
+      "/test/img/": "http://localhost:9876/base/test/img/"
     },
     reporters: [ "dots" ], //report results in this format
     webpack: webpackConfig,
