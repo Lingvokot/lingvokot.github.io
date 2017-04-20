@@ -17,17 +17,25 @@ class Screens extends React.Component {
     return (
       <Sidebar.Pusher>
         <Grid columns={1}>
-          <Element className="screen our-apps column" name="Applications"
-                  style={{paddingTop: this.props.paddingTop}}>
+          <Element className="screen our-apps column"
+              name="Applications"
+              style={{paddingTop: this.props.paddingTop}}
+          >
             <OurApps/>
           </Element>
-          <Element className="screen column" name="Technologies">
+          <Element className="screen column"
+              name="Technologies"
+          >
             <Technologies/>
           </Element>
-          <Element className="screen column" name="Socials">
+          <Element className="screen column"
+              name="Socials"
+          >
             <OurWorld/>
           </Element>
-          <Element className="screen column" name="Investors">
+          <Element className="screen column"
+              name="Investors"
+          >
             <ForInvestors/>
           </Element>
         </Grid>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ReactDOMServer from "react-dom/server";
 
 import App from "src/components/App.js";
-import 'semantic-ui-css/semantic.min.css';
+import "semantic-ui-css/semantic.min.css";
 
 // are we running in DOM environment?
 global.IS_CLIENT = typeof document !== "undefined";

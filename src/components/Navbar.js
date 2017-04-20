@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-scroll";
 import "src/styles/Navbar.css";
 import $ from "jquery";
-import {Grid, Sidebar, Segment, Menu} from "semantic-ui-react";
+import {Grid, Sidebar, Segment} from "semantic-ui-react";
 
 const argumentsSet = [
   ["Applications"],
@@ -10,6 +10,8 @@ const argumentsSet = [
   ["Socials"],
   ["Investors", "For investors"]
 ];
+const totalPossible = 16;
+const computerColumns = 5, tabletColumns = 4;
 
 //WARNING: the wheel was invented here!!!
 class Navbar extends React.Component {
@@ -28,7 +30,8 @@ class Navbar extends React.Component {
         //let the link be active if and only if the respective element
         //has a top bound upper than half of inner window free of navbar
         //and has a bottom bound lower than half of inner window free of navbar
-        if (((rect.top - navbarHeight) < boundY) && ((rect.bottom - navbarHeight) > boundY)) {
+        if (((rect.top - navbarHeight) < boundY) &&
+            ((rect.bottom - navbarHeight) > boundY)) {
           if (name1 != this.state.activeLinkName)
             this.setState({activeLinkName: name1});
           break;
@@ -51,9 +54,17 @@ class Navbar extends React.Component {
   renderMenuLink(name, text = name) {
     let isActive = (this.state.activeLinkName == name);
     return (
-      <Grid.Column mobile={8} tablet={4} computer={3} key={name}
-                  className={"navigation__page-scroller navigation__page-scroller--green"}>
-        <Link className={name + (isActive ? " true-active": "")} to={name} {...Navbar.linkProps}>
+      <Grid.Column className={"navigation__page-scroller " +
+                              "navigation__page-scroller--green"}
+          computer={Math.floor(totalPossible / computerColumns)}
+          key={name}
+          mobile={totalPossible / 2}
+          tablet={totalPossible / tabletColumns}
+      >
+        <Link className={name + (isActive ? " true-active": "")}
+            to={name}
+            {...Navbar.linkProps}
+        >
           {text}
         </Link>
       </Grid.Column>
@@ -61,10 +72,21 @@ class Navbar extends React.Component {
   }
   render() {
     return (
-      <Sidebar as={Segment} animation='push' direction='top' visible className="navbar">
-        <Grid textAlign="center" columns={argumentsSet.length} className="page">
-          <Grid.Column tablet={16} computer={3}>
-            <img id="logo" src="src/img/navbar/logo.svg"/>
+      <Sidebar animation="push"
+          as={Segment}
+          className="navbar"
+          direction="top"
+          visible
+      >
+        <Grid className="page"
+            columns={argumentsSet.length}
+            textAlign="center"
+        >
+          <Grid.Column computer={Math.floor(totalPossible / computerColumns)}
+              tablet={totalPossible}
+          >
+            <img id="logo"
+                src="src/img/navbar/logo.svg"/>
           </Grid.Column>
           {argumentsSet.map((item) => this.renderMenuLink(...item))}
         </Grid>

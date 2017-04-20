@@ -1,35 +1,47 @@
 import React from "react";
 import {Grid} from "semantic-ui-react";
 
+const totalPossible = 16;
+
 class Slide extends React.Component {
 	render() {
     let app = this.props.app;
     return (
-      <Grid columns={2} stackable key={app.bundleId} style={{paddingBottom: 40}}>
-        <Grid.Column width={8}>
-          <img alt="screenshot" src={app.screenshotUrls[0] || "src/img/apps/devices.svg"}
-              className="image"/>
+      <Grid columns={2}
+          key={app.bundleId}
+          stackable
+          style={{paddingBottom: 40}}
+      >
+        <Grid.Column width={totalPossible / 2}>
+          <img alt="screenshot"
+              className="image"
+              src={app.screenshotUrls[0] || "src/img/apps/devices.svg"}/>
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={totalPossible / 2}>
           <Grid columns={2}>
-            <Grid.Column width={16}>
+            <Grid.Column width={totalPossible}>
               <h2 className="header header--level-2">
-                <div className="header--big">Applications</div>
+                <div className="header--big">{"Applications"}</div>
                 <div className="header--small header--heavy">
-                  You want to use
+                  {"You want to use"}
                 </div>
               </h2>
               <h3 className="header header--level-3 header--green">
                 {app.name}
               </h3>
               <p className="text text--green"
-                  dangerouslySetInnerHTML={{__html: app.description}}></p>
+                  dangerouslySetInnerHTML={{__html: app.description}}
+              ></p>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={totalPossible / 2}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
-                  <a title="Get it on App Store" className="store-link" href={app.url}>
-                    <img alt="App Store" src="src/img/apps/app-store.svg"/>
+                  <a className="store-link"
+                      href={app.url}
+                      title="Get it on App Store"
+                  >
+                    <img alt="App Store"
+                        src="src/img/apps/app-store.svg"/>
                   </a>
                 </Grid.Column>
               </Grid.Row>
@@ -39,12 +51,16 @@ class Slide extends React.Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={totalPossible / 2}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
-                  <a title="Get it on Google Play" className="store-link"
-                      href={"https://play.google.com/store/apps/details?id=" + app.bundleId}>
-                    <img alt="Google Play" src="src/img/apps/google-play.svg"/>
+                  <a className="store-link"
+                      href={"https://play.google.com/store/apps/details?id=" +
+                            app.bundleId}
+                      title="Get it on Google Play"
+                  >
+                    <img alt="Google Play"
+                        src="src/img/apps/google-play.svg"/>
                   </a>
                 </Grid.Column>
               </Grid.Row>
