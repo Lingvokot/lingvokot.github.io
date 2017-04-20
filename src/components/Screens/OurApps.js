@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import reqwest from "reqwest";
 import Carousel from "nuka-carousel";
 import "src/styles/Screens/OurApps.css";
@@ -7,7 +6,7 @@ import BulletControl from "./BulletControl.js";
 import PreviousControl from "./PreviousControl.js";
 import NextControl from "./NextControl.js";
 import Slide from "./Slide.js";
-import {Grid} from 'semantic-ui-react';
+import {Grid} from "semantic-ui-react";
 
 const decoratorsIfMoreOne = [{
   component: BulletControl,
@@ -22,12 +21,12 @@ const decoratorsIfMoreOne = [{
   position: "CenterRight",
   style: {}
 }];
-
 const settings = {
   wrapAround: true,
   speed: 500,
   slidesToShow: 1
 };
+const totalPossible = 16;
 
 class OurApps extends React.Component {
   constructor(props) {
@@ -35,11 +34,11 @@ class OurApps extends React.Component {
     this.state = {extract: []};
   }
   getAvailableApps() {
-    if (!IS_CLIENT)
+    if (!global.IS_CLIENT)
       return;
     reqwest({
-      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy&country=ru&entity=software\
-&attribute=softwareDeveloper",
+      url: "https://itunes.apple.com/search?term=oleksandr+nikolaievskiy\
+&country=ru&entity=software&attribute=softwareDeveloper",
       type: "jsonp"
     }).then(response => {
       return response.results.map(item => {
@@ -62,13 +61,20 @@ class OurApps extends React.Component {
   }
   render() {
     return (
-      <Grid stackable columns={1}>
-        <Grid.Column width={16}>
-          <Carousel {...settings} decorators={this.getNeededDecorators()}
-                    dragging={this.state.extract.length > 1}
-                    swiping={this.state.extract.length > 1}>
+      <Grid columns={1}
+          stackable
+      >
+        <Grid.Column width={totalPossible}>
+          <Carousel {...settings}
+              decorators={this.getNeededDecorators()}
+              dragging={this.state.extract.length > 1}
+              swiping={this.state.extract.length > 1}
+          >
           {this.state.extract.map((app) => {
-            return (<Slide app={app} key={app.bundleId}/>)
+            return (
+              <Slide app={app}
+                  key={app.bundleId}/>
+            )
           })}
           </Carousel>
         </Grid.Column>

@@ -22,10 +22,7 @@ describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: [
-        "/base/dist/main.css",
-        "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"
-      ]
+      stylesheet: ["/base/dist/main.css"]
     }, done);
   });
   after(function() {
