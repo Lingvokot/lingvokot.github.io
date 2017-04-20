@@ -37,3 +37,6 @@ yarn.lock
 
 # Semantic UI dir
 semantic
+
+# eslint cache
+.eslintcache
