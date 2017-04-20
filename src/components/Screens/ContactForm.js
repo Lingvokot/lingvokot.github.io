@@ -7,8 +7,8 @@ const appURL = "https://script.google.com/macros/s/AKfycbxUnBrdST0kW8Ds3-" +
 const totalPossible = 16;
 
 function emailIsValid(email) {
-  const re = new RegExp("^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w\
-[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$", "i");
+  const re = new RegExp("^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w" +
+                        "[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$", "i");
   return re.test(email);
 }
 
@@ -75,8 +75,8 @@ class ContactForm extends React.Component {
             <Checkbox checked={this.state.promotion}
                 className="field"
                 id="promotion"
-                label="We have expertise in the marketing or \
-applications promotion"
+                label={"We have expertise in the marketing or " +
+                      "applications promotion"}
                 onChange={(event, data) => this.onFieldChange(data)}/>
           </div>
           <div className="contact-form__submit-part">
