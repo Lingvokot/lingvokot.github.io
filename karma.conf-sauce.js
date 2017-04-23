@@ -1,18 +1,14 @@
 process.env.NODE_ENV = "development";
 
 var path = require("path");
-
-var webpackConfig = require("./webpack.config.js");
+var webpackConfig = require(path.resolve("webpack.config.js"));
 
 webpackConfig.module.loaders.push({
   test: /\.spec\.js$/,
   include: path.join(__dirname, "test"),
-  loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js"
+  loader: "babel-loader!imports-loader?test_bootstrap=test/test_bootstrap.js"
 });
 webpackConfig.devtool = "inline-source-map";
-
-// quixote is served as prebuilt bundle so skip parsing it
-webpackConfig.module.noParse.push(/quixote\.js$/);
 
 var seleniumPlatforms = ["Windows 10", "Linux", "macOS 10.12"];
 var appiumPlatforms = [
@@ -70,9 +66,9 @@ module.exports = function (config) {
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
       "test/test_bundle.js", "dist/main.css",
-       {pattern: "src/img/**/*.svg", watched: false, included: false, served: true, nocache: false},
-       {pattern: "dist/*", watched: false, included: false, served: true, nocache: false},
-       {pattern: "test/img/*", watched: false, included: false, served: true, nocache: false}
+      {pattern: "src/img/**/*.svg", watched: false, included: false, served: true, nocache: false},
+      {pattern: "dist/*", watched: false, included: false, served: true, nocache: false},
+      {pattern: "test/img/*", watched: false, included: false, served: true, nocache: false}
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader

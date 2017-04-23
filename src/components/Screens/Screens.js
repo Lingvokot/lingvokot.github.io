@@ -2,13 +2,13 @@ import React from "react";
 import Scroll from "react-scroll";
 import {Grid, Sidebar} from "semantic-ui-react";
 
-import OurApps from "./OurApps.js";
-import Technologies from "./Technologies.js";
-import OurWorld from "./OurWorld.js";
-import ForInvestors from "./ForInvestors.js";
+import OurApps from "./OurApps";
+import Technologies from "./Technologies";
+import OurWorld from "./OurWorld";
+import ForInvestors from "./ForInvestors";
 
-import "src/styles/Screens/Screens.css";
-import "src/styles/Text.css";
+import "../../styles/Screens/Screens.css";
+import "../../styles/Text.css";
 
 const Element = Scroll.Element;
 

@@ -2,11 +2,11 @@ import React from "react";
 import $ from "jquery";
 import {Sidebar, Segment} from "semantic-ui-react";
 
-import "src/styles/App.css";
+import "../styles/App.css";
 
-import Navbar from "./Navbar.js";
-import Screens from "./Screens/Screens.js";
-import Footer from "./Footer.js";
+import Navbar from "./Navbar";
+import Screens from "./Screens/Screens";
+import Footer from "./Footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.onWindowResize = () => {
       if (!global.IS_CLIENT)
         return;
-      let navbarHeight = $(".navbar")[0].clientHeight;
+      let navbarHeight = $(".navbar").first().clientHeight;
       if (navbarHeight != this.state.navbarHeight)
         this.setState({navbarHeight});
     }

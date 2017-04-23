@@ -1,8 +1,8 @@
 // This file is included into webpack test bundle and executes first
-
+console.log("butthurt3");
 var quixote = require("quixote");
 var chai = require("chai");
-
+console.log("butthurt4");
 chai.should();
 var expect = chai.expect;
 

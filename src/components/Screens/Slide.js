@@ -2,23 +2,25 @@ import React from "react";
 import {Grid} from "semantic-ui-react";
 
 const totalPossible = 16;
+const columnsNeeded = 2;
+const zero = 0;
 
 class Slide extends React.Component {
 	render() {
     let app = this.props.app;
     return (
-      <Grid columns={2}
+      <Grid columns={columnsNeeded}
           key={app.bundleId}
           stackable
           style={{paddingBottom: 40}}
       >
-        <Grid.Column width={totalPossible / 2}>
+        <Grid.Column width={totalPossible / columnsNeeded}>
           <img alt="screenshot"
               className="image"
-              src={app.screenshotUrls[0] || "src/img/apps/devices.svg"}/>
+              src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}/>
         </Grid.Column>
-        <Grid.Column width={totalPossible / 2}>
-          <Grid columns={2}>
+        <Grid.Column width={totalPossible / columnsNeeded}>
+          <Grid columns={columnsNeeded}>
             <Grid.Column width={totalPossible}>
               <h2 className="header header--level-2">
                 <div className="header--big">{"Applications"}</div>
@@ -30,10 +32,9 @@ class Slide extends React.Component {
                 {app.name}
               </h3>
               <p className="text text--green"
-                  dangerouslySetInnerHTML={{__html: app.description}}
-              ></p>
+                  dangerouslySetInnerHTML={{__html: app.description}}/>
             </Grid.Column>
-            <Grid.Column width={totalPossible / 2}>
+            <Grid.Column width={totalPossible / columnsNeeded}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
                   <a className="store-link"
@@ -51,7 +52,7 @@ class Slide extends React.Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>
-            <Grid.Column width={totalPossible / 2}>
+            <Grid.Column width={totalPossible / columnsNeeded}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
                   <a className="store-link"

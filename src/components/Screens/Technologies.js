@@ -1,5 +1,5 @@
 import React from "react";
-import "src/styles/Screens/Technologies.css";
+import "../../styles/Screens/Technologies.css";
 import {Grid} from "semantic-ui-react";
 const columnsAmount = 5;
 const totalPossible = 16;

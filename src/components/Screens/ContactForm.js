@@ -1,10 +1,11 @@
 import React from "react";
-import "src/styles/Screens/ContactForm.css";
+import "../../styles/Screens/ContactForm.css";
 import {Grid, Form, Button, Input, Checkbox} from "semantic-ui-react";
 
 const appURL = "https://script.google.com/macros/s/AKfycbxUnBrdST0kW8Ds3-" +
                 "F8bBmZmqReU__nxeA-AACJuD-vr5w8LeA/exec";
 const totalPossible = 16;
+const columnsNeeded = 2;
 
 function emailIsValid(email) {
   const re = new RegExp("^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w" +
@@ -49,7 +50,7 @@ class ContactForm extends React.Component {
   }
   render() {
     return (
-      <Grid.Column width={totalPossible / 2}>
+      <Grid.Column width={totalPossible / columnsNeeded}>
         <Form as="div"
             className="contact-form--container"
         >
@@ -80,8 +81,8 @@ class ContactForm extends React.Component {
                 onChange={(event, data) => this.onFieldChange(data)}/>
           </div>
           <div className="contact-form__submit-part">
-            <Button disabled={(this.state.name.length == 0) ||
-                              (this.state.email.length == 0)}
+            <Button disabled={(this.state.name == "") ||
+                              (this.state.email == "")}
                 id="submit-button"
                 onClick={() => this.submitForm()}
             >
