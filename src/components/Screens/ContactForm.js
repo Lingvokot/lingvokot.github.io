@@ -60,25 +60,29 @@ class ContactForm extends React.Component {
                 id="name"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="text"
-                value={this.state.name}/>
+                value={this.state.name}
+            />
             <div className="label">{"Site"}</div>
             <Input className="field"
                 id="site"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="text"
-                value={this.state.site}/>
+                value={this.state.site}
+            />
             <div className="label">{"E-mail"}</div>
             <Input className="field"
                 id="email"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="email"
-                value={this.state.email}/>
+                value={this.state.email}
+            />
             <Checkbox checked={this.state.promotion}
                 className="field"
                 id="promotion"
                 label={"We have expertise in the marketing or " +
                       "applications promotion"}
-                onChange={(event, data) => this.onFieldChange(data)}/>
+                onChange={(event, data) => this.onFieldChange(data)}
+            />
           </div>
           <div className="contact-form__submit-part">
             <Button disabled={(this.state.name == "") ||

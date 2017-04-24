@@ -14,7 +14,8 @@ class OurWorld extends React.Component {
         <Grid.Column width={totalPossible / neededColumns}>
             <img alt="Planet image"
                 id="planet-image"
-                src="src/img/world/planet.svg"/>
+                src="src/img/world/planet.svg"
+            />
         </Grid.Column>
         <Grid.Column width={totalPossible / neededColumns}>
           <Grid className="our-world-description">

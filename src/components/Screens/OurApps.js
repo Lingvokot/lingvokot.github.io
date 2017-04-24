@@ -34,6 +34,12 @@ class OurApps extends React.Component {
     super(props);
     this.state = {extract: []};
   }
+  componentWillMount() {
+    this.getAvailableApps();
+  }
+  getNeededDecorators() {
+    return (this.state.extract.length > one) ? decoratorsIfMoreOne : [];
+  }
   getAvailableApps() {
     if (!global.IS_CLIENT)
       return;
@@ -54,12 +60,6 @@ class OurApps extends React.Component {
       this.setState({extract});
     }).catch(err => console.log(err));
   }
-  getNeededDecorators() {
-    return (this.state.extract.length > one) ? decoratorsIfMoreOne : [];
-  }
-  componentWillMount() {
-    this.getAvailableApps();
-  }
   render() {
     return (
       <Grid columns={1}
@@ -73,8 +73,9 @@ class OurApps extends React.Component {
           >
           {this.state.extract.map((app) => {
             return (
-              <Slide app={app}
-                  key={app.bundleId}/>
+              <Slide {...app}
+                  key={app.bundleId}
+              />
             )
           })}
           </Carousel>

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class NextControl extends React.Component {
 	render() {
@@ -8,6 +9,10 @@ class NextControl extends React.Component {
       </button>
     )
   }
+}
+
+NextControl.propTypes = {
+	nextSlide: PropTypes.func
 }
 
 export default NextControl;

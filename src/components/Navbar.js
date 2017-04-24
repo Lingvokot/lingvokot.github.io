@@ -11,7 +11,7 @@ const argumentsSet = [
   {name: "Investors", text: "For investors"}
 ];
 const totalPossible = 16;
-const computerColumns = 5, tabletColumns = 4, mobileColumns = 2;
+const computerColumns = 5;
 const zero = 0;
 const middleQuotient = 0.5;
 
@@ -23,7 +23,7 @@ class Navbar extends React.Component {
     this.onWindowScroll = () => {
       if (!global.IS_CLIENT)
         return;
-      let navbarHeight = -(Navbar.linkProps.offset);
+      let navbarHeight = -(Navbar.offset);
       const sectionsNames = argumentsSet.map(item => item.name);
       for (let name1 of sectionsNames) {
         let associatedElement = $(`div[name="${name1}"]`)[zero];
@@ -33,19 +33,14 @@ class Navbar extends React.Component {
         //has a top bound upper than half of inner window free of navbar
         //and has a bottom bound lower than half of inner window free of navbar
         if (((rect.top - navbarHeight) < boundY) &&
-            ((rect.bottom - navbarHeight) > boundY)) {
-          if (name1 != this.state.activeLinkName)
-            this.setState({activeLinkName: name1});
+            ((rect.bottom - navbarHeight) > boundY) &&
+            (name1 != this.state.activeLinkName)) {
+          this.setState({activeLinkName: name1});
           break;
         }
       }
     }
   }
-
-  adjustNavBar = () => {
-    Navbar.linkProps.offset = -($(".navbar")[zero].clientHeight);
-  };
-
   componentDidMount() {
     if (global.IS_CLIENT) {
       window.addEventListener("scroll", this.onWindowScroll, true);
@@ -53,26 +48,15 @@ class Navbar extends React.Component {
       this.adjustNavBar();
     }
   }
-  renderMenuLink(name, text) {
-    console.log(name + " " + text);
-    let isActive = (this.state.activeLinkName == name);
-    return (
-      <Grid.Column className={"navigation__page-scroller " +
-                              "navigation__page-scroller--green"}
-          computer={Math.floor(totalPossible / computerColumns)}
-          key={name}
-          mobile={totalPossible / mobileColumns}
-          tablet={totalPossible / tabletColumns}
-      >
-        <Link className={name + (isActive ? " true-active": "")}
-            to={name}
-            {...Navbar.linkProps}
-        >
-          {text}
-        </Link>
-      </Grid.Column>
-    );
+  componentWillUnmount() {
+    if (global.IS_CLIENT) {
+      window.removeEventListener("scroll", this.onWindowScroll);
+      window.removeEventListener("resize", this.adjustNavBar);
+    }
   }
+  adjustNavBar = () => {
+    Navbar.offset = -($(".navbar")[zero].clientHeight);
+  };
   render() {
     return (
       <Sidebar animation="push"
@@ -89,34 +73,25 @@ class Navbar extends React.Component {
               tablet={totalPossible}
           >
             <img id="logo"
-                src="src/img/navbar/logo.svg"/>
+                src="src/img/navbar/logo.svg"
+            />
           </Grid.Column>
           {
             argumentsSet.map((item) => (
-              <MenuLink name={item.name}
-                  text={item.text || item.name}
+              <MenuLink isActive={item.name == this.state.activeLinkName}
                   key={item.name}
-                  linkProps={Navbar.linkProps}
-                  isActive={item.name == this.state.activeLinkName}/>
+                  name={item.name}
+                  offset={Navbar.offset}
+                  text={item.text || item.name}
+              />
             ))
           }
         </Grid>
       </Sidebar>
     );
   }
-  componentWillUnmount() {
-    if (global.IS_CLIENT) {
-      window.removeEventListener("scroll", this.onWindowScroll);
-      window.removeEventListener("resize", this.adjustNavBar);
-    }
-  }
 }
 
-Navbar.linkProps = {
-  duration: 200,
-  offset: 0,
-  spy: true,
-  smooth: true
-};
+Navbar.offset = 0;
 
 export default Navbar;

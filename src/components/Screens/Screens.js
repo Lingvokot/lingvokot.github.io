@@ -1,6 +1,7 @@
 import React from "react";
 import Scroll from "react-scroll";
 import {Grid, Sidebar} from "semantic-ui-react";
+import PropTypes from "prop-types";
 
 import OurApps from "./OurApps";
 import Technologies from "./Technologies";
@@ -42,6 +43,10 @@ class Screens extends React.Component {
       </Sidebar.Pusher>
     );
   }
+}
+
+Screens.propTypes = {
+  paddingTop: PropTypes.number
 }
 
 export default Screens;

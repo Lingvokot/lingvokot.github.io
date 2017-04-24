@@ -27,6 +27,11 @@ class App extends React.Component {
       this.onWindowResize();
     }
   }
+  componentWillUnmount() {
+    if (global.IS_CLIENT) {
+      window.removeEventListener("resize", this.onWindowResize);
+    }
+  }
   render() {
     return (
       <div>
@@ -37,11 +42,6 @@ class App extends React.Component {
         </Sidebar.Pushable>
       </div>
     );
-  }
-  componentWillUnmount() {
-    if (global.IS_CLIENT) {
-      window.removeEventListener("resize", this.onWindowResize);
-    }
   }
 }
 
