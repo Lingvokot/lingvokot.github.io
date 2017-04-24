@@ -10,7 +10,7 @@
     "test:karma:sauce": "karma start karma.conf-sauce.js",
     "test:karma": "karma start --single-run",
     "watch": "webpack-dev-server --watch --color --hot --inline --host 0.0.0.0",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && cp assets/privacy_policy.html ./policy.html",
     "static": "static",
     "lint": "eslint --cache --color --config .eslintrc 'src/**/*.js'"
   },
