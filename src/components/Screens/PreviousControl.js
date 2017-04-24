@@ -12,7 +12,7 @@ class PreviousControl extends React.Component {
 }
 
 PreviousControl.propTypes = {
-	previousSlide: PropTypes.func
+  previousSlide: PropTypes.func
 }
 
 export default PreviousControl;
