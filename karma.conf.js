@@ -12,7 +12,8 @@ webpackConfig.devtool = "inline-source-map";
 
 module.exports = function (config) {
   config.set({
-    browsers: ((process.platform == "darwin") ? [ "Firefox", "Chrome", "Safari" ] : ["Firefox", "Chrome"]),
+    browsers: ((process.platform == "darwin") ? ["Firefox", "Chrome", "Safari"]
+                                              : ["Firefox", "Chrome"]),
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
       "test/test_bundle.js", "dist/main.css",
@@ -36,7 +37,6 @@ module.exports = function (config) {
     logLevel: config.LOG_DEBUG,
     // Timeout for capturing a browser (in ms).
     captureTimeout: 180 * 1e3,
-
     // to avoid DISCONNECTED messages
     browserDisconnectTimeout : 10000, // default 2000
     browserDisconnectTolerance : 1, // default 0

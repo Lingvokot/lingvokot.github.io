@@ -1,8 +1,8 @@
 import React from "react";
-import {Link} from "react-scroll";
 import "../styles/Navbar.css";
 import $ from "jquery";
 import {Grid, Sidebar, Segment} from "semantic-ui-react";
+import MenuLink from "./MenuLink";
 
 const argumentsSet = [
   {name: "Applications"},
@@ -24,9 +24,9 @@ class Navbar extends React.Component {
       if (!global.IS_CLIENT)
         return;
       let navbarHeight = -(Navbar.linkProps.offset);
-      const sectionsNames = argumentsSet.map(item => item[zero]);
+      const sectionsNames = argumentsSet.map(item => item.name);
       for (let name1 of sectionsNames) {
-        let associatedElement = $("div[name=\"" + name1 + "\"]").first();
+        let associatedElement = $(`div[name="${name1}"]`)[zero];
         let rect = associatedElement.getClientRects()[zero];
         let boundY = (window.innerHeight - navbarHeight) * middleQuotient;
         //let the link be active if and only if the respective element
@@ -43,7 +43,7 @@ class Navbar extends React.Component {
   }
 
   adjustNavBar = () => {
-    Navbar.linkProps.offset = -($(".navbar").first().clientHeight);
+    Navbar.linkProps.offset = -($(".navbar")[zero].clientHeight);
   };
 
   componentDidMount() {
@@ -54,6 +54,7 @@ class Navbar extends React.Component {
     }
   }
   renderMenuLink(name, text) {
+    console.log(name + " " + text);
     let isActive = (this.state.activeLinkName == name);
     return (
       <Grid.Column className={"navigation__page-scroller " +
@@ -91,9 +92,13 @@ class Navbar extends React.Component {
                 src="src/img/navbar/logo.svg"/>
           </Grid.Column>
           {
-            argumentsSet.map((item) => {
-              this.renderMenuLink(item.name, item.text || item.name)
-            })
+            argumentsSet.map((item) => (
+              <MenuLink name={item.name}
+                  text={item.text || item.name}
+                  key={item.name}
+                  linkProps={Navbar.linkProps}
+                  isActive={item.name == this.state.activeLinkName}/>
+            ))
           }
         </Grid>
       </Sidebar>

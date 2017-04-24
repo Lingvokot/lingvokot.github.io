@@ -7,6 +7,7 @@ import "../styles/App.css";
 import Navbar from "./Navbar";
 import Screens from "./Screens/Screens";
 import Footer from "./Footer";
+const zero = 0;
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends React.Component {
     this.onWindowResize = () => {
       if (!global.IS_CLIENT)
         return;
-      let navbarHeight = $(".navbar").first().clientHeight;
+      let navbarHeight = $(".navbar")[zero].clientHeight;
       if (navbarHeight != this.state.navbarHeight)
         this.setState({navbarHeight});
     }

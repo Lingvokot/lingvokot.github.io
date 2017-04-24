@@ -18,6 +18,11 @@ var appiumPlatforms = [
 var knownBrowsers = ["chrome", "firefox", "safari"];
 var customLaunchers = {};
 
+//here custom launchers are generated
+/*
+On all platforms Chrome and Firefox are supported but Safari is
+supported only on MacOS and iOS
+*/
 for (var i = 0; i < seleniumPlatforms.length; i++) {
   var platform1 = seleniumPlatforms[i];
   for (var j = 0; j < knownBrowsers.length; j++) {
@@ -25,8 +30,8 @@ for (var i = 0; i < seleniumPlatforms.length; i++) {
     if ((platform1 != "macOS 10.12") && (browser1 == "safari"))
       continue;
     else
-      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
-                      "_" + browser1] = {
+      customLaunchers[`sl_${platform1.split(" ")[0].toLowerCase()}_` +
+                      browser1] = {
         base: "SauceLabs",
         browserName: browser1,
         platform: platform1
@@ -36,18 +41,18 @@ for (var i = 0; i < seleniumPlatforms.length; i++) {
 for (var i = 0; i < appiumPlatforms.length; i++) {
   var platform1 = appiumPlatforms[i];
   var device1 = platform1.deviceName;
-  platform1 = platform1.platform;
+  var platformName = platform1.platform;
   for (var j = 0; j < knownBrowsers.length; j++) {
     var browser1 = knownBrowsers[j];
     browser1 = browser1.substr(0, 1).toUpperCase() + browser1.substr(1);
-    if ((platform1 != "iOS") && (browser1 == "Safari"))
+    if ((platformName != "iOS") && (browser1 == "Safari"))
       continue;
     else
-      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
-                      "_" + browser1] = {
+      customLaunchers[`sl_${platformName.split(" ")[0].toLowerCase()}_` +
+                      browser1] = {
         base: "SauceLabs",
         browserName: browser1,
-        platform: platform1,
+        platform: platformName,
         deviceName: device1
       }
   }
