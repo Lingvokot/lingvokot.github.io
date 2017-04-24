@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactDOMServer from "react-dom/server";
 
-import App from "src/components/App.js";
+import App from "src/components/App";
 import "semantic-ui-css/semantic.min.css";
 
 // are we running in DOM environment?

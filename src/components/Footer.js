@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid, Segment, Menu} from "semantic-ui-react";
 
-import "src/styles/Footer.css";
+import "../styles/Footer.css";
 const totalPossible = 16;
 //Oh my God, this eslint is sometimes a true paranoid!
 const totalIcons = 3;
@@ -9,11 +9,9 @@ const totalIcons = 3;
 class Footer extends React.Component {
   render () {
     return (
-      <Menu animation="push"
-          as={Segment}
+      <Menu as={Segment}
           direction="bottom"
           id="footer"
-          visible
       >
         <Grid centered
             className=" footer-socials"

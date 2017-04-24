@@ -1,49 +1,46 @@
 import React from "react";
-import {Link} from "react-scroll";
-import "src/styles/Navbar.css";
+import "../styles/Navbar.css";
 import $ from "jquery";
 import {Grid, Sidebar, Segment} from "semantic-ui-react";
+import MenuLink from "./MenuLink";
 
 const argumentsSet = [
-  ["Applications"],
-  ["Technologies"],
-  ["Socials"],
-  ["Investors", "For investors"]
+  {name: "Applications"},
+  {name: "Technologies"},
+  {name: "Socials"},
+  {name: "Investors", text: "For investors"}
 ];
 const totalPossible = 16;
-const computerColumns = 5, tabletColumns = 4;
+const computerColumns = 5;
+const zero = 0;
+const middleQuotient = 0.5;
 
 //WARNING: the wheel was invented here!!!
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {activeLinkName: argumentsSet[0][0]};
+    this.state = {activeLinkName: argumentsSet[zero].name};
     this.onWindowScroll = () => {
       if (!global.IS_CLIENT)
         return;
-      let navbarHeight = -(Navbar.linkProps.offset);
-      const sectionsNames = argumentsSet.map(item => item[0]);
+      let navbarHeight = -(Navbar.offset);
+      const sectionsNames = argumentsSet.map(item => item.name);
       for (let name1 of sectionsNames) {
-        let associatedElement = $("div[name=\"" + name1 + "\"]")[0];
-        let rect = associatedElement.getClientRects()[0];
-        let boundY = (window.innerHeight - navbarHeight) / 2;
+        let associatedElement = $(`div[name="${name1}"]`)[zero];
+        let rect = associatedElement.getClientRects()[zero];
+        let boundY = (window.innerHeight - navbarHeight) * middleQuotient;
         //let the link be active if and only if the respective element
         //has a top bound upper than half of inner window free of navbar
         //and has a bottom bound lower than half of inner window free of navbar
         if (((rect.top - navbarHeight) < boundY) &&
-            ((rect.bottom - navbarHeight) > boundY)) {
-          if (name1 != this.state.activeLinkName)
-            this.setState({activeLinkName: name1});
+            ((rect.bottom - navbarHeight) > boundY) &&
+            (name1 != this.state.activeLinkName)) {
+          this.setState({activeLinkName: name1});
           break;
         }
       }
     }
   }
-
-  adjustNavBar = () => {
-    Navbar.linkProps.offset = -($(".navbar")[0].clientHeight);
-  };
-
   componentDidMount() {
     if (global.IS_CLIENT) {
       window.addEventListener("scroll", this.onWindowScroll, true);
@@ -51,25 +48,15 @@ class Navbar extends React.Component {
       this.adjustNavBar();
     }
   }
-  renderMenuLink(name, text = name) {
-    let isActive = (this.state.activeLinkName == name);
-    return (
-      <Grid.Column className={"navigation__page-scroller " +
-                              "navigation__page-scroller--green"}
-          computer={Math.floor(totalPossible / computerColumns)}
-          key={name}
-          mobile={totalPossible / 2}
-          tablet={totalPossible / tabletColumns}
-      >
-        <Link className={name + (isActive ? " true-active": "")}
-            to={name}
-            {...Navbar.linkProps}
-        >
-          {text}
-        </Link>
-      </Grid.Column>
-    );
+  componentWillUnmount() {
+    if (global.IS_CLIENT) {
+      window.removeEventListener("scroll", this.onWindowScroll);
+      window.removeEventListener("resize", this.adjustNavBar);
+    }
   }
+  adjustNavBar = () => {
+    Navbar.offset = -($(".navbar")[zero].clientHeight);
+  };
   render() {
     return (
       <Sidebar animation="push"
@@ -86,26 +73,25 @@ class Navbar extends React.Component {
               tablet={totalPossible}
           >
             <img id="logo"
-                src="src/img/navbar/logo.svg"/>
+                src="src/img/navbar/logo.svg"
+            />
           </Grid.Column>
-          {argumentsSet.map((item) => this.renderMenuLink(...item))}
+          {
+            argumentsSet.map((item) => (
+              <MenuLink isActive={item.name == this.state.activeLinkName}
+                  key={item.name}
+                  name={item.name}
+                  offset={Navbar.offset}
+                  text={item.text || item.name}
+              />
+            ))
+          }
         </Grid>
       </Sidebar>
     );
   }
-  componentWillUnmount() {
-    if (global.IS_CLIENT) {
-      window.removeEventListener("scroll", this.onWindowScroll);
-      window.removeEventListener("resize", this.adjustNavBar);
-    }
-  }
 }
 
-Navbar.linkProps = {
-  duration: 200,
-  offset: 0,
-  spy: true,
-  smooth: true
-};
+Navbar.offset = 0;
 
 export default Navbar;

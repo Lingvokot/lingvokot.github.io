@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class PreviousControl extends React.Component {
   render() {
@@ -8,6 +9,10 @@ class PreviousControl extends React.Component {
       </button>
     )
   }
+}
+
+PreviousControl.propTypes = {
+  previousSlide: PropTypes.func
 }
 
 export default PreviousControl;

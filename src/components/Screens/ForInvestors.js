@@ -1,18 +1,19 @@
 import React from "react";
-import ContactForm from "./ContactForm.js";
+import ContactForm from "./ContactForm";
 import {Grid, } from "semantic-ui-react";
-import "src/styles/Screens/ForInvestors.css";
+import "../../styles/Screens/ForInvestors.css";
 
 const totalPossible = 16;
+const columnsNeeded = 2;
 
 class ForInvestors extends React.Component {
   render () {
     return (
       <Grid className="section__content section__content-for-investors"
-          columns={2}
+          columns={columnsNeeded}
       >
         <ContactForm />
-        <Grid.Column width={totalPossible / 2}>
+        <Grid.Column width={totalPossible / columnsNeeded}>
           <h2 className="header header--level-2">
             <div className="header--big">
               {"Great opportunities for your investments"}

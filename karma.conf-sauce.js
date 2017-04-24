@@ -1,18 +1,14 @@
 process.env.NODE_ENV = "development";
 
 var path = require("path");
-
-var webpackConfig = require("./webpack.config.js");
+var webpackConfig = require(path.resolve("webpack.config.js"));
 
 webpackConfig.module.loaders.push({
   test: /\.spec\.js$/,
   include: path.join(__dirname, "test"),
-  loader: "babel-loader!imports?test_bootstrap=test/test_bootstrap.js"
+  loader: "babel-loader!imports-loader?test_bootstrap=test/test_bootstrap.js"
 });
 webpackConfig.devtool = "inline-source-map";
-
-// quixote is served as prebuilt bundle so skip parsing it
-webpackConfig.module.noParse.push(/quixote\.js$/);
 
 var seleniumPlatforms = ["Windows 10", "Linux", "macOS 10.12"];
 var appiumPlatforms = [
@@ -22,6 +18,11 @@ var appiumPlatforms = [
 var knownBrowsers = ["chrome", "firefox", "safari"];
 var customLaunchers = {};
 
+//here custom launchers are generated
+/*
+On all platforms Chrome and Firefox are supported but Safari is
+supported only on MacOS and iOS
+*/
 for (var i = 0; i < seleniumPlatforms.length; i++) {
   var platform1 = seleniumPlatforms[i];
   for (var j = 0; j < knownBrowsers.length; j++) {
@@ -29,8 +30,8 @@ for (var i = 0; i < seleniumPlatforms.length; i++) {
     if ((platform1 != "macOS 10.12") && (browser1 == "safari"))
       continue;
     else
-      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
-                      "_" + browser1] = {
+      customLaunchers[`sl_${platform1.split(" ")[0].toLowerCase()}_` +
+                      browser1] = {
         base: "SauceLabs",
         browserName: browser1,
         platform: platform1
@@ -40,18 +41,18 @@ for (var i = 0; i < seleniumPlatforms.length; i++) {
 for (var i = 0; i < appiumPlatforms.length; i++) {
   var platform1 = appiumPlatforms[i];
   var device1 = platform1.deviceName;
-  platform1 = platform1.platform;
+  var platformName = platform1.platform;
   for (var j = 0; j < knownBrowsers.length; j++) {
     var browser1 = knownBrowsers[j];
     browser1 = browser1.substr(0, 1).toUpperCase() + browser1.substr(1);
-    if ((platform1 != "iOS") && (browser1 == "Safari"))
+    if ((platformName != "iOS") && (browser1 == "Safari"))
       continue;
     else
-      customLaunchers["sl_" + platform1.split(" ")[0].toLowerCase() +
-                      "_" + browser1] = {
+      customLaunchers[`sl_${platformName.split(" ")[0].toLowerCase()}_` +
+                      browser1] = {
         base: "SauceLabs",
         browserName: browser1,
-        platform: platform1,
+        platform: platformName,
         deviceName: device1
       }
   }
@@ -70,9 +71,9 @@ module.exports = function (config) {
     frameworks: [ "mocha" ], //use the mocha test framework
     files: [ //just load these files
       "test/test_bundle.js", "dist/main.css",
-       {pattern: "src/img/**/*.svg", watched: false, included: false, served: true, nocache: false},
-       {pattern: "dist/*", watched: false, included: false, served: true, nocache: false},
-       {pattern: "test/img/*", watched: false, included: false, served: true, nocache: false}
+      {pattern: "src/img/**/*.svg", watched: false, included: false, served: true, nocache: false},
+      {pattern: "dist/*", watched: false, included: false, served: true, nocache: false},
+      {pattern: "test/img/*", watched: false, included: false, served: true, nocache: false}
     ],
     preprocessors: {
       "test/test_bundle.js": [ "webpack", "sourcemap" ] //preprocess with webpack and our sourcemap loader

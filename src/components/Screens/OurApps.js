@@ -1,11 +1,11 @@
 import React from "react";
 import reqwest from "reqwest";
 import Carousel from "nuka-carousel";
-import "src/styles/Screens/OurApps.css";
-import BulletControl from "./BulletControl.js";
-import PreviousControl from "./PreviousControl.js";
-import NextControl from "./NextControl.js";
-import Slide from "./Slide.js";
+import "../../styles/Screens/OurApps.css";
+import BulletControl from "./BulletControl";
+import PreviousControl from "./PreviousControl";
+import NextControl from "./NextControl";
+import Slide from "./Slide";
 import {Grid} from "semantic-ui-react";
 
 const decoratorsIfMoreOne = [{
@@ -27,11 +27,18 @@ const settings = {
   slidesToShow: 1
 };
 const totalPossible = 16;
+const one = 1;
 
 class OurApps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {extract: []};
+  }
+  componentWillMount() {
+    this.getAvailableApps();
+  }
+  getNeededDecorators() {
+    return (this.state.extract.length > one) ? decoratorsIfMoreOne : [];
   }
   getAvailableApps() {
     if (!global.IS_CLIENT)
@@ -53,12 +60,6 @@ class OurApps extends React.Component {
       this.setState({extract});
     }).catch(err => console.log(err));
   }
-  getNeededDecorators() {
-    return this.state.extract.length > 1 ? decoratorsIfMoreOne : [];
-  }
-  componentWillMount() {
-    this.getAvailableApps();
-  }
   render() {
     return (
       <Grid columns={1}
@@ -67,13 +68,14 @@ class OurApps extends React.Component {
         <Grid.Column width={totalPossible}>
           <Carousel {...settings}
               decorators={this.getNeededDecorators()}
-              dragging={this.state.extract.length > 1}
-              swiping={this.state.extract.length > 1}
+              dragging={this.state.extract.length > one}
+              swiping={this.state.extract.length > one}
           >
           {this.state.extract.map((app) => {
             return (
-              <Slide app={app}
-                  key={app.bundleId}/>
+              <Slide {...app}
+                  key={app.bundleId}
+              />
             )
           })}
           </Carousel>

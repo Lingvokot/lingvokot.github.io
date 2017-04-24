@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class BulletControl extends React.Component {
 	shouldComponentUpdate(nextProps) {
@@ -20,11 +21,16 @@ class BulletControl extends React.Component {
         <li className={"carousel-control " + active}
             key={i}
             onClick={props.goToSlide.bind(null,i)}
-        ></li>
+        />
       );
     }
     return (<ul className="carousel-controls">{buttons}</ul>);
   }
+}
+
+BulletControl.propTypes = {
+  currentSlide: PropTypes.number,
+  slideCount: PropTypes.number
 }
 
 export default BulletControl;

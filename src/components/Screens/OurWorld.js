@@ -3,18 +3,21 @@ import {Grid} from "semantic-ui-react";
 
 const totalPossible = 16;
 const mobileColumns = 3, tabletColumns = 4, computerColumns = 5;
+const neededColumns = 2;
 
 class OurWorld extends React.Component {
   render () {
     return (
-      <Grid column={2}
-          stackable>
-        <Grid.Column width={totalPossible / 2}>
+      <Grid columns={neededColumns}
+          stackable
+      >
+        <Grid.Column width={totalPossible / neededColumns}>
             <img alt="Planet image"
                 id="planet-image"
-                src="src/img/world/planet.svg"/>
+                src="src/img/world/planet.svg"
+            />
         </Grid.Column>
-        <Grid.Column width={totalPossible / 2}>
+        <Grid.Column width={totalPossible / neededColumns}>
           <Grid className="our-world-description">
             <Grid.Column width={totalPossible}>
               <h2 className="header header--level-2">
