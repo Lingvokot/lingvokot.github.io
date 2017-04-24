@@ -9,11 +9,9 @@ const totalIcons = 3;
 class Footer extends React.Component {
   render () {
     return (
-      <Menu animation="push"
-          as={Segment}
+      <Menu as={Segment}
           direction="bottom"
           id="footer"
-          visible
       >
         <Grid centered
             className=" footer-socials"
