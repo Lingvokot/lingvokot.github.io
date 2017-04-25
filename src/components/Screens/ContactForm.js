@@ -8,8 +8,11 @@ const totalPossible = 16;
 const columnsNeeded = 2;
 
 function emailIsValid(email) {
-  const re = new RegExp("^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w" +
-                        "[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$", "i");
+  const re = new RegExp(
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))/.source +
+    "@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\" +
+    "-0-9]+\\.)+[a-zA-Z]{2,}))$"
+  );
   return re.test(email);
 }
 
