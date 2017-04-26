@@ -42,7 +42,6 @@ class ContactForm extends React.Component {
     xhr.open("POST", appURL);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onload = () => {
-      this.setState({ loading: false });
       alert("Thank you for reaching out. We will get back to you soon");
       this.setState({
         email: "",
