@@ -54,27 +54,35 @@ class ContactForm extends React.Component {
   render() {
     return (
       <Grid.Column width={totalPossible / columnsNeeded}>
-        <Form as="div"
+        <Form
+            action="https://docs.google.com/forms/d/e/1FAIpQLScv88X27c7q1uOVqyiX8JUb6CzjEuQg4GjzPZJpFdMyClxq4A/formResponse" // eslint-disable-line
+            as="div"
             className="contact-form--container"
         >
           <div className="contact-form__input-part">
             <div className="label">{"Name"}</div>
-            <Input className="field"
+            <Input
+                className="field"
                 id="name"
+                name="entry.799353464"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="text"
                 value={this.state.name}
             />
             <div className="label">{"Site"}</div>
-            <Input className="field"
+            <Input
+                className="field"
                 id="site"
+                name="entry.467602186"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="text"
                 value={this.state.site}
             />
             <div className="label">{"E-mail"}</div>
-            <Input className="field"
+            <Input
+                className="field"
                 id="email"
+                name="entry.1781812128"
                 onChange={(event, data) => this.onFieldChange(data)}
                 type="email"
                 value={this.state.email}
@@ -84,6 +92,7 @@ class ContactForm extends React.Component {
                 id="promotion"
                 label={"We have expertise in the marketing or " +
                       "applications promotion"}
+                name="entry.1960241228"
                 onChange={(event, data) => this.onFieldChange(data)}
             />
           </div>
@@ -96,6 +105,27 @@ class ContactForm extends React.Component {
               {"Send"}
             </Button>
           </div>
+
+          <Input
+              name="fvv"
+              type="hidden"
+              value="1"
+          />
+          <Input
+              name="draftResponse"
+              type="hidden"
+              value="[null,null,&quot;5246452325233904698&quot;]"
+          />
+          <Input
+              name="pageHistory"
+              type="hidden"
+              value="0"
+          />
+          <Input
+              name="fbzx"
+              type="hidden"
+              value="5246452325233904698"
+          />
         </Form>
       </Grid.Column>
     );
