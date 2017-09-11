@@ -19,7 +19,7 @@ class Slide extends React.Component {
           <img alt="screenshot"
               className="image"
               src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
-							style={{height: "75%"}}
+              style={{height: "75%"}}
           />
         </Grid.Column>
         <Grid.Column width={totalPossible / columnsNeeded}>
@@ -74,35 +74,35 @@ class Slide extends React.Component {
             <Grid.Column width={totalPossible / columnsNeeded}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
-								{
+                {
                   app.androidURL ? (
-										<a className="store-link"
-                      	href={"https://play.google.com/store/apps/details?id=" +
-                            	app.bundleId}
-                      	title="Get it on Google Play"
-                  	>
-                    	<img alt="Google Play"
-                        	src="src/img/apps/google-play.svg"
-                    	/>
-                  	</a>
-									) : (
-										<p className="text text--green"
+                    <a className="store-link"
+                        href={"https://play.google.com/store/apps/details?id=" +
+                              app.bundleId}
+                        title="Get it on Google Play"
+                    >
+                      <img alt="Google Play"
+                          src="src/img/apps/google-play.svg"
+                      />
+                    </a>
+                  ) : (
+                    <p className="text text--green"
                         style={{textAlign: "center"}}
                     >
                       Not available on Google Play for now
                     </p>
-									)
-								}
+                  )
+                }
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-							{
-								app.androidURL && (
-                	<div className="column shadow-container">
-                  	<img src="src/img/apps/google-play-button-shadow.svg"/>
-                	</div>
-								)
-							}
+              {
+                app.androidURL && (
+                  <div className="column shadow-container">
+                    <img src="src/img/apps/google-play-button-shadow.svg"/>
+                  </div>
+                )
+              }
               </Grid.Row>
             </Grid.Column>
           </Grid>
