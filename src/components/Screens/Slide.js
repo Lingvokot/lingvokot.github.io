@@ -7,7 +7,7 @@ const columnsNeeded = 2;
 const zero = 0;
 
 class Slide extends React.Component {
-	render() {
+  render() {
     let app = this.props;
     return (
       <Grid columns={columnsNeeded}
@@ -40,19 +40,33 @@ class Slide extends React.Component {
             <Grid.Column width={totalPossible / columnsNeeded}>
               <Grid.Row>
                 <Grid.Column className="above-shadow">
-                  <a className="store-link"
-                      href={app.url}
-                      title="Get it on App Store"
-                  >
-                    <img alt="App Store"
-                        src="src/img/apps/app-store.svg"
-                    />
-                  </a>
+                {
+                  app.url ? (
+                    <a className="store-link"
+                        href={app.url}
+                        title="Get it on App Store"
+                    >
+                      <img alt="App Store"
+                          src="src/img/apps/app-store.svg"
+                      />
+                    </a>
+                  ) : (
+                    <p className="text text--green"
+                        style={{textAlign: "center"}}
+                    >
+                      Not available on App Store for now
+                    </p>
+                  )
+                }
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column className="shadow-container">
-                  <img src="src/img/apps/app-store-button-shadow.svg"/>
+                {
+                  app.url && (
+                    <img src="src/img/apps/app-store-button-shadow.svg"/>
+                  )
+                }
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>
