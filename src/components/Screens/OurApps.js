@@ -83,8 +83,8 @@ educational game for children and adults.\n\
 In this game, you have to solve the computer-generated code with a certain \
 number of moves.\n\
 Why would you like this game?\n\
-- A large selection of levels and complex combinations for experienced players\n\
-- The ability to play a quick occasional game\n\
+- A large selection of levels and complex combinations for experienced players\
+\n- The ability to play a quick occasional game\n\
 - Compete with yourself and get the best level time\n\
 - A great tool to relax when your brain is overstressed\n\
 - “Bulls and Cows” maniacs will enjoy this version of the game with a nice \
