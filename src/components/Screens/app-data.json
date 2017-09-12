@@ -9,20 +9,8 @@
 			"https://lh3.googleusercontent.com/BfnRz5u_PZ_DIPotSyIAo5YWjFbu6GqN-90VcK-RYBl08RnfQOhV9hZ66KhSP0PKXbw=h900",
 			"https://lh3.googleusercontent.com/t2gmRYbTjdYBdTuwc3N-uD44Mb7DPQewQOatFRkHOP4kFCSitAwYX76frHYXuzU-mA=h900"
 		],
+		"iOSURL": "https://itunes.apple.com/us/app/mastermind-code/id1239057753?mt=8",
 		"androidURL": "https://play.google.com/store/apps/details?id=com.lingvokot.mastermind.en",
 		"bundleId": "com.lingvokot.mastermind.en"
-	},
-	{
-		"icon": "https://lh3.googleusercontent.com/d2faPTUcaQjxh0CmIz-JrYIUxJrwaR5deb1AwpqMCFSqCm4xT0ji-o1ZR1PwyJh4QU0=w300",
-		"description": "Логическая бесплатная настольная игра для детей и взрослых Break a Code - разновидность популярной игры Мастермайнд.  <br>Сделайте вызов себе и своим способностям разгадывать шифры с помощью этого приложения. Отличная развивающая игра для детей и взрослых.  <br><br>В данной игре необходимо разгадать задуманный компьютером код за определенное количество ходов.  <br>Почему вам понравится играть?  <br>- Большой выбор уровней и сложные комбинации для опытных игроков  <br>- Возможность быстрой игры, которая будет сгенерирована случайным образом  <br>- Прохождение уровней на время<br>- Отличный тренажер и средство отдыха, когда ваш мозг перегружен<br>- Любителей \"Быки и Коровы\" порадует некоторая разновидность данной игры с приятным интерфейсом",
-		"screenshotUrls": [
-			"https://lh3.googleusercontent.com/fBEEwqhbFpmwZ-M_G2wS36T2B2j5w1-oGAIFuKN_zmU74YTtvdumpr3ChycOzA-z-o0=h900",
-			"https://lh3.googleusercontent.com/nX6yc73-Wqe2HWIatnxjFWiOsyZz9Lqb3D-tIG1dfhNWMchSvzYaYs2_dp-jjt1Dl2A=h900",
-			"https://lh3.googleusercontent.com/22MJFaT0jNxpXj307xhtg_M9XW-Jlp7FkDIKSVf9EQ8nxKc8ykm_tiRpeP8X9y7M7A=h900",
-			"https://lh3.googleusercontent.com/NHHlbYIMYBVvTH76byGikovjdmFEGrnGS3Zc7Sb77o8opgN8wFQ_FKIzxoOn-ZHlllgC=h900",
-			"https://lh3.googleusercontent.com/jMQuo-VEfM6CXsypK9NfGtwnLgqZFZXMtt9TViGLILYPinunLF4IDE8iL6usM-J4-NY=h900"
-		],
-		"androidURL": "https://play.google.com/store/apps/details?id=com.lingvokot.mastermind",
-		"bundleId": "com.lingvokot.mastermind"
 	}
 ]
