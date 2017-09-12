@@ -11,6 +11,7 @@
     "test:karma": "karma start --single-run",
     "watch": "webpack-dev-server --watch --color --hot --inline --host 0.0.0.0",
     "build": "node scripts/build.js && cp assets/privacy_policy.html ./policy.html",
+    "update-apps-info": "node --harmony ./scripts/update-apps-info.js",
     "static": "static",
     "lint": "eslint --cache --color --config .eslintrc 'src/**/*.js'"
   },
@@ -37,6 +38,7 @@
   "homepage": "https://github.com/Lingvokot/lingvokot.github.io#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
+    "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
@@ -56,8 +58,10 @@
     "img-loader": "^2.0.0",
     "imports-loader": "^0.7.1",
     "jquery": "^3.2.1",
+    "jsdom": "^11.2.0",
+    "json-format": "^1.0.1",
     "karma": "^1.6.0",
-    "karma-chrome-launcher": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^1.0.1",
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
@@ -89,7 +93,6 @@
     "webpack-dev-server": "^2.4.3"
   },
   "dependencies": {
-    "axios": "^0.16.1",
     "form-serialize": "^0.7.1",
     "jsonp": "^0.2.1",
     "nuka-carousel": "^2.0.4",
