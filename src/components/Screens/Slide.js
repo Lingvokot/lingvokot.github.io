@@ -44,7 +44,7 @@ class Slide extends React.Component {
                 {
                   app.iOSURL ? (
                     <a className="store-link"
-                        href={app.url}
+                        href={app.iOSURL}
                         title="Get it on App Store"
                     >
                       <img alt="App Store"
@@ -77,8 +77,7 @@ class Slide extends React.Component {
                 {
                   app.androidURL ? (
                     <a className="store-link"
-                        href={"https://play.google.com/store/apps/details?id=" +
-                              app.bundleId}
+                        href={app.androidURL}
                         title="Get it on Google Play"
                     >
                       <img alt="Google Play"

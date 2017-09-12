@@ -22,7 +22,8 @@ Fusce sagittis quam nec pharetra eleifend.<br>Quisque mollis vehicula eros.",
       "base/test/img/unnamed2.jpg"
     ],
     name: "Application 1",
-    url: "https://url1.domain/application1",
+    androidURL: "https://url1.domain/application1",
+    iOSURL: "https://url1.domain/application1",
     bundleId: "com.developer1.application1"
   },
   {
@@ -31,7 +32,8 @@ Fusce sagittis quam nec pharetra eleifend.<br>Quisque mollis vehicula eros.",
 Suspendisse iaculis orci id efficitur vulputate.",
     screenshotUrls: [],
     name: "Application 2",
-    url: "https://url2.domain/application2",
+    androidURL: "https://url2.domain/application2",
+    iOSURL: "https://url2.domain/application2",
     bundleId: "com.developer2.application2"
   },
   {
@@ -44,7 +46,8 @@ Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
       "base/test/img/unnamed3.jpg"
     ],
     name: "Application 3",
-    url: "https://url3.domain/application3",
+    androidURL: "https://url1.domain/application3",
+    iOSURL: "https://url1.domain/application3",
     bundleId: "com.developer3.application3"
   }
 ];
@@ -105,8 +108,8 @@ describe("OurApps", () => {
 
     let refs = slide.querySelectorAll("a.store-link");
     expect(refs.length).to.equal(2);
-    expect(refs[0].href).to.equal(dataSet.url);
-    expect(refs[1].href).to.equal("https://play.google.com/store/apps/details?id=" + dataSet.bundleId);
+    expect(refs[0].href).to.equal(dataSet.iOSURL);
+    expect(refs[1].href).to.equal(dataSet.androidURL);
     expect(refs[0].children.length).to.equal(1);
     expect(refs[1].children.length).to.equal(1);
     let maybeImages = [refs[0].children[0], refs[1].children[0]];
@@ -134,7 +137,7 @@ describe("OurApps", () => {
       checkSlideConsistency(slides[0], extract[0]);
       done();
     });
-  })
+  });
   it("Checking presence of necessary elements in case there are more than one apps", (done) => {
     reactElement.setState({extract}, () => {
       let sliderList = frame.get('.slider-list').toDomElement();
