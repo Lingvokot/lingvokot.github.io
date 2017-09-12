@@ -133,6 +133,14 @@ table {
 	padding-bottom: 0 !important;
 }
 
+.screenshot-column {
+  max-height: 768px !important;
+}
+
+.screenshot-column > img {
+  height: 100%;
+}
+
 .shadow-container {
 	padding-top: 6px !important;
 }
@@ -157,10 +165,19 @@ div.slider-decorator-1 img, div.slider-decorator-2 img {
 	height: 5rem;
 }
 
+div.slider-decorator-1 {
+  left: -4rem !important;
+}
+
+div.slider-decorator-2 {
+  right: -4rem !important;
+}
+
 div.slider-decorator-1 > button, div.slider-decorator-2 > button {
 	background-color: rgba(0, 0, 0, 0.05);
 	border: none;
-}.tech-link {
+}
+.tech-link {
   background: #f3c523;
   border-radius: .6rem;
   color: white;
