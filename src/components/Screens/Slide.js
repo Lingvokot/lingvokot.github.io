@@ -15,11 +15,13 @@ class Slide extends React.Component {
           stackable
           style={{paddingBottom: 40}}
       >
-        <Grid.Column width={totalPossible / columnsNeeded}>
+        <Grid.Column
+            className="screenshot-column"
+            width={totalPossible / columnsNeeded}
+        >
           <img alt="screenshot"
               className="image"
               src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
-              style={{height: "75%"}}
           />
         </Grid.Column>
         <Grid.Column width={totalPossible / columnsNeeded}>
