@@ -53,7 +53,7 @@ Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
 ];
 
 describe("OurApps", () => {
-  var frame, rootElement, element, pageBody, reactElement;
+  var frame, rootElement, pageBody, reactElement;
 	before(function(done) {
     frame = quixote.createFrame({
       stylesheet: [
@@ -70,8 +70,6 @@ describe("OurApps", () => {
     let container = frame.add('<div id="app-container"></div>', "container");
     let root = frame.get("#app-container", "react root element");
     rootElement = root.toDomElement();
-    reactElement = ReactDOM.render(<OurApps />, rootElement);
-    element = frame.get(".one.grid");
     pageBody = frame.body();
   });
 
@@ -124,34 +122,34 @@ describe("OurApps", () => {
   }
 
   it("Checking presence of necessary elements in case there are no apps", () => {
+    reactElement = ReactDOM.render(<OurApps apps={[]}/>, rootElement);
     let sliderList = frame.get(".slider-list").toDomElement();
     expect(sliderList.children.length).to.equal(0);
     checkDecoratorsPresence(false);
+    ReactDOM.unmountComponentAtNode(rootElement);
   });
-  it("Checking presence of necessary elements in case there is one app", (done) => {
-    reactElement.setState({extract: [extract[0]]}, () => {
-      let sliderList = frame.get(".slider-list").toDomElement();
-      let slides = sliderList.children;
-      expect(slides.length).to.equal(1);
-      checkDecoratorsPresence(false);
-      checkSlideConsistency(slides[0], extract[0]);
-      done();
-    });
+  it("Checking presence of necessary elements in case there is one app", () => {
+    reactElement = ReactDOM.render(<OurApps apps={[extract[0]]}/>, rootElement);
+    let sliderList = frame.get(".slider-list").toDomElement();
+    let slides = sliderList.children;
+    expect(slides.length).to.equal(1);
+    checkDecoratorsPresence(false);
+    checkSlideConsistency(slides[0], extract[0]);
+    ReactDOM.unmountComponentAtNode(rootElement);
   });
-  it("Checking presence of necessary elements in case there are more than one apps", (done) => {
-    reactElement.setState({extract}, () => {
-      let sliderList = frame.get('.slider-list').toDomElement();
-      expect(sliderList.children.length).to.equal(extract.length);
-      checkDecoratorsPresence(true);
-      let bulletControl = frame.get(".slider-decorator-0 > ul").toDomElement();
-      let dots = bulletControl.children;
-      expect(dots.length).to.equal(extract.length);
-      for (let i = 0; i < sliderList.children.length; i++) {
-        let slide1 = sliderList.children[i];
-        expect(dots[i].classList.contains("active")).to.equal(i == 0);
-        checkSlideConsistency(slide1, extract[i]);
-      }
-      done();
-    });
+  it("Checking presence of necessary elements in case there are more than one apps", () => {
+    reactElement = ReactDOM.render(<OurApps apps={extract}/>, rootElement);
+    let sliderList = frame.get('.slider-list').toDomElement();
+    expect(sliderList.children.length).to.equal(extract.length);
+    checkDecoratorsPresence(true);
+    let bulletControl = frame.get(".slider-decorator-0 > ul").toDomElement();
+    let dots = bulletControl.children;
+    expect(dots.length).to.equal(extract.length);
+    for (let i = 0; i < sliderList.children.length; i++) {
+      let slide1 = sliderList.children[i];
+      expect(dots[i].classList.contains("active")).to.equal(i == 0);
+      checkSlideConsistency(slide1, extract[i]);
+    }
+    ReactDOM.unmountComponentAtNode(rootElement);
   });
 });

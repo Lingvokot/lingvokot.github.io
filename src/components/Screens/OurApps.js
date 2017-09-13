@@ -7,6 +7,7 @@ import NextControl from "./NextControl";
 import Slide from "./Slide";
 import {Grid} from "semantic-ui-react";
 import appData from "./app-data.json";
+import PropTypes from "prop-types";
 
 const decoratorsIfMoreOne = [{
   component: BulletControl,
@@ -34,16 +35,8 @@ class OurApps extends React.Component {
     super(props);
     this.state = {extract: []};
   }
-  componentWillMount() {
-    this.getAvailableApps();
-  }
   getNeededDecorators() {
-    return (this.state.extract.length > one) ? decoratorsIfMoreOne : [];
-  }
-  getAvailableApps() {
-    if (!global.IS_CLIENT)
-      return;
-    this.setState({extract: appData});
+    return (this.props.apps.length > one) ? decoratorsIfMoreOne : [];
   }
   render() {
     return (
@@ -53,10 +46,10 @@ class OurApps extends React.Component {
         <Grid.Column width={totalPossible}>
           <Carousel {...settings}
               decorators={this.getNeededDecorators()}
-              dragging={this.state.extract.length > one}
-              swiping={this.state.extract.length > one}
+              dragging={this.props.apps.length > one}
+              swiping={this.props.apps.length > one}
           >
-          {this.state.extract.map((app) => {
+          {this.props.apps.map((app) => {
             return (
               <Slide {...app}
                   key={app.bundleId}
@@ -69,5 +62,21 @@ class OurApps extends React.Component {
     );
   }
 }
+
+// `apps` property was added in order to help make good tests for this component
+OurApps.propTypes = {
+  apps: PropTypes.arrayOf(PropTypes.shape({
+    icon: PropTypes.string,
+    description: PropTypes.string,
+    screenshotUrls: PropTypes.arrayOf(PropTypes.string),
+    iOSURL: PropTypes.string,
+    androidURL: PropTypes.string,
+    bundleId: PropTypes.string
+  }))
+};
+
+OurApps.defaultProps = {
+  apps: appData
+};
 
 export default OurApps;
