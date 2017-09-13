@@ -9,8 +9,9 @@
 			"https://lh3.googleusercontent.com/BfnRz5u_PZ_DIPotSyIAo5YWjFbu6GqN-90VcK-RYBl08RnfQOhV9hZ66KhSP0PKXbw=h900",
 			"https://lh3.googleusercontent.com/t2gmRYbTjdYBdTuwc3N-uD44Mb7DPQewQOatFRkHOP4kFCSitAwYX76frHYXuzU-mA=h900"
 		],
-		"iOSURL": "https://itunes.apple.com/us/app/mastermind-code/id1239057753?mt=8",
+		"name": "Mastermind Code",
 		"androidURL": "https://play.google.com/store/apps/details?id=com.lingvokot.mastermind.en",
-		"bundleId": "com.lingvokot.mastermind.en"
+		"bundleId": "com.lingvokot.mastermind.en",
+		"iOSURL": "https://itunes.apple.com/us/app/mastermind-code/id1239057753?mt=8"
 	}
 ]
