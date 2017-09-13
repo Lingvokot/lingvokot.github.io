@@ -11,6 +11,7 @@ class ForInvestors extends React.Component {
     return (
       <Grid className="section__content section__content-for-investors"
           columns={columnsNeeded}
+          stackable
       >
         <ContactForm />
         <Grid.Column width={totalPossible / columnsNeeded}>
