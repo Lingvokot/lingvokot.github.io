@@ -115,7 +115,7 @@ class Slide extends React.Component {
 
 Slide.propTypes = {
   bundleId: PropTypes.string,
-  screenshotUrls: PropTypes.array,
+  screenshotUrls: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
