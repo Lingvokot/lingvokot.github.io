@@ -11,10 +11,6 @@
   max-height: 768px !important;
 }
 
-.screenshot-column > img {
-  height: 100%;
-}
-
 .shadow-container {
 	padding-top: 6px !important;
 }
