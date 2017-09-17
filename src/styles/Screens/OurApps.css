@@ -7,12 +7,12 @@
 	padding-bottom: 0 !important;
 }
 
-.screenshot-column {
-  max-height: 768px !important;
-}
-
 .shadow-container {
 	padding-top: 6px !important;
+}
+
+.screenshot-column {
+  text-align: center;
 }
 
 ul.carousel-controls > li.carousel-control {
