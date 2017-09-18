@@ -13,7 +13,7 @@ class Slide extends React.Component {
       <Grid columns={columnsNeeded}
           key={app.bundleId}
           stackable
-          style={{paddingBottom: 40}}
+          style={{paddingBottom: 40, paddingTop: 10}}
       >
         <Grid.Column
             className="screenshot-column"
