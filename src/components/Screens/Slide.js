@@ -50,6 +50,7 @@ class Slide extends React.Component {
                         title="Get it on App Store"
                     >
                       <img alt="App Store"
+                          onClick={() => window.open(app.iOSURL, '_blank')}
                           src="src/img/apps/app-store.svg"
                       />
                     </a>
@@ -83,6 +84,7 @@ class Slide extends React.Component {
                         title="Get it on Google Play"
                     >
                       <img alt="Google Play"
+                      onClick={() => window.open(app.androidURL, '_blank')}
                           src="src/img/apps/google-play.svg"
                       />
                     </a>
