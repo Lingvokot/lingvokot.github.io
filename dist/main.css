@@ -133,9 +133,18 @@ table {
 	padding-bottom: 0 !important;
 }
 
-.screenshot-column {
-  max-height: 768px !important;
+.screenshot-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+@media (min-width: 1000px) {
+  .screenshot-image-wrapper .image {
+    height: 600px;
+  }
+}
+
 
 .shadow-container {
 	padding-top: 6px !important;
