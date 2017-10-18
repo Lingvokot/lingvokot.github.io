@@ -19,10 +19,12 @@ class Slide extends React.Component {
             className="screenshot-column"
             width={totalPossible / columnsNeeded}
         >
-          <img alt="screenshot"
+          <div className="screenshot-image-wrapper">
+            <img alt="screenshot"
               className="image"
               src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
-          />
+            />
+          </div>
         </Grid.Column>
         <Grid.Column width={totalPossible / columnsNeeded}>
           <Grid columns={columnsNeeded}>
