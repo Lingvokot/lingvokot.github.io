@@ -1,6 +1,7 @@
 image: node:6
 
 stages:
+  - test
   - deploy
 
 cache:
@@ -9,6 +10,11 @@ cache:
 before_script:
   - source .env
   - npm install
+
+test:
+  stage: test
+  script:
+    - npm run test
 
 pages:
   stage: deploy
