@@ -3,7 +3,7 @@ image: node:6
 stages:
   - deploy
 
-run:node
+run:node:
   stage: deploy
   before_script:
     - source .env
