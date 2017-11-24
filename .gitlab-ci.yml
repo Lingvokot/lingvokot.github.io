@@ -3,16 +3,17 @@ image: node:6
 stages:
   - deploy
 
-run:node:
+pages:
   stage: deploy
   before_script:
     - source .env
     - npm install
   script:
     - npm run build
-    - mv dist public
+    - mv dist public/dist
+    - mv index.html public/
   artifacts:
     paths:
     - public
-  # only:
-    # - master
+  only:
+    - master
