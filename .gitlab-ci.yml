@@ -18,6 +18,7 @@ pages:
     - mv dist public/
     - mv index.html public/
     - mv policy.html public/
+    - find public/
   artifacts:
     paths:
     - public
