@@ -21,6 +21,7 @@ function hexNotationToRgb(hex1) {
 describe("Footer", () => {
   var frame, rootElement, element, pageBody;
   before(function(done) {
+    this.timeout(10000);
     frame = quixote.createFrame({
       stylesheet: ["/base/dist/main.css"]
     }, done);

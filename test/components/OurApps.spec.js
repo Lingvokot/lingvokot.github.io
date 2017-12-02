@@ -55,6 +55,7 @@ Fusce sagittis quam nec pharetra eleifend. Quisque mollis vehicula eros.",
 describe("OurApps", () => {
   var frame, rootElement, pageBody, reactElement;
 	before(function(done) {
+    this.timeout(10000);
     frame = quixote.createFrame({
       stylesheet: [
         "/base/dist/main.css",
