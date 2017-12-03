@@ -41,9 +41,15 @@ class Navbar extends React.Component {
       }
     }
   }
+  componentWillMount() {
+    if (global.IS_CLIENT) {
+      window.addEventListener("load", () => {
+        window.addEventListener("scroll", this.onWindowScroll, true);
+      }, true);
+    }
+  }
   componentDidMount() {
     if (global.IS_CLIENT) {
-      window.addEventListener("scroll", this.onWindowScroll, true);
       window.addEventListener("resize", this.adjustNavBar, true);
       this.adjustNavBar();
     }

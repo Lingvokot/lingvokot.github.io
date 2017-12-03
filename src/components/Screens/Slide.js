@@ -21,8 +21,9 @@ class Slide extends React.Component {
         >
           <div className="screenshot-image-wrapper">
             <img alt="screenshot"
-              className="image"
-              src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
+                className="image"
+                height="600"
+                src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
             />
           </div>
         </Grid.Column>
