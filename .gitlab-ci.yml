@@ -12,11 +12,15 @@ before_script:
   - npm install
 
 test:
+  variables:
+    NODE_ENV: 'test'
   stage: test
   script:
     - npm run test
 
 pages:
+  variables:
+    NODE_ENV: 'production'
   stage: deploy
   script:
     - npm run build
