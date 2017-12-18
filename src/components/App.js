@@ -26,7 +26,9 @@ class App extends React.Component {
     if (global.IS_CLIENT) {
       window.addEventListener("resize", this.onWindowResize, true);
       this.onWindowResize();
-      animateScroll.scrollToTop({delay: 50, smooth: false, duration: 50});
+      window.addEventListener("load", () => {
+        animateScroll.scrollToTop({ delay: 1, smooth: false, duration: 1 });
+      }, true);
     }
   }
   componentWillUnmount() {
