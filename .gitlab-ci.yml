@@ -25,7 +25,7 @@ pages:
   script:
     - npm run build
     - cp -r src public/
-    - cp payomb* public/
+    - cp -r payomb* public/
     - mv dist public/
     - mv index.html public/
     - mv policy.html public/
