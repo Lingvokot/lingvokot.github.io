@@ -40,9 +40,7 @@ class OurApps extends React.Component {
   }
   render() {
     return (
-      <Grid columns={1}
-          stackable
-      >
+      <Grid columns={1}>
         <Grid.Column width={totalPossible}>
           <Carousel {...settings}
               decorators={this.getNeededDecorators()}
