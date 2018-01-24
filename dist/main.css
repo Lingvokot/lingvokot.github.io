@@ -84,10 +84,18 @@ table {
   justify-content: center;
 }
 
-.navbar > .grid > .column {
+.navbar > .grid {
   display: flex !important;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.logo-container {
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .navigation__page-scroller::before, .logo-container::before {
@@ -307,6 +315,11 @@ input:checked ~ .checkbox-img {
 .screen {
 	padding-left: 17% !important;
 	padding-right: 17% !important;
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+}
+.screens-container {
+  margin: 1em -1em -1em -1em
 }
 .header,
 .text {
