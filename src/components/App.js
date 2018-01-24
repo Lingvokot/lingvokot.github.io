@@ -6,7 +6,7 @@ import "../styles/App.css";
 import Navbar from "./Navbar";
 import Screens from "./Screens/Screens";
 import Footer from "./Footer";
-// import {animateScroll} from "react-scroll";
+import {animateScroll} from "react-scroll";
 const zero = 0;
 
 class App extends React.Component {
@@ -25,9 +25,9 @@ class App extends React.Component {
     if (global.IS_CLIENT) {
       window.addEventListener("resize", this.onWindowResize, true);
       this.onWindowResize();
-      /* window.addEventListener("load", () => {
+      window.addEventListener("load", () => {
         animateScroll.scrollToTop({ delay: 1, smooth: false, duration: 1 });
-      }, true); */
+      }, true);
     }
   }
   componentWillUnmount() {
