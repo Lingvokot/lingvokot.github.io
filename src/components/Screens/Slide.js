@@ -16,16 +16,14 @@ class Slide extends React.Component {
           style={{paddingBottom: 40, paddingTop: 10}}
       >
         <Grid.Column
-            className="screenshot-column"
+            className="screenshot-column screenshot-image-wrapper"
             width={totalPossible / columnsNeeded}
         >
-          <div className="screenshot-image-wrapper">
-            <img alt="screenshot"
-                className="image"
-                height="600"
-                src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
-            />
-          </div>
+          <img alt="screenshot"
+              className="image"
+              height="600"
+              src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
+          />
         </Grid.Column>
         <Grid.Column width={totalPossible / columnsNeeded}>
           <Grid columns={columnsNeeded}>
@@ -87,7 +85,7 @@ class Slide extends React.Component {
                         title="Get it on Google Play"
                     >
                       <img alt="Google Play"
-                      onClick={() => window.open(app.androidURL, "_blank")}
+                          onClick={() => window.open(app.androidURL, "_blank")}
                           src="src/img/apps/google-play.svg"
                       />
                     </a>

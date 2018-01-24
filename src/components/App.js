@@ -13,7 +13,7 @@ const zero = 0;
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {navbarHeight: 150};
+    this.state = {navbarHeight: 180};
     this.onWindowResize = () => {
       if (!global.IS_CLIENT)
         return;
