@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid} from "semantic-ui-react";
+import {Grid, Image} from "semantic-ui-react";
 import PropTypes from "prop-types";
 
 const totalPossible = 16;
@@ -10,18 +10,20 @@ class Slide extends React.Component {
   render() {
     let app = this.props;
     return (
-      <Grid columns={columnsNeeded}
+      <Grid
+          className="slide-grid"
+          columns={columnsNeeded}
           key={app.bundleId}
           stackable
-          style={{paddingBottom: 40, paddingTop: 10}}
       >
         <Grid.Column
-            className="screenshot-column screenshot-image-wrapper"
+            className="screenshot-image-wrapper"
+            verticalAlign="middle"
             width={totalPossible / columnsNeeded}
         >
-          <img alt="screenshot"
-              className="image"
-              height="600"
+          <Image alt="screenshot"
+              centered
+              className="screenshot"
               src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
           />
         </Grid.Column>

@@ -86,7 +86,6 @@ table {
 
 .navbar > .grid {
   display: flex !important;
-  align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
   margin-top: 0px !important;
@@ -95,7 +94,6 @@ table {
 
 .logo-container {
   display: flex !important;
-  justify-content: center !important;
 }
 
 .navigation__page-scroller::before, .logo-container::before {
@@ -134,7 +132,6 @@ table {
 }
 .image {
   margin-right: 1rem;
-  max-width: 100%;
 }
 
 .above-shadow {
@@ -143,8 +140,11 @@ table {
 
 .screenshot-image-wrapper {
   display: flex !important;
-  justify-content: center;
-  align-items: center;
+}
+
+.slide-grid {
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
 
 @media (min-width: 1000px) {

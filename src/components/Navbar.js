@@ -82,7 +82,7 @@ class Navbar extends React.Component {
               computer={Math.floor(totalPossible / computerColumns)}
               tablet={totalPossible}
           >
-            <Image
+            <Image centered
                 id="logo"
                 size="small"
                 src="src/img/navbar/logo.svg"
