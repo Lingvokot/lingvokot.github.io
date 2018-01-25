@@ -5,6 +5,7 @@ import {Grid, Form, Button, Input, Checkbox} from "semantic-ui-react";
 const totalPossible = 16;
 const columnsNeeded = 2;
 
+/* eslint-disable no-useless-escape */
 function emailIsValid(email) {
   const re = new RegExp(
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))/.source +
@@ -13,6 +14,7 @@ function emailIsValid(email) {
   );
   return re.test(email);
 }
+/* eslint-enable no-useless-escape */
 
 class ContactForm extends React.Component {
   constructor(props) {
