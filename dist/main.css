@@ -358,7 +358,6 @@ input:checked ~ .checkbox-img {
   background-color: #7cd985;
   padding-bottom: 0;
   padding-top: 0;
-  margin-right: -1rem;
   justify-content: center;
 }
 
