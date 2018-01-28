@@ -1,36 +1,36 @@
 .header,
 .text {
-  font-family: "Luba LT CYR";
+  font-family: "Luba LT CYR" !important;
 }
 
 .text,
 .header--level-3 {
-  color: #828882;
-  font-weight: 300;
+  color: #828882 !important;
+  font-weight: 300 !important;
 }
 
 .header--level-2 {
-  color: black;
-  text-transform: uppercase;
+  color: black !important;
+  text-transform: uppercase !important;
 }
 
 .header--big {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .header--small {
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 
 .header--heavy {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .header--level-3 {
-  margin: 1.6rem 0rem;
+  margin: 1.6rem 0rem !important;
 }
 
 .text--green,
 .header--green {
-  color: #3d6d42;
+  color: #3d6d42 !important;
 }

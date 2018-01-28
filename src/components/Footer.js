@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Segment, Menu} from "semantic-ui-react";
+import {Grid, Segment, Menu, Image} from "semantic-ui-react";
 
 import "../styles/Footer.css";
 const totalPossible = 16;
@@ -14,36 +14,48 @@ class Footer extends React.Component {
           id="footer"
       >
         <Grid centered
-            className=" footer-socials"
-            columns={1}
+            className="footer-socials"
+            columns={totalIcons}
         >
-          <Grid.Column verticalAlign="middle">
-            <Grid className="footer-socials"
-                columns={Math.floor(totalPossible / totalIcons)}
-            >
-              <Grid.Column/>
-              <Grid.Column id="footer-socials__github">
-                <a href="https://github.com/Lingvokot">
-                  <img src="src/img/footer/github-ico.svg"/>
-                </a>
-              </Grid.Column>
-              <Grid.Column id="footer-socials__facebook">
-                <a href=""><img src="src/img/footer/facebook-ico.svg"/></a>
-              </Grid.Column>
-              <Grid.Column id="footer-socials__slideshare">
-                <a href="http://www.slideshare.net/Lingvokot">
-                  <img src="src/img/footer/slideshare-ico.svg"/>
-                </a>
-              </Grid.Column>
-              <Grid.Column/>
-              <Grid.Column width={totalPossible}>
-                <p className="footer-text">
-                  <span>{"© 2017 LingvoKot Inc."}</span>
-                  <br/>
-                  <span>{"All rights reserved"}</span>
-                </p>
-              </Grid.Column>
-            </Grid>
+          <Grid.Column id="footer-socials__github"
+              textAlign="right"
+          >
+            <Image
+                centered
+                href="https://github.com/Lingvokot"
+                size="mini"
+                spaced={false}
+                src="src/img/footer/github-ico.svg"
+            />
+          </Grid.Column>
+          <div id="footer-socials__facebook">
+            <Image
+                centered
+                href=""
+                size="mini"
+                spaced={false}
+                src="src/img/footer/facebook-ico.svg"
+            />
+          </div>
+          <Grid.Column id="footer-socials__slideshare"
+              textAlign="left"
+          >
+            <Image
+                centered
+                href="http://www.slideshare.net/Lingvokot"
+                size="mini"
+                spaced={false}
+                src="src/img/footer/slideshare-ico.svg"
+            />
+          </Grid.Column>
+          <Grid.Column textAlign="center"
+            width={totalPossible}
+          >
+            <p className="footer-text">
+              <span>{"© 2017 LingvoKot Inc."}</span>
+              <br/>
+              <span>{"All rights reserved"}</span>
+            </p>
           </Grid.Column>
         </Grid>
       </Menu>

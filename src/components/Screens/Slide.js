@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Image} from "semantic-ui-react";
+import {Grid, Image, Header} from "semantic-ui-react";
 import PropTypes from "prop-types";
 
 const totalPossible = 16;
@@ -23,22 +23,26 @@ class Slide extends React.Component {
         >
           <Image alt="screenshot"
               centered
-              className="screenshot"
+              size="medium"
               src={app.screenshotUrls[zero] || "src/img/apps/devices.svg"}
           />
         </Grid.Column>
         <Grid.Column width={totalPossible / columnsNeeded}>
           <Grid columns={columnsNeeded}>
             <Grid.Column width={totalPossible}>
-              <h2 className="header header--level-2">
+              <Header as="h2"
+                  className="header header--level-2"
+              >
                 <div className="header--big">{"Applications"}</div>
                 <div className="header--small header--heavy">
                   {"You want to use"}
                 </div>
-              </h2>
-              <h3 className="header header--level-3 header--green">
+              </Header>
+              <Header as="h3"
+                  className="header header--level-3 header--green"
+              >
                 {app.name}
-              </h3>
+              </Header>
               <p className="text text--green"
                   dangerouslySetInnerHTML={{__html: app.description}}
               />
@@ -48,17 +52,17 @@ class Slide extends React.Component {
                 <Grid.Column className="above-shadow">
                 {
                   app.iOSURL ? (
-                    <a className="store-link"
+                    <Image alt="App Store"
+                        className="store-link"
                         href={app.iOSURL}
+                        onClick={() => window.open(app.iOSURL, "_blank")}
+                        size="medium"
+                        spaced={false}
+                        src="src/img/apps/app-store.svg"
                         title="Get it on App Store"
-                    >
-                      <img alt="App Store"
-                          onClick={() => window.open(app.iOSURL, "_blank")}
-                          src="src/img/apps/app-store.svg"
-                      />
-                    </a>
+                    />
                   ) : (
-                    <p className="text text--green"
+                    <p className="text"
                         style={{textAlign: "center"}}
                     >
                       Not available on App Store for now
@@ -71,7 +75,10 @@ class Slide extends React.Component {
                 <Grid.Column className="shadow-container">
                 {
                   app.iOSURL && (
-                    <img src="src/img/apps/app-store-button-shadow.svg"/>
+                    <Image size="medium"
+                        spaced={false}
+                        src="src/img/apps/app-store-button-shadow.svg"
+                    />
                   )
                 }
                 </Grid.Column>
@@ -82,17 +89,17 @@ class Slide extends React.Component {
                 <Grid.Column className="above-shadow">
                 {
                   app.androidURL ? (
-                    <a className="store-link"
+                    <Image alt="Google Play"
+                        className="store-link"
                         href={app.androidURL}
+                        onClick={() => window.open(app.androidURL, "_blank")}
+                        size="medium"
+                        spaced={false}
+                        src="src/img/apps/google-play.svg"
                         title="Get it on Google Play"
-                    >
-                      <img alt="Google Play"
-                          onClick={() => window.open(app.androidURL, "_blank")}
-                          src="src/img/apps/google-play.svg"
-                      />
-                    </a>
+                    />
                   ) : (
-                    <p className="text text--green"
+                    <p className="text"
                         style={{textAlign: "center"}}
                     >
                       Not available on Google Play for now
@@ -102,13 +109,16 @@ class Slide extends React.Component {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-              {
-                app.androidURL && (
-                  <div className="column shadow-container">
-                    <img src="src/img/apps/google-play-button-shadow.svg"/>
-                  </div>
-                )
-              }
+                <Grid.Column className="shadow-container">
+                {
+                  app.androidURL && (
+                    <Image size="medium"
+                        spaced={false}
+                        src="src/img/apps/google-play-button-shadow.svg"
+                    />
+                  )
+                }
+                </Grid.Column>
               </Grid.Row>
             </Grid.Column>
           </Grid>

@@ -15,13 +15,6 @@
   padding-top: 1rem;
 }
 
-@media (min-width: 1000px) {
-  .screenshot-image-wrapper .image {
-    height: 600px;
-  }
-}
-
-
 .shadow-container {
 	padding-top: 6px !important;
 }
