@@ -5,7 +5,6 @@ import BulletControl from "./BulletControl";
 import PreviousControl from "./PreviousControl";
 import NextControl from "./NextControl";
 import Slide from "./Slide";
-import {Grid} from "semantic-ui-react";
 import appData from "./app-data.json";
 import PropTypes from "prop-types";
 
@@ -27,7 +26,6 @@ const settings = {
   speed: 500,
   slidesToShow: 1
 };
-const totalPossible = 16;
 const one = 1;
 
 class OurApps extends React.Component {
@@ -40,29 +38,25 @@ class OurApps extends React.Component {
   }
   render() {
     return (
-      <Grid columns={1}
-          stackable
+      <Carousel {...settings}
+          decorators={this.getNeededDecorators()}
+          dragging={this.props.apps.length > one}
+          swiping={this.props.apps.length > one}
       >
-        <Grid.Column width={totalPossible}>
-          <Carousel {...settings}
-              decorators={this.getNeededDecorators()}
-              dragging={this.props.apps.length > one}
-              swiping={this.props.apps.length > one}
-          >
-          {this.props.apps.map((app) => {
-            return (
-              <Slide {...app}
-                  key={app.bundleId}
-              />
-            )
-          })}
-          </Carousel>
-        </Grid.Column>
-      </Grid>
+      {this.props.apps.map((app) => {
+        return (
+          <Slide {...app}
+              key={app.bundleId}
+          />
+        )
+      })}
+      </Carousel>
     );
   }
 }
 
+// <Grid columns={1}>
+//   <Grid.Column width={totalPossible}>
 // `apps` property was added in order to help make good tests for this component
 OurApps.propTypes = {
   apps: PropTypes.arrayOf(PropTypes.shape({

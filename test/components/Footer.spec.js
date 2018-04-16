@@ -55,7 +55,7 @@ describe("Footer", () => {
   it("Child elements are centered", () => {
     let expectedMiddleX = getElementMiddleX(element);
     let expectedMiddleY = getElementMiddleY(element);
-    let childrenContainer = frame.get("#footer .ui.five.column.grid.footer-socials");
+    let childrenContainer = frame.get("#footer > div");
     expect(getElementMiddleX(childrenContainer)).to.equal(expectedMiddleX);
     expect(getElementMiddleY(childrenContainer)).to.equal(expectedMiddleY);
     let textLabels = frame.getAll("#footer span");

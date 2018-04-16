@@ -20,6 +20,11 @@
   max-height: 6rem;
 }
 
+#footer-socials__facebook {
+  padding-top: 1rem;
+  text-align: center;
+}
+
 .footer-text {
   color: #3d6d42;
   font-family: "Luba LT CYR";

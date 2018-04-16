@@ -1,7 +1,11 @@
 import React from "react";
 import "../styles/Navbar.css";
 import $ from "jquery";
-import {Grid, Sidebar, Segment} from "semantic-ui-react";
+import {
+  Grid,
+  Image,
+  Menu,
+} from "semantic-ui-react";
 import MenuLink from "./MenuLink";
 
 const argumentsSet = [
@@ -13,6 +17,7 @@ const argumentsSet = [
 const totalPossible = 16;
 const computerColumns = 5;
 const zero = 0;
+const one = 1;
 const middleQuotient = 0.5;
 
 //WARNING: the wheel was invented here!!!
@@ -65,20 +70,21 @@ class Navbar extends React.Component {
   };
   render() {
     return (
-      <Sidebar animation="push"
-          as={Segment}
-          className="navbar"
-          direction="top"
-          visible
+      <Menu className="navbar"
+          fixed="top"
       >
         <Grid className="page"
-            columns={argumentsSet.length}
+            columns={argumentsSet.length + one}
             textAlign="center"
         >
-          <Grid.Column computer={Math.floor(totalPossible / computerColumns)}
+          <Grid.Column
+              className="logo-container"
+              computer={Math.floor(totalPossible / computerColumns)}
               tablet={totalPossible}
           >
-            <img id="logo"
+            <Image centered
+                id="logo"
+                size="small"
                 src="src/img/navbar/logo.svg"
             />
           </Grid.Column>
@@ -93,7 +99,7 @@ class Navbar extends React.Component {
             ))
           }
         </Grid>
-      </Sidebar>
+      </Menu>
     );
   }
 }

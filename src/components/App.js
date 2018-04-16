@@ -1,6 +1,5 @@
 import React from "react";
 import $ from "jquery";
-import {Sidebar, Segment} from "semantic-ui-react";
 
 import "../styles/App.css";
 
@@ -13,7 +12,7 @@ const zero = 0;
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {navbarHeight: 150};
+    this.state = {navbarHeight: 180};
     this.onWindowResize = () => {
       if (!global.IS_CLIENT)
         return;
@@ -40,10 +39,8 @@ class App extends React.Component {
     return (
       <div>
         <Navbar/>
-        <Sidebar.Pushable as={Segment}>
-          <Screens paddingTop={this.state.navbarHeight}/>
-          <Footer/>
-        </Sidebar.Pushable>
+        <Screens paddingTop={this.state.navbarHeight}/>
+        <Footer/>
       </div>
     );
   }

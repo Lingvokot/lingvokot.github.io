@@ -1,7 +1,6 @@
 import React from "react";
 import ContactForm from "./ContactForm";
-import {Grid, } from "semantic-ui-react";
-import "../../styles/Screens/ForInvestors.css";
+import {Grid, Header} from "semantic-ui-react";
 
 const totalPossible = 16;
 const columnsNeeded = 2;
@@ -9,20 +8,21 @@ const columnsNeeded = 2;
 class ForInvestors extends React.Component {
   render () {
     return (
-      <Grid className="section__content section__content-for-investors"
-          columns={columnsNeeded}
+      <Grid columns={columnsNeeded}
           stackable
       >
         <ContactForm />
         <Grid.Column width={totalPossible / columnsNeeded}>
-          <h2 className="header header--level-2">
+          <Header as="h2"
+              className="header header--level-2"
+          >
             <div className="header--big">
               {"Great opportunities for your investments"}
             </div>
             <div className="header--small">
               {"Complete the form and receive our brief shortly"}
             </div>
-          </h2>
+          </Header>
           <p className="text">
             {"Inspired by minimalist art, functional and domain \
 driven software developing approach, we create our \

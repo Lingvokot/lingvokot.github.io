@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Screens/Technologies.css";
-import {Grid} from "semantic-ui-react";
+import {Grid, Image, Header} from "semantic-ui-react";
 const columnsAmount = 5;
 const totalPossible = 16;
 
@@ -13,23 +13,31 @@ class Technologies extends React.Component {
           relaxed
       >
         <Grid.Column verticalAlign="middle">
-          <h2 className="header header--level-2">
+          <Header as="h2"
+              className="header header--level-2"
+          >
             <div className="header--big">{"We like what we do"}</div>
             <div className="header--small">
               {"Creating applications make our adopters and us happy. \
 Discover what is behind our apps"}
             </div>
-          </h2>
+          </Header>
         </Grid.Column>
         <Grid.Column verticalAlign="middle">
           <Grid columns={Math.floor(totalPossible / columnsAmount)}
               stackable
           >
             <Grid.Column>
-              <img alt="Gear image"
+              <Image alt="Gear image"
+                  size="medium"
+                  spaced
                   src="src/img/technologies/gear.svg"
               />
-              <h3 className="header header--level-3">{"CI & CD"}</h3>
+              <Header as="h3"
+                  className="header header--level-3"
+              >
+                {"CI & CD"}
+              </Header>
               <p className="text text--centered">
                 {"We use fully automated continuous integration and continuous\
   delivery. So we can deliver any changes rapidly"}
@@ -42,10 +50,16 @@ Discover what is behind our apps"}
               </a>
             </Grid.Column>
             <Grid.Column>
-              <img alt="React Native logo"
+              <Image alt="React Native logo"
+                  size="medium"
+                  spaced
                   src="src/img/technologies/react-native.svg"
               />
-              <h3 className="header header--level-3">{"React native"}</h3>
+              <Header as="h3"
+                  className="header header--level-3"
+              >
+                {"React native"}
+              </Header>
               <p className="text">
                 {"We build native iOS and Android apps with Javascript. \
 Together with automation it allows us to develop smart and \
@@ -59,10 +73,16 @@ efficient way. Also hot deploy is available."}
               </a>
             </Grid.Column>
             <Grid.Column>
-              <img alt="Tech talks"
+              <Image alt="Tech talks"
+                  size="medium"
+                  spaced
                   src="src/img/technologies/tech-talks.svg"
               />
-              <h3 className="header header--level-3">{"Tech Talks"}</h3>
+              <Header as="h3"
+                  className="header header--level-3"
+              >
+                {"Tech Talks"}
+              </Header>
               <p className="text">
                 {"We use cutting edge technologies and make things simple.\
 We are always ready to share our vision."}

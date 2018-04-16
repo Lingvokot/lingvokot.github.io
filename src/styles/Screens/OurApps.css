@@ -1,6 +1,5 @@
 .image {
   margin-right: 1rem;
-  max-width: 100%;
 }
 
 .above-shadow {
@@ -8,17 +7,13 @@
 }
 
 .screenshot-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
 }
 
-@media (min-width: 1000px) {
-  .screenshot-image-wrapper .image {
-    height: 600px;
-  }
+.slide-grid {
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
-
 
 .shadow-container {
 	padding-top: 6px !important;

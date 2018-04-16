@@ -84,10 +84,16 @@ table {
   justify-content: center;
 }
 
-.navbar > .grid > .column {
+.navbar > .grid {
   display: flex !important;
-  align-items: center;
-  justify-content: center;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.logo-container {
+  display: flex !important;
 }
 
 .navigation__page-scroller::before, .logo-container::before {
@@ -126,7 +132,6 @@ table {
 }
 .image {
   margin-right: 1rem;
-  max-width: 100%;
 }
 
 .above-shadow {
@@ -134,17 +139,13 @@ table {
 }
 
 .screenshot-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
 }
 
-@media (min-width: 1000px) {
-  .screenshot-image-wrapper .image {
-    height: 600px;
-  }
+.slide-grid {
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
-
 
 .shadow-container {
 	padding-top: 6px !important;
@@ -213,6 +214,10 @@ div.slider-decorator-1 > button, div.slider-decorator-2 > button {
 
 .technologies > .column > .grid > .column > p {
   flex: 1 0 auto;
+}
+#planet-image {
+  width: 100%;
+  height: auto;
 }
 .contact-form--container {
   border-radius: .6rem;
@@ -307,42 +312,47 @@ input:checked ~ .checkbox-img {
 .screen {
 	padding-left: 17% !important;
 	padding-right: 17% !important;
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+}
+.screens-container {
+  margin: 1em -1em -1em -1em
 }
 .header,
 .text {
-  font-family: "Luba LT CYR";
+  font-family: "Luba LT CYR" !important;
 }
 
 .text,
 .header--level-3 {
-  color: #828882;
-  font-weight: 300;
+  color: #828882 !important;
+  font-weight: 300 !important;
 }
 
 .header--level-2 {
-  color: black;
-  text-transform: uppercase;
+  color: black !important;
+  text-transform: uppercase !important;
 }
 
 .header--big {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .header--small {
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 
 .header--heavy {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .header--level-3 {
-  margin: 1.6rem 0rem;
+  margin: 1.6rem 0rem !important;
 }
 
 .text--green,
 .header--green {
-  color: #3d6d42;
+  color: #3d6d42 !important;
 }
 #footer {
   background-color: #7cd985;
@@ -364,6 +374,11 @@ input:checked ~ .checkbox-img {
 
 #footer-socials__github img, #footer-socials__facebook img, #footer-socials__slideshare img {
   max-height: 6rem;
+}
+
+#footer-socials__facebook {
+  padding-top: 1rem;
+  text-align: center;
 }
 
 .footer-text {

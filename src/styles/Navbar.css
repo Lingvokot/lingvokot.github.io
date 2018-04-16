@@ -11,10 +11,16 @@
   justify-content: center;
 }
 
-.navbar > .grid > .column {
+.navbar > .grid {
   display: flex !important;
-  align-items: center;
-  justify-content: center;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.logo-container {
+  display: flex !important;
 }
 
 .navigation__page-scroller::before, .logo-container::before {
